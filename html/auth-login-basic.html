@@ -62,6 +62,12 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
+      <style>
+        .error{
+          color: red;
+        }
+      </style>
+
   </head>
 
   <body>
@@ -149,6 +155,7 @@
                     placeholder="Enter your email or mobile number"
                     autofocus
                   />
+                  <div id="emailError" class="error"></div>
                 </div>
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
@@ -168,6 +175,7 @@
                     />
                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                   </div>
+                  <div id="passwordError" class="error"></div>
                 </div>
                 <div class="mb-3">
                   <div class="form-check">
@@ -216,21 +224,31 @@
         var p = password.value;
         let e = email.value;
         var arry = JSON.parse(localStorage.getItem("daru"));
-        var validate = arry.find(h =>( h.userDetail.Email===e && h.userDetail.Password===p ));
+        var validate = arry.find(h => ( h.userDetail.Email===e && h.userDetail.Password===p ) );
 
 
         if(validate){
           smart.push(validate);
-          if(localStorage.damilare != null){
-            smart = JSON.parse(localStorage.getItem("damilare"))
-          }
           jsmart= JSON.stringify(smart);
           localStorage.setItem("damilare",jsmart);
-          e="eeeeeeeeeee";
-          p="";
+          
           location.href="dashboard.html"
 
 
+        }
+         
+
+        else if(e!==validate){
+          document.getElementById("emailError").innerText="There is no record of this email in our platform"
+
+              
+
+        }
+
+
+        else{
+          // alert("your not a member of this platform")
+          location.href="Pages-misc-error.html"
         }
         
 

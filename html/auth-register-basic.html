@@ -145,7 +145,7 @@
                       </g>
                     </svg>
                   </span>
-                  <span class="app-brand-text demo text-body fw-bolder">STar bank</span>
+                  <span class="app-brand-text demo text-body fw-bolder" style="text-transform: uppercase;">STar bank</span>
                 </a>
               </div>
               <!-- /Logo -->
@@ -325,15 +325,15 @@
         }
 
         // password unfill
-        else if( password.length<11){
+        else if( password.length<8){
 
-          if(password.length<=0){
+          if(password.length=0){
 
             document.getElementById("passwordError").innerText = "please fill it with your password";
           }
-          else if(password.length<=1){
+          else if(password.length<=7){
 
-            document.getElementById("passwordError").innerText = "Your password must be atleast 11 characters";
+            document.getElementById("passwordError").innerText = "Your password must be atleast 8 characters";
           }
 
         }
@@ -365,7 +365,7 @@
             localStorage.setItem("daru", sarry);
 
             document.write(`<font> <h1 class="bank">Welcome to STAR BANK</h1>
-            <p>${first} ${second} Your accont Number ${a} </p>
+            <p>${first} ${second} Your account Number ${a} </p>
             <small> Your acount balance is N ${userBal} </small><br>
              <p> click here to <a href="auth-login-basic.html">login<a></p></font> `)
           }
