@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+`<!DOCTYPE html>
 
 <!-- =========================================================
 * Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
@@ -225,40 +225,21 @@
         let e = email.value;
         var arry = JSON.parse(localStorage.getItem("daru"));
         var validate = arry.find(h => ( h.userDetail.Email===e && h.userDetail.Password===p ) );
-
-
         if(validate){
           smart.push(validate);
           jsmart= JSON.stringify(smart);
           localStorage.setItem("damilare",jsmart);
-          
           location.href="dashboard.html"
-
-
         }
-         
-
         else if(e!==validate){
           document.getElementById("emailError").innerText="There is no record of this email in our platform"
-
-              
 
         }
 
 
         else{
-          // alert("your not a member of this platform")
           location.href="Pages-misc-error.html"
         }
-        
-
-
-
-
-
-
-
-
       })
 
       

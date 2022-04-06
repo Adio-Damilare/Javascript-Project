@@ -1091,89 +1091,138 @@
       <!-- <div class="layout-overlay layout-menu-toggle"></div>
     </div> -->
     <!-- / Layout wrapper -->
+    <div class="d-flex container d-flex justify-content-center align-center" style="height: 300px; align-items: center; flex-direction: row-reverse;">
+      <div>
+        <button class="btn btn-primary">forget my account number</button>
+      </div>
+        <div class="col-lg-6 col-xl-6 col-md-6"  >
+        <small class="text-light fw-semibold"></small>
+        <div class="">
+          <button
+          onclick="reloadPage()"
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modalToggle"
+           
+          >
+            Transfer
+          </button>
 
-    <div class="col-lg-12 col-xl-12 col-md-12"  style="display: flex; justify-content: center; align-items: center; height: 600px;">
-    <small class="text-light fw-semibold"></small>
-    <div class="">
-      <button
-        type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#modalToggle"
-      >
-        Transfer
-      </button>
-
-      <!-- Modal 1-->
-      <div
-        class="modal fade"
-        id="modalToggle"
-        aria-labelledby="modalToggleLabel"
-        tabindex="-1"
-        style="display: none"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header text-center
-            px-5">
-              <h5 class="modal-title " id="modalToggleLabel">Transfer</h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+          <!-- Modal 1-->
+          <div
+            class="modal fade"
+            id="modalToggle"
+            aria-labelledby="modalToggleLabel"
+            tabindex="-1"
+            style="display: none"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header text-center
+                px-5">
+                  <h5 class="modal-title  fw-bolder display-4 text-primary" >Transfer</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="p-md-5 p-sm-5"> <label for="" class="fw-semibold my-3 ms-2">Account Number</label>
+                  <input type="text" class="form-control ms-5 w-75" name="" onkeypress="errorClear()" onmouseleave="dare()" id="account">
+                  <div id="errorAcc" style="color: red;"></div>
+                </div>
+                <div class="px-md-5 px-sm-"> <label for="" class="fw-semibold mb-3 ms-2">Password</label>
+                  <input type="text"  class="form-control ms-5 w-75" name="" id="password">
+                  <div id="errorPass" style="color: red;"></div>
+                </div>
+                <!-- <div class="modal-body"></div> -->
+                <div class="modal-footer">
+                  <button
+                  id="confir"
+                  onmouseover="check()"
+                    class="btn btn-primary w-100"
+                    data-bs-target="#modalToggle2"
+                    data-bs-toggle="modal"
+                    data-bs-dismiss="modal"
+                  >
+                  confirm
+                  </button>
+                </div>
+              </div>
             </div>
-            <div class="modal-body">Show a second modal and hide this one with the button below.</div>
-            <div class="modal-footer">
-              <button
-                class="btn btn-primary"
-                data-bs-target="#modalToggle2"
-                data-bs-toggle="modal"
-                data-bs-dismiss="modal"
-              >
-                Open second modal
-              </button>
+          </div>
+          <!-- Modal 2-->
+          <div
+            class="modal fade"
+            id="modalToggle3"
+            aria-hidden="true"
+            aria-labelledby="modalToggleLabel3"
+            tabindex="-1"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalToggleLabel3"></h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">Hide this modal and show the first with the button below.</div>
+                <div class="modal-footer">
+                  <button
+                    class="btn btn-primary"
+                    data-bs-target="#modalToggle"
+                    data-bs-toggle="modal"
+                    data-bs-dismiss="modal"
+                  >
+                    Back to first
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="modal fade"
+            id="modalToggle2"
+            aria-hidden="true"
+            aria-labelledby="modalToggleLabel2"
+            tabindex="-1"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalToggleLabel2">Modal 2</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">Hide this modal and show the first with the button below.</div>
+                <div class="modal-footer">
+                  <button
+                    class="btn btn-primary"
+                    data-bs-target="#modalToggle3"
+                    data-bs-toggle="modal"
+                    data-bs-dismiss="modal"
+                  >
+                    Back to first
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Modal 2-->
-      <div
-        class="modal fade"
-        id="modalToggle2"
-        aria-hidden="true"
-        aria-labelledby="modalToggleLabel2"
-        tabindex="-1"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalToggleLabel2">Modal 2</h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">Hide this modal and show the first with the button below.</div>
-            <div class="modal-footer">
-              <button
-                class="btn btn-primary"
-                data-bs-target="#modalToggle"
-                data-bs-toggle="modal"
-                data-bs-dismiss="modal"
-              >
-                Back to first
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+ 
+</div>
 
 
     <!-- Core JS -->
@@ -1197,5 +1246,76 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+    <script>
+
+      function reloadPage() {
+        account.value = "";
+        password.value = "";
+        document.getElementById("errorAcc").innerText = ""
+        document.getElementById("errorPass").innerText = "";
+        document.getElementById("confir").disabled = false;
+      }
+
+      function errorClear() {
+        var acc = account.value
+        if(acc.lenth!==0){
+          document.getElementById("errorAcc").innerText= ""
+        }        
+      }
+
+
+      function dare(){
+        var acc = account.value
+        var pas = password.value
+        smart = JSON.parse(localStorage.getItem("damilare"));
+        var validate = smart.find(mail => (mail.userDetail.accountNumber === acc) )
+        if(validate){
+
+          document.getElementById("confir").disabled = false
+        }
+        else if(acc.length<=0){
+
+          document.getElementById("confir").disabled = true;
+          document.getElementById("errorAcc").innerText= "Kindly enter you account number to continue with the transaction";
+        }
+        else if(validate !== acc){
+          document.getElementById("errorAcc").innerText= "This is account number is invalid"
+        }
+      }
+
+
+        function check() {
+          var acc = account.value
+          var pas = password.value
+          var errorTextAcc = " Kindly enter you account number to continue with the transaction";
+          var errorTextPass = "Kindly enter you password "
+          if (acc.length<=0 && pas.length<=0){
+            document.getElementById("confir").disabled = true
+            document.getElementById("errorAcc").innerText = errorTextAcc
+            document.getElementById("errorPass").innerText = errorTextPass
+          }
+          
+
+        }
+
+
+
+      document.getElementById("confir").addEventListener('click', function(){
+          var acc = account.value;
+          var pas = password.value;
+          var error1 = document.getElementById("errorPass").innerText
+          var error2 = document.getElementById("errorAcc").innerText
+          
+
+          if( error1.length<=0 && error2.length<=0){
+            alert("welcome")
+
+          }
+      
+      })
+
+    </script>
   </body>
 </html>

@@ -535,8 +535,8 @@
                               </div>
                             </div>
                           </div>
-                          <span>Sales</span>
-                          <h3 class="card-title text-nowrap mb-1">$0,0</h3>
+                          <span>Balance</span>
+                          <h3 class="card-title text-nowrap mb-1">N<span id="bal"></span></h3>
                           <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +00.0%</small>
                         </div>
                       </div>
@@ -891,7 +891,7 @@
         smart = JSON.parse(localStorage.getItem("damilare"));
       
         document.getElementById('span').innerHTML = smart[0].userDetail.firstname + "  "+ smart[0].userDetail.SecondName;
-        console.log(smart)  
+        document.getElementById('bal').innerHTML = smart[0].userDetail.Bal
         
       }
 
