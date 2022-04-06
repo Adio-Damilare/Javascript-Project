@@ -52,7 +52,16 @@
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-
+  
+    <style>
+      hr{
+        border: 3px solid grey;
+      }
+      .crush{
+        text-decoration: line-through double;
+        font-size: 20px;
+      }
+    </style>
     <!-- Page CSS -->
 
     <!-- Helpers -->
@@ -1123,19 +1132,14 @@
                 <div class="modal-header text-center
                 px-5">
                   <h5 class="modal-title  fw-bolder display-4 text-primary" >Transfer</h5>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
+                 
                 </div>
                 <div class="p-md-5 p-sm-5"> <label for="" class="fw-semibold my-3 ms-2">Account Number</label>
                   <input type="text" class="form-control ms-5 w-75" name="" onkeypress="errorClear()" onmouseleave="dare()" id="account">
                   <div id="errorAcc" style="color: red;"></div>
                 </div>
                 <div class="px-md-5 px-sm-"> <label for="" class="fw-semibold mb-3 ms-2">Password</label>
-                  <input type="text"  class="form-control ms-5 w-75" name="" id="password">
+                  <input type="password"  class="form-control ms-5 w-75" onkeypress="errClear()" name="" onmouseleave="free()" id="password">
                   <div id="errorPass" style="color: red;"></div>
                 </div>
                 <!-- <div class="modal-body"></div> -->
@@ -1143,13 +1147,18 @@
                   <button
                   id="confir"
                   onmouseover="check()"
-                    class="btn btn-primary w-100"
+                    class="btn btn-primary w-75"
                     data-bs-target="#modalToggle2"
                     data-bs-toggle="modal"
                     data-bs-dismiss="modal"
-                  >
-                  confirm
+                    >
+                    confirm
                   </button>
+                  <button
+                  type="button" class="btn border border-5 bg-danger text-white"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                >cancel</button>
                 </div>
               </div>
             </div>
@@ -1166,12 +1175,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="modalToggleLabel3"></h5>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
+                 
                 </div>
                 <div class="modal-body">Hide this modal and show the first with the button below.</div>
                 <div class="modal-footer">
@@ -1183,6 +1187,12 @@
                   >
                     Back to first
                   </button>
+                  <button
+                  type="button"
+                  data-bs-dismiss="modal"
+                  class="btn border bg-danger"
+                  aria-label="Close"
+                >cancel</button>
                 </div>
               </div>
             </div>
@@ -1197,24 +1207,46 @@
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="modalToggleLabel2">Modal 2</h5>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
+                  <h5 class="modal-title fw-semibold display-6 text-primary" id="modalToggleLabel2">Amout to transfer and the reciever account number</h5>
+                 
                 </div>
-                <div class="modal-body">Hide this modal and show the first with the button below.</div>
+                <div class="modal-body container">
+                  <div class="container">
+                    <label for=""> Amount to transfer</label>
+                    <div class="input-group input-group-merge">
+                      <span class="input-group-text cursor-pointer crush ">N</span>
+                      <input
+                        type="number"
+                        id="pS"
+                        class="form-control"
+                        name="null"
+                        aria-describedby="password"
+                      />
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="container">
+                    <label for=""> Account number of the reciever</label>
+                    <input type="number" class="form-control" name="" onmouseleave="checkAcountNumber()" id="recieverAccountNumber">
+                  </div>
+                </div>
                 <div class="modal-footer">
                   <button
                     class="btn btn-primary"
                     data-bs-target="#modalToggle3"
                     data-bs-toggle="modal"
+                    id="SendMoney"
+                    onmouseover="checkIfTheTextBoxsIsFill()"
                     data-bs-dismiss="modal"
                   >
-                    Back to first
+                    Send
                   </button>
+                  <button
+                  type="button"
+                  class="btn border bg-danger"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                > cancel</button>
                 </div>
               </div>
             </div>
@@ -1249,7 +1281,8 @@
 
 
     <script>
-
+      var smart = JSON.parse(localStorage.getItem("damilare"));
+//        first tranfer button
       function reloadPage() {
         account.value = "";
         password.value = "";
@@ -1258,45 +1291,75 @@
         document.getElementById("confir").disabled = false;
       }
 
+
+
       function errorClear() {
-        var acc = account.value
+        var acc = account.value;
         if(acc.lenth!==0){
           document.getElementById("errorAcc").innerText= ""
-        }        
+        } 
+
       }
 
+      function errClear() {
+        var pas = password.value
+        if(pas.lenth!==0){
+          document.getElementById("errorPass").innerText= " "
+
+        } 
+
+      }
+      
+
+      function free(){
+        var pas = password.value
+        var smart = JSON.parse(localStorage.getItem("damilare"));
+        var validate = smart.find(mail => ( mail.userDetail.Password == pas) )
+        if(!validate){
+
+          document.getElementById("errorPass").innerText= " invalid" 
+          document.getElementById("confir").disabled = true;
+        }
+        else{
+          document.getElementById("confir").disabled = false;
+          document.getElementById("errorPass").innerText= " " 
+
+        }
+      }
 
       function dare(){
         var acc = account.value
         var pas = password.value
         smart = JSON.parse(localStorage.getItem("damilare"));
-        var validate = smart.find(mail => (mail.userDetail.accountNumber === acc) )
+        var validate = smart.find(mail => (mail.userDetail.accountNumber === acc ) )
         if(validate){
 
-          document.getElementById("confir").disabled = false
+          document.getElementById("confir").disabled = true
         }
-        else if(acc.length<=0){
-
-          document.getElementById("confir").disabled = true;
-          document.getElementById("errorAcc").innerText= "Kindly enter you account number to continue with the transaction";
-        }
-        else if(validate !== acc){
+        else if(!validate){
           document.getElementById("errorAcc").innerText= "This is account number is invalid"
+          document.getElementById("confir").disabled = true;
+
         }
       }
 
 
         function check() {
           var acc = account.value
-          var pas = password.value
-          var errorTextAcc = " Kindly enter you account number to continue with the transaction";
+          var pas = password.value;
+          smart = JSON.parse(localStorage.getItem("damilare"));
+           var validate = smart.find(mail => (mail.userDetail.accountNumber === acc  && mail.userDetail.Password === pas) )
+          var errorTextAcc = "Kindly enter you account number to continue with the transaction";
           var errorTextPass = "Kindly enter you password "
-          if (acc.length<=0 && pas.length<=0){
+          if (validate){
+            document.getElementById("confir").disabled = false
+          }
+          
+          else if (!validate){
             document.getElementById("confir").disabled = true
             document.getElementById("errorAcc").innerText = errorTextAcc
             document.getElementById("errorPass").innerText = errorTextPass
           }
-          
 
         }
 
@@ -1305,17 +1368,37 @@
       document.getElementById("confir").addEventListener('click', function(){
           var acc = account.value;
           var pas = password.value;
-          var error1 = document.getElementById("errorPass").innerText
-          var error2 = document.getElementById("errorAcc").innerText
-          
-
-          if( error1.length<=0 && error2.length<=0){
-            alert("welcome")
+          var acc = account.value
+          smart = JSON.parse(localStorage.getItem("damilare"));
+          var validate = smart.find(mail => (mail.userDetail.accountNumber === acc && mail.userDetail.Password ===pas ) )
+          if( validate){
+            document.getElementById("confir").disabled = false
 
           }
       
       })
 
+   // <-----for reciever and amount to send---->
+
+    
+    function checkIfTheTextBoxsIsFill(){
+      var amount = pS.value;
+      var acconut = recieverAccountNumber.value;
+      var validate = smart.find( f => (f.userDetail.Bal>=amount));
+      if(validate){
+        alert("send")
+      }
+      else{
+        alert( "amount you enter is more than the balance")
+      }
+      
+    }
+    
+    document.getElementById("sendMoney").addEventListner("click",function () {
+      var amount = pS.value;
+  
+   
+    })
     </script>
   </body>
 </html>
