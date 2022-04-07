@@ -197,8 +197,8 @@
                     <input
                       type="password"
                       id="pS"
-                      class="form-control"
                       name="password"
+                      class="form-control"
                       placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                       aria-describedby="password"
                     />
@@ -352,7 +352,7 @@
           
         else{
           arry = JSON.parse(localStorage.getItem("daru"))
-          var drake = arry.find(h => ( h.userDetail.Email===email));
+          var drake = arry.find(h => ( h.userDetail.Email=== email));
           if(drake){
             document.getElementById("emailError").innerText ="This  email address you use has alredy been used by another customer"
           }
