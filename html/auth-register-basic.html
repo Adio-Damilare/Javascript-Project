@@ -274,6 +274,7 @@
       
 
       function signUp(){
+        
         let userBal = 20000
         var first = fN.value;
         var second = lN.value;
@@ -281,10 +282,10 @@
         var phone =pN.value;
         var password = pS.value;
         var cPassword = cM.value;
-        var a = "4"+ Math.floor(Math.random()*100000000)
+        var a = "490"+ Math.floor(Math.random()*100000000)
        
         
-        let pass = {"userDetail":{"firstname":first,"SecondName":second,"PhoneNumber":phone,"Email":email,"Password":password, "accountNumber":a,"Bal":userBal}}
+        let pass = {"userDetail":{"firstname":first,"SecondName":second,"PhoneNumber":phone,"Email":email,"Password":password, "accountNumber":a,"Bal":userBal,"Transaction History":{"transfer":[], "credit":[],"Airtimes":[],"withDraw":[],"deposit":[],"credit":[]}}}
         
         //  form unfill
         if( ((first.length<=0) && (second<=0)) && ( (phone<=0) && (email.length<=0)  && (password<=0)) ){
@@ -351,18 +352,20 @@
         }
           
         else{
-          arry = JSON.parse(localStorage.getItem("daru"))
-          var drake = arry.find(h => ( h.userDetail.Email=== email));
-          if(drake){
-            document.getElementById("emailError").innerText ="This  email address you use has alredy been used by another customer"
-          }
+         var  sarry = JSON.parse(localStorage.getItem("user"));
+         if(sarry.length<=0){
+           var rake = sarry.find(h => ( h.userDetail.Email === email));
+           if(rake){
+             document.getElementById("emailError").innerText ="This  email address you use has alredy been used by another customer"
+           }
+         }
           else{
-            if(localStorage.daru != null){
-            arry = JSON.parse(localStorage.getItem("daru"))
+            if(localStorage.user != null){
+            arry = JSON.parse(localStorage.getItem("user"))
             };
             arry.push(pass);
             sarry = JSON.stringify(arry);
-            localStorage.setItem("daru", sarry);
+            localStorage.setItem("user", sarry);
 
             document.write(`<font> <h1 class="bank">Welcome to STAR BANK</h1>
             <p>${first} ${second} Your account Number ${a} </p>
@@ -379,3 +382,4 @@
     </script>
   </body>
 </html>
+// 

@@ -223,7 +223,7 @@
       document.getElementById("submit").addEventListener("click",function(){
         var p = password.value;
         let e = email.value;
-        var arry = JSON.parse(localStorage.getItem("daru"));
+        var arry = JSON.parse(localStorage.getItem("user"));
         var validate = arry.find(h => ( h.userDetail.Email===e && h.userDetail.Password===p ) );
         if(validate){
           smart.push(validate);

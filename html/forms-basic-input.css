@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding:  0;
+    box-sizing: border-box;
+}
+#transfer{
+    transform: translate(-110px,0pc);
+    margin-top: 300px;
+}
+
+
+@media  (max-width:766px){
+    #transfer{
+        transform: translate(0px,0pc)
+    }
+}

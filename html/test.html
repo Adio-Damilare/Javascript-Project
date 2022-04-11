@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arry =[]
+        
+        function mars(){
+        
+            var myDate = new Date;
+            var daysList = ["sunday","monday",'tuesday',"wednesday","thursday","friday","saturday"];
+            var monthsList = ["January","february",'March',"April","May","June","July","September","October","November","December"];
+            let date = myDate.getDate();
+            let month = monthsList[myDate.getMonth()];
+            let year = myDate.getFullYear();
+            let day = daysList[myDate.getDay()];
+            let today = `${date} ${month} ${year} ${day}`;
+            let amOrPm;
+            let twentyHours = function(){
+
+                if (myDate.getHours()>12){
+                    amOrPm = "PM";
+                    let twentyFourHoursTimes = myDate.getHours();
+                    let conversion = twentyFourHoursTimes-12;
+                    return conversion
+                }
+                else{
+                    amOrPm = "AM";
+                    return `${myDate.getHours()}`
+                }
+            }
+            let hours = twentyHours();
+            let minutes = myDate.getMinutes()
+            let currentTime = `${hours} ${minutes}`
+            var r = (alert=( `${today} ${currentTime}`))
+            arry.push(r)
+            document.getElementById("timeKeeper").innerText = r
+            
+        }
+
+        function dip(){
+            var s = (alert=(new Date().toLocaleString().replace(',',',','')));
+            document.getElementById("timeKeeper").innerText = s
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="out">
+    <div id="timeKeeper"></div>
+    <button onclick="mars()">cge</button>
+    <button onclick="dip()">dd</button>
+    
+</body>
+</html>
