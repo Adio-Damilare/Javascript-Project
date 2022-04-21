@@ -63,7 +63,7 @@
     <script src="../assets/js/config.js"></script>
   </head>
 
-  <body>
+  <body onload="message()">
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -166,16 +166,30 @@
               </a>
             </li>
             <li class="menu-item">
+              <a href="cards-basic.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Input groups">WithDraw</div>
+              </a>
+            </li>
+
+            <li class="menu-item ">
+              <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Input groups">Deposit</div>
+              </a>
+            </li>
+
+            <li class="menu-item ">
               <a href="form-layouts-horizontal.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-box"></i>
-                <div data-i18n="Input groups">Payment of Bill</div>
+                <div data-i18n="Input groups">Payment of Bills</div>
               </a>
             </li>
           
       
-       
+            <hr class="menu-header border " >
          
-            <li class="menu-item">
+            <li class="menu-item ">
               <a href="form-layouts-vertical.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Vertical Form">Transaction History</div>
@@ -603,7 +617,7 @@
                     >Documentation</a
                   >
 
-                  <a
+                  <a  
                     href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
                     target="_blank"
                     class="footer-link me-4"
@@ -648,5 +662,22 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+   function message(){
+
+    var great = JSON.parse(localStorage.getItem("damilare"))
+    document.getElementById("email").value = great[0].userDetail.Email
+    document.getElementById("email").placeholder = great[0].userDetail.Email
+    document.getElementById("firstName").value =great[0].userDetail.firstname
+    document.getElementById("lastName").value =great[0].userDetail.SecondName
+
+      }
+
+      document.getElementById("upload").addEventListener("click",function(){
+    
+        alert("helo")
+        setTimeout("upload()",20000)
+      })
+    </script>
   </body>
 </html>

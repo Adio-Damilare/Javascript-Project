@@ -174,17 +174,31 @@
                     <div data-i18n="Input groups">Airtimes</div>
                   </a>
                 </li>
+                <li class="menu-item ">
+                  <a href="cards-basic.html" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-collection"></i>
+                    <div data-i18n="Input groups">WithDraw</div>
+                  </a>
+                </li>
+    
+                <li class="menu-item">
+                  <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-collection"></i>
+                    <div data-i18n="Input groups">Deposit</div>
+                  </a>
+                </li>
+    
                 <li class="menu-item">
                   <a href="form-layouts-horizontal.html" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-box"></i>
-                    <div data-i18n="Input groups">Payment of Bill</div>
+                    <div data-i18n="Input groups">Payment of Bills</div>
                   </a>
                 </li>
               
           
-           
+                <hr class="menu-header border " >
              
-                <li class="menu-item">
+                <li class="menu-item ">
                   <a href="form-layouts-vertical.html" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-detail"></i>
                     <div data-i18n="Vertical Form">Transaction History</div>
@@ -381,6 +395,7 @@
                       type="number"
                       id="pS"
                       onkeypress="checkAmount()"
+                      onmouseover="year()"
                       class="form-control"
                       name="null"
                       aria-describedby="password"
@@ -392,7 +407,7 @@
                 <hr>
                 <div class="container">
                   <label for=""> Account number of the reciever</label>
-                  <input type="number" class="form-control" name=""  onkeypress="checkAccountNumber()" id="recieverAccountNumber">
+                  <input type="number" class="form-control" name=""  onmouseover="year()" onkeypress="checkAccountNumber()" id="recieverAccountNumber">
                   <div id="accountNumberError" style="color: red;"></div>
                 </div>
               </div>
@@ -483,7 +498,7 @@
                  
                 </div>
                 <div class="p-md-5 p-sm-5"> <label for="" class="fw-semibold my-3 ms-2">Account Number</label>
-                  <input type="text" class="form-control ms-5 w-75" name="" onkeypress="errorClear()" id="account">
+                  <input type="text" class="form-control ms-5 w-75" name=""  onkeypress="errorClear()" id="account">
                   <div id="errorAcc" style="color: red;"></div>
                 </div>
                 <div class="px-md-5 px-sm-"> <label for="" class="fw-semibold mb-3 ms-2">Password</label>
@@ -601,7 +616,9 @@
 
 
        
-
+      function year(){
+        document.getElementById('SendMoney').disabled =  false;
+      }
 
      
 
@@ -620,10 +637,12 @@
 
     }
 
-    
+    var sure = []
     function checkIfTheTextBoxsIsFill(){
+      sure.splice(0,sure.length)
       var amount = pS.value;
       var account = recieverAccountNumber.value;
+      sure.push({"amount":amount,"account":account})
       var validUser = arry.find(nam =>(nam.userDetail.accountNumber === account))
       var validate = smart.find( f => (f.userDetail.Bal>=amount));
      var same = smart[0].userDetail.accountNumber;
@@ -633,18 +652,27 @@
         if(account == same){
           
           document.getElementById('SendMoney').disabled = true;
-          document.getElementById("accountNumberError").innerText ="This account number is your already so you can't transfer to your account "
+          document.getElementById("accountNumberError").innerText ="This account number is yours so you can't transfer to your account "
         }
         else{
           var t = "<br>"
           document.getElementById("accountNumberError").innerHTML =  ` `
           document.getElementById('SendMoney').disabled =  false;
           document.getElementById("displayTheReciever").innerHTML=`<div><b>${validUser.userDetail.firstname}</b> ${t} <b> ${validUser.userDetail.SecondName}</b>`
+            document.getElementById("pS").value=""
+            document.getElementById("recieverAccountNumber").value=""
         }
         
         
       }
-      else if(bal<amount && validate!==account ){
+
+      else if(bal<amount && account == ""  ){
+        document.getElementById("checkAmountError").innerText= "Insufficient Balance "
+        document.getElementById("accountNumberError").innerHTML =  `Enter the account number bank of the reciever  `
+        document.getElementById('SendMoney').disabled = true;
+      }
+
+      else if(bal<amount && !validUser ){
         document.getElementById("checkAmountError").innerText= "Insufficient Balance "
         document.getElementById("accountNumberError").innerHTML =  `This account does not exist in our bank  `
         document.getElementById('SendMoney').disabled = true;
@@ -655,6 +683,7 @@
           document.getElementById("accountNumberError").innerHTML = ' Enter account number of the reciever '
           document.getElementById('SendMoney').disabled = true;
          }
+
       else if (account == "" || amount==""){
         if(account == ""){
           document.getElementById("accountNumberError").innerHTML = ' Enter account number of the reciever '
@@ -664,15 +693,18 @@
 
         }
           document.getElementById('SendMoney').disabled = true;
-         }
+      }
 
-      else if(bal<amount || validate!==account){
+      else if(bal<amount || !validUser){
          if(bal<amount){
-          document.getElementById("checkAmountError").innerText= "Insufficient Balance "
+          document.getElementById("checkAmountError").innerText= "Insufficient Balance ";
+          document.getElementById("accountNumberError").innerHTML =  ` `
           document.getElementById('SendMoney').disabled = true;
          }
-         else if( validate!==account){
+         else if( !validUser){
           document.getElementById("accountNumberError").innerHTML =  `This account does not exist in our bank  `
+          document.getElementById("checkAmountError").innerText= "";
+
           document.getElementById('SendMoney').disabled = true;
          }
       }
@@ -740,8 +772,6 @@
     
 
         document.getElementById("confir").addEventListener('click', function(){
-
-          // tme function name(params) 
           var smart = JSON.parse(localStorage.getItem("user"));
             var myDate = new Date;
             var daysList = ["sunday","monday",'tuesday',"wednesday","thursday","friday","saturday"];
@@ -750,7 +780,7 @@
             let month = monthsList[myDate.getMonth()];
             let year = myDate.getFullYear();
             let day = daysList[myDate.getDay()];
-            let today = `${date} ${month} ${year} ${day}`;
+            let today = `${date} / ${month} / ${year} / ${day}`;
             let amOrPm;
             let twentyHours = function(){
 
@@ -767,14 +797,13 @@
             }
             let hours = twentyHours();
             let minutes = myDate.getMinutes()
-            let currentTime = `${hours} ${minutes}`
+            let currentTime = `${hours} : ${minutes} ${amOrPm}`
             var timer = (alert=( `${currentTime}`));
             var dates = (alert=( `${today}`));
 
-
-              var moneySend = parseInt(pS.value);
+              var moneySend = parseInt(sure[0].amount);
               var senderAcc = account.value;
-              var recieverAcc = recieverAccountNumber.value;
+              var recieverAcc = sure[0].account;
               var great = JSON.parse(localStorage.getItem("damilare"));
               var validate = smart.find(mail => (mail.userDetail.accountNumber === senderAcc) )
               var validUser = smart.find(gold => (gold.userDetail.accountNumber === recieverAcc) );
@@ -782,13 +811,13 @@
                 var recieve = validUser.userDetail.Bal + moneySend;
               console.log(validUser.userDetail.Bal);
               console.log(validate.userDetail.Bal);
-            var timeRecord = {"date":dates,"time":timer, 'Balance':sent,}
+            var timeRecord = {"date":dates,"time":timer, 'Balance':sent,"amountSend":moneySend,"nameOfTheReciever":validUser.userDetail.firstname +"  "+ validUser.userDetail.SecondName};
+            var timeRecieve = {"date":dates,"time":timer, 'Balance':recieve,"amountRecieve":moneySend,'nameOfTheSender':validate.userDetail.firstname + "  " + validate.userDetail.SecondName};
 
               for(r=0; r<smart.length;){
                 if(smart[r].userDetail.accountNumber == senderAcc){
                   smart[r].userDetail.Bal = sent;
-
-
+                  smart[r].userDetail.TransactionHistory.transfer.push(timeRecord)
                   break
                 }
                 r++;
@@ -798,15 +827,16 @@
               for(real=0; real<smart.length;){
                 if(smart[real].userDetail.accountNumber == recieverAcc){
                   smart[real].userDetail.Bal = recieve;
+                  smart[real].userDetail.TransactionHistory.credit.push(timeRecieve)
                   break
                 }
                 real++;
               }
 
               for(l=0; l<great.length;){
-                great[l].userDetail.Bal = sent
                 if(great[l].userDetail.accountNumber == senderAcc){
                   great[l].userDetail.Bal = sent;
+                  great[l].userDetail.TransactionHistory.transfer.push(timeRecord)
                   break
 
                 }

@@ -168,22 +168,35 @@
               </a>
             </li>
             <li class="menu-item">
+              <a href="cards-basic.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Input groups">WithDraw</div>
+              </a>
+            </li>
+
+            <li class="menu-item ">
+              <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Input groups">Deposit</div>
+              </a>
+            </li>
+
+            <li class="menu-item ">
               <a href="form-layouts-horizontal.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-box"></i>
-                <div data-i18n="Input groups">Payment of Bill</div>
+                <div data-i18n="Input groups">Payment of Bills</div>
               </a>
             </li>
           
       
-       
+            <hr class="menu-header border " >
          
-            <li class="menu-item">
+            <li class="menu-item ">
               <a href="form-layouts-vertical.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Vertical Form">Transaction History</div>
               </a>
             </li>
-
         <!-- Layouts -->
         <hr class="menu-header border " >
         <li class="menu-item  ">
@@ -216,7 +229,7 @@
             <i class="menu-icon tf-icons bx bx-support"></i>
             <div data-i18n="Support">Support</div>
           </a>
-        </li>
+        </li>1
         <li class="menu-item">
           <a
             target="_blank"
@@ -394,7 +407,7 @@
                             </div>
                           </div>
                           <span class="fw-semibold d-block mb-1">AIrtimes</span>
-                          <h3 class="card-title mb-2">$00,0</h3>
+                          <h3 class="card-title mb-2"><span style="text-decoration:line-through double;">N</span><span id="airtime"></span></h3>
                           <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +00.0%</small>
                         </div>
                       </div>
@@ -422,13 +435,19 @@
                                 <i class="bx bx-dots-vertical-rounded"></i>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
-                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                <a class="dropdown-item
+                                btn btn-primary "
+                                data-bs-target="#modalToggle2"
+                                data-bs-toggle="modal"
+                                data-bs-dismiss="modal"
+                            
+                                onclick="good()"
+                                href="javascript:void(0);">View Balance</a>
                               </div>
                             </div>
                           </div>
                           <span>Balance</span>
-                          <h3 class="card-title text-nowrap mb-1">N<span id="bal"></span></h3>
+                          <h3 class="card-title text-nowrap mb-1"><span style="text-decoration: line-through double;">N</span><span id="bal"></span></h3>
                           <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +00.0%</small>
                         </div>
                       </div>
@@ -549,8 +568,8 @@
                               </div>
                             </div>
                           </div>
-                          <span class="fw-semibold d-block mb-1">Transactions</span>
-                          <h3 class="card-title mb-2">$0,0</h3>
+                          <span class="fw-semibold d-block mb-1">Transfer</span>
+                          <h3 class="card-title mb-2"><span style="text-decoration: line-through double;">N</span><span id="transfer"></span></h3>
                           <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +0.0%</small>
                         </div>
                       </div>
@@ -704,6 +723,42 @@
                     </div>
                   </div>
                 </div>
+                <div
+                class="modal fade"
+                id="modalToggle2"
+                id="transfer"
+                aria-hidden="true"
+                aria-labelledby="modalToggleLabel2"
+                tabindex="-1"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                   
+                    <div class="modal-body" >
+
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        class="btn btn-primary "
+                        data-bs-target="#modalToggle4"
+                        data-bs-toggle="modal"
+                        data-bs-dismiss="modal"
+            
+                      >
+                        OKAY
+                      </button>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+              class="modal fade"
+              id="modalToggle4"
+              aria-hidden="true"
+              aria-labelledby="modalToggleLabel4"
+              tabindex="-1"
+            >
                 <!--/ Transactions -->
               </div>
             </div>
@@ -784,11 +839,38 @@
       
         document.getElementById('span').innerHTML = smart[0].userDetail.firstname + "  "+ smart[0].userDetail.SecondName;
         document.getElementById('bal').innerHTML = smart[0].userDetail.Bal
-        
+        var create = smart[0].userDetail.TransactionHistory.Airtimes
+        var judge = smart[0].userDetail.TransactionHistory.transfer
+      console.log(create)
+
+
+      var wait=0;
+      var good = 0
+      for(s=0;s<create.length;s++){
+        wait+= parseInt(create[s].AirtimeAmount)
+      }
+      document.getElementById("airtime").innerText = wait
+
+
+      for(d=0; d<judge.length; d++){
+        good+= parseInt(judge[d].amountSend)
       }
 
-      document.getElementById("LogOut").addEventListener("click",function(){
+      document.getElementById("transfer").innerText = good
+      
+      
+       
+    }
+
+      
+      
+      function good(){
         smart = JSON.parse(localStorage.clear("damilare"));
-      })
+        alert(smart[0].userDetail.Bal)
+
+       document.querySelector(".modal-body").innerHTML =`Your current balance is `
+        
+      }
+      
   </script>
 </html>

@@ -33,6 +33,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+    <link rel="stylesheet" href="forms-input-gruop.css">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -127,7 +128,7 @@
                   </g>
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2" style="text-transform: uppercase;">Star Bank</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -165,16 +166,30 @@
               </a>
             </li>
             <li class="menu-item ">
+              <a href="cards-basic.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Input groups">WithDraw</div>
+              </a>
+            </li>
+
+            <li class="menu-item">
+              <a href="cards-basic.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Input groups">Deposit</div>
+              </a>
+            </li>
+
+            <li class="menu-item">
               <a href="form-layouts-horizontal.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-box"></i>
-                <div data-i18n="Input groups">Payment of Bill</div>
+                <div data-i18n="Input groups">Payment of Bills</div>
               </a>
             </li>
           
       
-       
+            <hr class="menu-header border " >
          
-            <li class="menu-item">
+            <li class="menu-item ">
               <a href="form-layouts-vertical.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Vertical Form">Transaction History</div>
@@ -222,7 +237,7 @@
             <i class="menu-icon tf-icons bx bx-file"></i>
             <div data-i18n="Documentation">Documentation</div>
           </a>
-        </li>          <
+        </li>          
         </aside>
         <!-- / Menu -->
 
@@ -286,7 +301,7 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">John Doe</span>
+                            <span class="fw-semibold d-block">DARUZ</span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>
@@ -339,605 +354,126 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms /</span> Input groups</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class=" fw-bolder ms-5 text-warning">Airtimes</span> </h4>
 
               <div class="row">
                 <!-- Basic -->
-                <div class="col-md-6">
-                  <div class="card mb-4">
-                    <h5 class="card-header">Basic</h5>
-                    <div class="card-body demo-vertical-spacing demo-only-element">
-                      <div class="input-group">
-                        <span class="input-group-text" id="basic-addon11">@</span>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Username"
-                          aria-label="Username"
-                          aria-describedby="basic-addon11"
-                        />
-                      </div>
-
-                      <div class="form-password-toggle">
-                        <label class="form-label" for="basic-default-password12">Password</label>
-                        <div class="input-group">
-                          <input
-                            type="password"
-                            class="form-control"
-                            id="basic-default-password12"
-                            placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                            aria-describedby="basic-default-password2"
-                          />
-                          <span id="basic-default-password2" class="input-group-text cursor-pointer"
-                            ><i class="bx bx-hide"></i
-                          ></span>
-                        </div>
-                      </div>
-
-                      <div class="input-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Recipient's username"
-                          aria-label="Recipient's username"
-                          aria-describedby="basic-addon13"
-                        />
-                        <span class="input-group-text" id="basic-addon13">@example.com</span>
-                      </div>
-
-                      <div class="input-group">
-                        <span class="input-group-text" id="basic-addon14">https://example.com/users/</span>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="URL"
-                          id="basic-url1"
-                          aria-describedby="basic-addon14"
-                        />
-                      </div>
-
-                      <div class="input-group">
-                        <span class="input-group-text">$</span>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Amount"
-                          aria-label="Amount (to the nearest dollar)"
-                        />
-                        <span class="input-group-text">.00</span>
-                      </div>
-
-                      <div class="input-group">
-                        <span class="input-group-text">With textarea</span>
-                        <textarea class="form-control" aria-label="With textarea" placeholder="Comment"></textarea>
-                      </div>
-                    </div>
-                  </div>
+                <!-- <di -->
                 </div>
-
+              
                 <!-- Merged -->
-                <div class="col-md-6">
-                  <div class="card mb-4">
-                    <h5 class="card-header">Merged</h5>
+                <div class="col-md-6 ms-md-5 ms-sm-3" id="the">
+                   <div class="card mb-4">
+                    <h5 class="card-header"><label for="amount">Airtime amount</label></h5>
                     <div class="card-body demo-vertical-spacing demo-only-element">
                       <div class="input-group input-group-merge">
-                        <span class="input-group-text" id="basic-addon-search31"><i class="bx bx-search"></i></span>
+                        <span class="input-group-text " id="basic-addon-search31" style="text-decoration: line-through double;">N</span>
                         <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Search..."
-                          aria-label="Search..."
+                          type="number"
+                          class="form-control h-px-50"
+                          id="amount"
+                          placeholder=""
                           aria-describedby="basic-addon-search31"
                         />
                       </div>
+                      <div id="amountErr"></div>
 
                       <div class="form-password-toggle">
-                        <label class="form-label" for="basic-default-password32">Password</label>
+                        <label class="form-label" for="basic">Phone number</label>
                         <div class="input-group input-group-merge">
                           <input
-                            type="password"
-                            class="form-control"
-                            id="basic-default-password32"
+                            type="number"
+                            class="form-control h-px-50"
+                            id="basic"
                             placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                            aria-describedby="basic-default-password"
+                            aria-describedby="basic-default-password"  maxlength="11"
                           />
-                          <span class="input-group-text cursor-pointer" id="basic-default-password"
+                          <!-- <span class="input-group-text cursor-pointer" id="basic-default-password"
                             ><i class="bx bx-hide"></i
-                          ></span>
+                          ></span> -->
                         </div>
-                      </div>
-
-                      <div class="input-group input-group-merge">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Recipient's username"
-                          aria-label="Recipient's username"
-                          aria-describedby="basic-addon33"
-                        />
-                        <span class="input-group-text" id="basic-addon33">@example.com</span>
-                      </div>
-
-                      <div class="input-group input-group-merge">
-                        <span class="input-group-text" id="basic-addon34">https://example.com/users/</span>
-                        <input type="text" class="form-control" id="basic-url3" aria-describedby="basic-addon34" />
-                      </div>
-
-                      <div class="input-group input-group-merge">
-                        <span class="input-group-text">$</span>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="100"
-                          aria-label="Amount (to the nearest dollar)"
-                        />
-                        <span class="input-group-text">.00</span>
-                      </div>
-
-                      <div class="input-group input-group-merge">
-                        <span class="input-group-text">With textarea</span>
-                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                        <div id="basicErr"></div>
+                        <div class="text-center mt-5" id="MyHTML">
+                          <button type="button" class="btn border border-3 w-50  " id="deal"  
+                          data-bs-target="#modalToggle2"
+                          data-bs-toggle="modal"
+                          data-bs-dismiss="modal"
+                            >purchase</button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <!-- Sizing -->
-                <div class="col-md-6">
-                  <div class="card mb-4">
-                    <h5 class="card-header">Sizing</h5>
-                    <div class="card-body demo-vertical-spacing demo-only-element">
-                      <div class="input-group input-group-lg">
-                        <span class="input-group-text">@</span>
-                        <input type="text" class="form-control" placeholder="Username" />
-                      </div>
-
-                      <div class="input-group">
-                        <span class="input-group-text">@</span>
-                        <input type="text" class="form-control" placeholder="Username" />
-                      </div>
-
-                      <div class="input-group input-group-sm">
-                        <span class="input-group-text">@</span>
-                        <input type="text" class="form-control" placeholder="Username" />
-                      </div>
-                    </div>
-                  </div>
+            </div>
+            <div
+            class="modal fade"
+            id="modalToggle2"
+            id="transfer"
+            aria-hidden="true"
+            aria-labelledby="modalToggleLabel2"
+            tabindex="-1"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title modal-title fw-semibold display-6 text-primary" id="modalToggleLabel2">Your password</h5>
+                 
                 </div>
-                <!-- Checkbox and radio addons -->
-                <div class="col-md-6">
-                  <div class="card mb-4">
-                    <h5 class="card-header">Checkbox and radio addons</h5>
-                    <div class="card-body demo-vertical-spacing demo-only-element">
-                      <div class="input-group">
-                        <div class="input-group-text">
-                          <input
-                            class="form-check-input mt-0"
-                            type="checkbox"
-                            value=""
-                            aria-label="Checkbox for following text input"
-                          />
-                        </div>
-                        <input type="text" class="form-control" aria-label="Text input with checkbox" />
-                      </div>
-
-                      <div class="input-group">
-                        <div class="input-group-text">
-                          <input
-                            class="form-check-input mt-0"
-                            type="radio"
-                            value=""
-                            aria-label="Radio button for following text input"
-                          />
-                        </div>
-                        <input type="text" class="form-control" aria-label="Text input with radio button" />
-                      </div>
+                <div class="modal-body" >
+                    <div id="displayTheReciever">
+                      <input type="password" class="form-control" placeholder="" name="" id="password">
                     </div>
-                  </div>
+                    <div id="passwordErr"></div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    class="btn btn-primary w-100"
+                    data-bs-target="#modalToggle4"
+                    data-bs-toggle="modal"
+                    data-bs-dismiss="modal"
+                   
+                    id="amSure"
+                  >
+                    confirm
+                  </button>
+                 
                 </div>
               </div>
-
-              <div class="row">
-                <!-- Multiple inputs & addon -->
-                <div class="col-md-6">
-                  <div class="card mb-4">
-                    <h5 class="card-header">Multiple inputs & addon</h5>
-
-                    <div class="card-body demo-vertical-spacing demo-only-element">
-                      <small class="text-light fw-semibold d-block">Multiple inputs</small>
-                      <div class="input-group">
-                        <span class="input-group-text">First and last name</span>
-                        <input type="text" aria-label="First name" class="form-control" />
-                        <input type="text" aria-label="Last name" class="form-control" />
-                      </div>
-
-                      <small class="text-light fw-semibold d-block pt-3">Multiple addons</small>
-                      <div class="input-group">
-                        <span class="input-group-text">$</span>
-                        <span class="input-group-text">0.00</span>
-                        <input
-                          type="text"
-                          class="form-control"
-                          aria-label="Dollar amount (with dot and two decimal places)"
-                        />
-                      </div>
-
-                      <div class="input-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          aria-label="Dollar amount (with dot and two decimal places)"
-                        />
-                        <span class="input-group-text">$</span>
-                        <span class="input-group-text">0.00</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Speech To Text -->
-                <div class="col-md-6">
-                  <div class="card mb-4">
-                    <h5 class="card-header">Speech To Text</h5>
-                    <div class="card-body demo-vertical-spacing demo-only-element">
-                      <small class="text-light fw-semibold d-block">Input Group</small>
-
-                      <div class="input-group input-group-merge speech-to-text">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Say it"
-                          aria-describedby="text-to-speech-addon"
-                        />
-                        <span class="input-group-text" id="text-to-speech-addon">
-                          <i class="bx bx-microphone cursor-pointer text-to-speech-toggle"></i>
-                        </span>
-                      </div>
-
-                      <small class="text-light fw-semibold d-block pt-3">Textarea</small>
-
-                      <div class="input-group input-group-merge speech-to-text">
-                        <textarea class="form-control" placeholder="Say it" rows="2"></textarea>
-                        <span class="input-group-text">
-                          <i class="bx bx-microphone cursor-pointer text-to-speech-toggle"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            </div>
+          </div>
+          <div
+          class="modal fade"
+          id="modalToggle4"
+          aria-hidden="true"
+          aria-labelledby="modalToggleLabel4"
+          tabindex="-1"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title fw-bolder display-4 text-primary" id="modalToggleLabel4">Transfer successful</h5>
+               
               </div>
-
-              <!-- Button with dropdowns & addons -->
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card mb-4">
-                    <h5 class="card-header">Button with dropdowns & addons</h5>
-                    <div class="card-body demo-vertical-spacing demo-only-element">
-                      <small class="text-light fw-semibold d-block">Button addons</small>
-                      <div class="input-group">
-                        <button class="btn btn-outline-primary" type="button" id="button-addon1">Button</button>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder=""
-                          aria-label="Example text with button addon"
-                          aria-describedby="button-addon1"
-                        />
-                      </div>
-
-                      <div class="input-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Recipient's username"
-                          aria-label="Recipient's username"
-                          aria-describedby="button-addon2"
-                        />
-                        <button class="btn btn-outline-primary" type="button" id="button-addon2">Button</button>
-                      </div>
-
-                      <div class="input-group">
-                        <button class="btn btn-outline-primary" type="button">Button</button>
-                        <button class="btn btn-outline-primary" type="button">Button</button>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder=""
-                          aria-label="Example text with two button addons"
-                        />
-                      </div>
-
-                      <div class="input-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Recipient's username"
-                          aria-label="Recipient's username with two button addons"
-                        />
-                        <button class="btn btn-outline-primary" type="button">Button</button>
-                        <button class="btn btn-outline-primary" type="button">Button</button>
-                      </div>
-
-                      <small class="text-light fw-semibold d-block pt-3">Button with dropdowns</small>
-                      <div class="input-group">
-                        <button
-                          class="btn btn-outline-primary dropdown-toggle"
-                          type="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          Dropdown
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="javascript:void(0);">Action</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">Another action</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
-                          <li>
-                            <hr class="dropdown-divider" />
-                          </li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">Separated link</a></li>
-                        </ul>
-                        <input type="text" class="form-control" aria-label="Text input with dropdown button" />
-                      </div>
-
-                      <div class="input-group">
-                        <input type="text" class="form-control" aria-label="Text input with dropdown button" />
-                        <button
-                          class="btn btn-outline-primary dropdown-toggle"
-                          type="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          Dropdown
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                          <li><a class="dropdown-item" href="javascript:void(0);">Action</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">Another action</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
-                          <li>
-                            <hr class="dropdown-divider" />
-                          </li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">Separated link</a></li>
-                        </ul>
-                      </div>
-
-                      <div class="input-group">
-                        <button
-                          class="btn btn-outline-primary dropdown-toggle"
-                          type="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          Dropdown
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="javascript:void(0);">Action before</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">Another action before</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
-                          <li>
-                            <hr class="dropdown-divider" />
-                          </li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">Separated link</a></li>
-                        </ul>
-                        <input type="text" class="form-control" aria-label="Text input with 2 dropdown buttons" />
-                        <button
-                          class="btn btn-outline-primary dropdown-toggle"
-                          type="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          Dropdown
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                          <li><a class="dropdown-item" href="javascript:void(0);">Action</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">Another action</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
-                          <li>
-                            <hr class="dropdown-divider" />
-                          </li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">Separated link</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <!-- Segmented buttons -->
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="card mb-4">
-                        <h5 class="card-header">Segmented buttons</h5>
-                        <div class="card-body demo-vertical-spacing demo-only-element">
-                          <div class="input-group">
-                            <button type="button" class="btn btn-outline-primary">Action</button>
-                            <button
-                              type="button"
-                              class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
-                              data-bs-toggle="dropdown"
-                              aria-expanded="false"
-                            >
-                              <span class="visually-hidden">Toggle Dropdown</span>
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="javascript:void(0);">Action</a></li>
-                              <li><a class="dropdown-item" href="javascript:void(0);">Another action</a></li>
-                              <li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
-                              <li>
-                                <hr class="dropdown-divider" />
-                              </li>
-                              <li><a class="dropdown-item" href="javascript:void(0);">Separated link</a></li>
-                            </ul>
-                            <input
-                              type="text"
-                              class="form-control"
-                              aria-label="Text input with segmented dropdown button"
-                            />
-                          </div>
-
-                          <div class="input-group">
-                            <input
-                              type="text"
-                              class="form-control"
-                              aria-label="Text input with segmented dropdown button"
-                            />
-                            <button type="button" class="btn btn-outline-primary">Action</button>
-                            <button
-                              type="button"
-                              class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
-                              data-bs-toggle="dropdown"
-                              aria-expanded="false"
-                            >
-                              <span class="visually-hidden">Toggle Dropdown</span>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                              <li><a class="dropdown-item" href="javascript:void(0);">Action</a></li>
-                              <li><a class="dropdown-item" href="javascript:void(0);">Another action</a></li>
-                              <li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
-                              <li>
-                                <hr class="dropdown-divider" />
-                              </li>
-                              <li><a class="dropdown-item" href="javascript:void(0);">Separated link</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Custom select -->
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="card mb-4">
-                        <h5 class="card-header">Custom select</h5>
-                        <div class="card-body demo-vertical-spacing demo-only-element">
-                          <div class="input-group">
-                            <label class="input-group-text" for="inputGroupSelect01">Options</label>
-                            <select class="form-select" id="inputGroupSelect01">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                          </div>
-
-                          <div class="input-group">
-                            <select class="form-select" id="inputGroupSelect02">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                            <label class="input-group-text" for="inputGroupSelect02">Options</label>
-                          </div>
-
-                          <div class="input-group">
-                            <button class="btn btn-outline-primary" type="button">Button</button>
-                            <select
-                              class="form-select"
-                              id="inputGroupSelect03"
-                              aria-label="Example select with button addon"
-                            >
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                          </div>
-
-                          <div class="input-group">
-                            <select
-                              class="form-select"
-                              id="inputGroupSelect04"
-                              aria-label="Example select with button addon"
-                            >
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                            <button class="btn btn-outline-primary" type="button">Button</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class="modal-body"></div>
+              <div class="modal-footer">
+                
+                <button
+                type="button"
+                data-bs-dismiss="modal"
+                class="btn border bg-danger"
+                aria-label="Close"
+              >cancel</button>
               </div>
+            </div>
+          </div>
 
-              <!-- Custom file input -->
-              <div class="row">
-                <div class="col-12">
-                  <div class="card">
-                    <h5 class="card-header">Custom file input</h5>
-                    <div class="card-body demo-vertical-spacing demo-only-element">
-                      <div class="input-group">
-                        <label class="input-group-text" for="inputGroupFile01">Upload</label>
-                        <input type="file" class="form-control" id="inputGroupFile01" />
-                      </div>
-
-                      <div class="input-group">
-                        <input type="file" class="form-control" id="inputGroupFile02" />
-                        <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                      </div>
-
-                      <div class="input-group">
-                        <button class="btn btn-outline-primary" type="button" id="inputGroupFileAddon03">Button</button>
-                        <input
-                          type="file"
-                          class="form-control"
-                          id="inputGroupFile03"
-                          aria-describedby="inputGroupFileAddon03"
-                          aria-label="Upload"
-                        />
-                      </div>
-
-                      <div class="input-group">
-                        <input
-                          type="file"
-                          class="form-control"
-                          id="inputGroupFile04"
-                          aria-describedby="inputGroupFileAddon04"
-                          aria-label="Upload"
-                        />
-                        <button class="btn btn-outline-primary" type="button" id="inputGroupFileAddon04">Button</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                     
             </div>
             <!-- / Content -->
 
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                <div class="mb-2 mb-md-0">
-                  ©
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  , made with ❤️ by
-                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-                </div>
-                <div>
-                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-                  <a
-                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Documentation</a
-                  >
-
-                  <a
-                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Support</a
-                  >
-                </div>
-              </div>
+             
             </footer>
             <!-- / Footer -->
 
@@ -974,5 +510,194 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <script>
+      var recentUser = JSON.parse(localStorage.getItem("damilare"))
+      document.getElementById("amount").addEventListener("keypress",function(){
+        document.getElementById("amountErr").innerText = " "
+            document.getElementById("deal").disabled = false
+
+      })
+
+      document.getElementById("amount").addEventListener("mouseover",function(){
+            document.getElementById("deal").disabled = false
+
+      })
+
+      document.getElementById("basic").addEventListener("keypress",function(){
+        document.getElementById("basicErr").innerText = " "
+          document.getElementById("deal").disabled = false
+      })
+
+      document.getElementById("basic").addEventListener("mouseover",function(){
+          document.getElementById("deal").disabled = false
+      })
+
+      document.getElementById("deal").addEventListener("mouseover",function(){
+        var sum = amount.value
+        var num = basic.value
+
+        if(sum == "" && num =="" ){
+          document.getElementById("deal").disabled = true
+          document.getElementById("amountErr").style.color = "red"
+          document.getElementById("amountErr").innerText = "Enter the amount of airtime you want to purchase"
+          document.getElementById("basicErr").style.color = "red "
+          document.getElementById("basicErr").innerText = "Enter your phone number "
+        }
+        else if(sum == "" || num ==""){
+          document.getElementById("deal").disabled = true
+          if(sum == "" ){
+
+            document.getElementById("amountErr").style.color="red"
+            document.getElementById("amountErr").innerText = "Enter the amount of airtime you want to purchase"
+            document.getElementById("basicErr").innerText = " "
+            document.getElementById("basicErr").style.color = "red "
+          }
+          else{
+            document.getElementById("amountErr").innerText = ""
+            document.getElementById("basicErr").style.color = "red "
+            document.getElementById("basicErr").innerText = "Enter your phone number "
+          }
+        }
+        else if(num.length<=10 && num>0){
+          document.getElementById("deal").disabled = true
+          
+          document.getElementById("amountErr").innerText =""
+          document.getElementById("basicErr").style.color="red"
+          document.getElementById("basicErr").innerText =  "Your phone number must be 11 numbers"
+        }
+        else if(recentUser[0].userDetail.Bal<sum){
+          document.getElementById("deal").disabled = true
+          document.getElementById("amountErr").innerText =" Insufficient balance"
+          document.getElementById("amountErr").style.color="red"
+          document.getElementById("basicErr").innerText=" "
+
+        }
+        else if(num<0 || num == 0){
+          document.getElementById("deal").disabled = true
+          document.getElementById("amountErr").innerText =" "
+          document.getElementById("amountErr").style.color="red"
+          document.getElementById("basicErr").style.color="red"
+          document.getElementById("basicErr").innerText="invalid "
+
+        }
+        else{
+          document.getElementById("deal").disabled = false
+          // document.getElementById("deal").innerHTML =`<buttton>confirm</button>`
+          
+        }
+
+
+
+      })
+
+      // document,getElementById("deal").addEventListener("click",function(){
+
+      // })
+
+   
+      document.getElementById("amSure").addEventListener("mouseover",function(){
+        var pass = password.value;
+        var save= recentUser[0].userDetail.Password
+         if(pass==""){
+          document.getElementById("amSure").disabled= true
+          document.getElementById("passwordErr").innerText = "Enter your password"
+          document.getElementById("passwordErr").style.color = "red"
+        }
+        else if(save !== pass){
+          document.getElementById("amSure").disabled = true
+          document.getElementById("passwordErr").innerText = "wrong password"
+          document.getElementById("passwordErr").style.color = "red"
+        }
+        else{
+          document.getElementById("amSure").disabled = false
+        }
+      })
+
+      document.getElementById("password").addEventListener("mouseover",function(){
+        document.getElementById("amSure").disabled = false
+      })
+
+      document.getElementById("password").addEventListener("keypress",function(){
+        document.getElementById("amSure").disabled = false
+      })
+
+
+      var smart =[]
+
+      document.getElementById("amSure").addEventListener("click",function(){
+           var myDate = new Date;
+            var daysList = ["sunday","monday",'tuesday',"wednesday","thursday","friday","saturday"];
+            var monthsList = ["January","february",'March',"April","May","June","July","September","October","November","December"];
+            let date = myDate.getDate();
+            let month = monthsList[myDate.getMonth()];
+            let year = myDate.getFullYear();
+            let day = daysList[myDate.getDay()];
+            let today = `${date} / ${month} / ${year} / ${day}`;
+            let amOrPm;
+            console.log(today)
+            let twentyHours = function(){
+
+                if (myDate.getHours()>12){
+                    amOrPm = "PM";
+                    let twentyFourHoursTimes = myDate.getHours();
+                    let conversion = twentyFourHoursTimes-12;
+                    return conversion
+                }
+                else{
+                    amOrPm = "AM";
+                    return `${myDate.getHours()}`
+                }
+            }
+
+            smart.splice(0,smart)
+            let hours = twentyHours();
+            let minutes = myDate.getMinutes()
+            let currentTime = `${hours} : ${minutes} ${amOrPm}`
+            var timer = (alert=( `${currentTime}`));
+            var dates = (alert=( `${today}`));
+            var num = basic.value
+            var sum = amount.value
+            var pass = password.value;
+            var tire ={ "amount":sum}
+            smart.push(tire)
+
+
+            var sarray = JSON.parse(localStorage.getItem("user"))
+            var recentUser = JSON.parse(localStorage.getItem("damilare"))
+            var apc = recentUser[0].userDetail.accountNumber
+              var deduct = sarray.find(great =>(great.userDetail.Password === pass && great.userDetail.accountNumber===apc));
+              // console.log(deduct)
+              var some = deduct.userDetail.Bal-sum;
+
+
+              var timeRecord = {"date":dates,"time":timer, 'Balance':some,"AirtimeAmount":smart[0].amount,"numberOfthatRecieveTheAirtime":num};
+            // alert(sum)
+              for(f=0;f<recentUser.length;){
+                if(recentUser[f].userDetail.Password === pass){
+                  recentUser[f].userDetail.Bal = some;
+                  recentUser[f].userDetail.TransactionHistory.Airtimes.push(timeRecord)
+                  break;
+                }
+                f++
+              }
+            
+
+              for(d=0; d<sarray.length;){
+              if(recentUser[0].userDetail.accountNumber=== sarray[d].userDetail.accountNumber){
+                sarray[d].userDetail.Bal = some
+                sarray[d].userDetail.TransactionHistory.Airtimes.push(timeRecord)
+                break
+              }
+              d++
+              }
+
+              document.getElementById("password").value=""
+              document.getElementById("basic").value=""
+              document.getElementById("amount").value=""
+              localStorage.setItem("user",JSON.stringify(sarray))
+              localStorage.setItem("damilare",JSON.stringify(recentUser))
+      })
+    </script> 
   </body>
 </html>

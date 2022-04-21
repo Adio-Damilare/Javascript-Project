@@ -142,7 +142,7 @@
               </div>
               <!-- /Logo -->
               <h4 class="mb-2">Welcome back! 👋</h4>
-              <p class="mb-4">Please sign-in to your account and start the adventure</p>
+              <p class="mb-4" id="HTml">Please sign-in to your account and start the adventure</p>
 
               <!-- <form id="formAuthentication" class="mb-3" action="index.html" method="POST"> -->
                 <div class="mb-3">
@@ -177,12 +177,12 @@
                   </div>
                   <div id="passwordError" class="error"></div>
                 </div>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="remember-me" />
                     <label class="form-check-label" for="remember-me"> Remember Me </label>
                   </div>
-                </div>
+                </div> -->
                 <div class="mb-3">
                   <button class="btn btn-primary d-grid w-100" type="submit" id="submit"> Sign in</button>
                 </div>
@@ -220,26 +220,98 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script>
       var smart=[];
+      var countdown =50
+      var welcome = document.querySelector("body");
+      welcome,addEventListener("load",function(){
+        document.querySelector("body").style.backgroundImage ="linear-gradient(slateblue,white)"
+      })
       document.getElementById("submit").addEventListener("click",function(){
         var p = password.value;
         let e = email.value;
         var arry = JSON.parse(localStorage.getItem("user"));
-        var validate = arry.find(h => ( h.userDetail.Email===e && h.userDetail.Password===p ) );
-        if(validate){
-          smart.push(validate);
-          jsmart= JSON.stringify(smart);
-          localStorage.setItem("damilare",jsmart);
-          location.href="dashboard.html"
-        }
-        else if(e!==validate){
-          document.getElementById("emailError").innerText="There is no record of this email in our platform"
 
-        }
+        if(arry){
+          if(smart.length<3){
+              var validate = arry.find(h => ( h.userDetail.Email===e ) );
+              var validPass = arry.find(h => ( h.userDetail.Password===p ) );
+              if(validate && validPass ){
+                smart.splice(0,smart.length)
+                smart.push(validate);
+                jsmart= JSON.stringify(smart);
+                localStorage.setItem("damilare",jsmart);
+                location.href="dashboard.html"
+              }
+              else{
+                smart.push(555)
+                  if(p=="" && e==""){
+                    document.getElementById("emailError").innerText=" Enter your Email Address"
+                    document.getElementById("passwordError").innerText=" Enter your password"
 
 
-        else{
-          location.href="Pages-misc-error.html"
-        }
+                  }
+                  else if(p=="" || e==""){
+                    if(p==""){
+
+                      document.getElementById("passwordError").innerText=" Enter your password"
+                      document.getElementById("emailError").innerText=" "
+                    }
+                    else{
+                      document.getElementById("passwordError").innerText=" "
+
+                      document.getElementById("emailError").innerText=" Enter your Email Address"
+                    }
+
+                  }
+
+                  else if(!validate && !validPass){
+                      document.getElementById("emailError").innerText=" Wrong Email Address"
+                      document.getElementById("passwordError").innerText=" Wrong password"
+
+                    }
+                    else if(!validate || !validPass){
+                      if(!validate){
+
+                        document.getElementById("emailError").innerText=" Wrong Email Address"
+                        document.getElementById("passwordError").innerText=" "
+                      }
+                      else{
+                        document.getElementById("emailError").innerText=" "
+
+                        document.getElementById("passwordError").innerText=" Wrong password"
+                      }
+
+                    }
+
+                    else{
+                      location.href="Pages-misc-error.html"
+                  }
+                }
+              }
+              else{
+                setInterval(function(){
+
+                  document.getElementById("HTml").innerHTML =`<div class='d-flex justify-content-center'><p class='text-danger'> Please wait for  ${countdown} secs
+                    </p></div> `
+                  countdown--
+                  document.getElementById("password").disabled = true
+                  document.getElementById("submit").disabled = true
+                  document.getElementById("email").disabled = true
+                  document.getElementById("emailError").innerText=""
+                   document.getElementById("passwordError").innerText=""
+
+                  if(countdown == 0){
+                    smart.splice(0,smart.length)
+                    location.reload()
+                  }
+
+
+                },1000)
+
+              }
+      }
+      else{
+        location.href ="auth-register-basic.html"
+      }
       })
 
       

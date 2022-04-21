@@ -45,6 +45,14 @@
             var s = (alert=(new Date().toLocaleString().replace(',',',','')));
             document.getElementById("timeKeeper").innerText = s
         }
+
+        function tab(){
+            var sweet = document.getElementById("sweet")
+            var pattern = /\t/; 
+            var result =sweet.search(pattern)
+
+
+        }
     </script>
 </head>
 <body>
@@ -52,6 +60,6 @@
     <div id="timeKeeper"></div>
     <button onclick="mars()">cge</button>
     <button onclick="dip()">dd</button>
-    
+        <button onclick="tab()" id="sweet">check the tab</button>
 </body>
 </html>

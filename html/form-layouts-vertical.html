@@ -167,6 +167,21 @@
                 <div data-i18n="Input groups">AIrtimes</div>
               </a>
             </li>
+
+            <li class="menu-item">
+              <a href="cards-basic.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Input groups">WithDraw</div>
+              </a>
+            </li>
+
+            <li class="menu-item">
+              <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Input groups">Deposit</div>
+              </a>
+            </li>
+
             <li class="menu-item">
               <a href="form-layouts-horizontal.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-box"></i>
@@ -175,7 +190,7 @@
             </li>
           
       
-       
+            <hr class="menu-header border " >
          
             <li class="menu-item active">
               <a href="form-layouts-vertical.html" class="menu-link">
@@ -342,189 +357,145 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Vertical Layouts</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-bold">Transaction-History</h4>
 
               <!-- Basic Layout -->
               <div class="row">
                 <div class="col-xl">
                   <div class="card mb-4">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                      <h5 class="mb-0">Basic Layout</h5>
-                      <small class="text-muted float-end">Default label</small>
-                    </div>
+                    <div class="fw-bold fs-5 fst-italic text-primary px-3 shadow" style="-webkit-text-stroke: 1px grey;">Click here to veiw the history of airtimes </div>
                     <div class="card-body">
-                      <form>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-fullname">Full Name</label>
-                          <input type="text" class="form-control" id="basic-default-fullname" placeholder="John Doe" />
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-company">Company</label>
-                          <input type="text" class="form-control" id="basic-default-company" placeholder="ACME Inc." />
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-email">Email</label>
-                          <div class="input-group input-group-merge">
-                            <input
-                              type="text"
-                              id="basic-default-email"
-                              class="form-control"
-                              placeholder="john.doe"
-                              aria-label="john.doe"
-                              aria-describedby="basic-default-email2"
-                            />
-                            <span class="input-group-text" id="basic-default-email2">@example.com</span>
-                          </div>
-                          <div class="form-text">You can use letters, numbers & periods</div>
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-phone">Phone No</label>
-                          <input
-                            type="text"
-                            id="basic-default-phone"
-                            class="form-control phone-mask"
-                            placeholder="658 799 8941"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-default-message">Message</label>
-                          <textarea
-                            id="basic-default-message"
-                            class="form-control"
-                            placeholder="Hi, Do you have a moment to talk Joe?"
-                          ></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send</button>
-                      </form>
+                     
+                        
+                      <button type="submit" class="btn btn-primary" id="airtimes"
+                      type="button"
+                      class="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#fullscreenModal"
+                      >Airtimes</button>
                     </div>
                   </div>
                 </div>
                 <div class="col-xl">
                   <div class="card mb-4">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                      <h5 class="mb-0">Basic with Icons</h5>
-                      <small class="text-muted float-end">Merged input group</small>
+                     <div class="fw-bold fs-5 fst-italic text-primary px-3 shadow" style="-webkit-text-stroke: 1px grey;">Click here to veiw the history of deposit</div>
+                    <div class="card-body ">
+                      
+                        <button type="submit" class="btn btn-primary"
+                         id="deposit"
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#fullscreenModal"
+                        >deposit</button>
+                    
                     </div>
-                    <div class="card-body">
-                      <form>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-icon-default-fullname">Full Name</label>
-                          <div class="input-group input-group-merge">
-                            <span id="basic-icon-default-fullname2" class="input-group-text"
-                              ><i class="bx bx-user"></i
-                            ></span>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="basic-icon-default-fullname"
-                              placeholder="John Doe"
-                              aria-label="John Doe"
-                              aria-describedby="basic-icon-default-fullname2"
-                            />
+                  </div>
+                </div>
+                <div class="col-xl">
+                  <div class="card mb-4">
+                    <div class="fw-bold fs-5 fst-italic text-primary px-3 shadow" style="-webkit-text-stroke: 1px grey;">Click here to veiw the history of Transfer</div>
+                    <div class="card-body ">
+                      
+                        <button type="submit" class="btn btn-primary" id="transfer"
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#fullscreenModal"
+                        >Transfer</button>
+                    
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl">
+                  <div class="card mb-4">
+                    <div class="fw-bold fs-5 fst-italic text-primary px-3 shadow" style="-webkit-text-stroke: 1px grey;">Click here to veiw the history of withdraw</div>
+                    <div class="card-body ">
+                      
+                        <button type="submit" class="btn btn-primary"
+                        id="withdraw"
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#fullscreenModal"
+                        >withdraw</button>
+                    
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl">
+                  <div class="card mb-4">
+                    <div class="fw-bold fs-5 fst-italic text-primary px-3 shadow" style="-webkit-text-stroke: 1px grey;">Click here to veiw the history of credit</div>
+                    <div class="card-body ">
+                      
+                        <button type="submit" class="btn btn-primary"
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#fullscreenModal"
+                        >credit</button>
+                    
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl">
+                  <div class="card mb-4">
+                    <div class="fw-bold fs-5 fst-italic text-primary px-3 shadow" style="-webkit-text-stroke: 1px grey;">Click here to veiw the history of credit</div>
+                    <div class="card-body ">
+                      
+                        <button type="submit" class="btn btn-primary"
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#fullscreenModal"
+                        >credit</button>
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="">
+                <div class="col-lg-4 col-md-6">
+                  <!-- <small class="text-light fw-semibold">Fullscreen</small> -->
+                  <div class="mt-3">
+                   
+
+                    <!-- Modal -->
+                    <div class="modal fade " id="fullscreenModal" tabindex="-1" aria-hidden="true">
+                      <div class="modal-dialog modal-fullscreen" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title ms-5 fs-1" id="modalFullTitle">Airtime History</h5>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div class="modal-body accordion mt-3" id="display">
+                            
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                              Close
+                            </button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
                           </div>
                         </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-icon-default-company">Company</label>
-                          <div class="input-group input-group-merge">
-                            <span id="basic-icon-default-company2" class="input-group-text"
-                              ><i class="bx bx-buildings"></i
-                            ></span>
-                            <input
-                              type="text"
-                              id="basic-icon-default-company"
-                              class="form-control"
-                              placeholder="ACME Inc."
-                              aria-label="ACME Inc."
-                              aria-describedby="basic-icon-default-company2"
-                            />
-                          </div>
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-icon-default-email">Email</label>
-                          <div class="input-group input-group-merge">
-                            <span class="input-group-text"><i class="bx bx-envelope"></i></span>
-                            <input
-                              type="text"
-                              id="basic-icon-default-email"
-                              class="form-control"
-                              placeholder="john.doe"
-                              aria-label="john.doe"
-                              aria-describedby="basic-icon-default-email2"
-                            />
-                            <span id="basic-icon-default-email2" class="input-group-text">@example.com</span>
-                          </div>
-                          <div class="form-text">You can use letters, numbers & periods</div>
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-icon-default-phone">Phone No</label>
-                          <div class="input-group input-group-merge">
-                            <span id="basic-icon-default-phone2" class="input-group-text"
-                              ><i class="bx bx-phone"></i
-                            ></span>
-                            <input
-                              type="text"
-                              id="basic-icon-default-phone"
-                              class="form-control phone-mask"
-                              placeholder="658 799 8941"
-                              aria-label="658 799 8941"
-                              aria-describedby="basic-icon-default-phone2"
-                            />
-                          </div>
-                        </div>
-                        <div class="mb-3">
-                          <label class="form-label" for="basic-icon-default-message">Message</label>
-                          <div class="input-group input-group-merge">
-                            <span id="basic-icon-default-message2" class="input-group-text"
-                              ><i class="bx bx-comment"></i
-                            ></span>
-                            <textarea
-                              id="basic-icon-default-message"
-                              class="form-control"
-                              placeholder="Hi, Do you have a moment to talk Joe?"
-                              aria-label="Hi, Do you have a moment to talk Joe?"
-                              aria-describedby="basic-icon-default-message2"
-                            ></textarea>
-                          </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send</button>
-                      </form>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- / Content -->
+              </div>
+            </div>
+           
 
             <!-- Footer -->
-            <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                <div class="mb-2 mb-md-0">
-                  ©
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  , made with ❤️ by
-                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-                </div>
-                <div>
-                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-                  <a
-                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Documentation</a
-                  >
-
-                  <a
-                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Support</a
-                  >
-                </div>
-              </div>
+            <footer style="justify-content: st; align-items:w ; width: max-content;" class="content-footer footer bg-footer-theme">
+              
             </footer>
             <!-- / Footer -->
 
@@ -540,15 +511,7 @@
     </div>
     <!-- / Layout wrapper -->
 
-    <div class="buy-now">
-      <a
-        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >Upgrade to Pro</a
-      >
-    </div>
-
+  
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
@@ -568,5 +531,465 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+    <script>
+
+      // Airtime
+
+      document.getElementById("airtimes").addEventListener("click",function(){
+        var recentUser = JSON.parse(localStorage.getItem("damilare"));
+        var say = recentUser[0].userDetail.TransactionHistory.Airtimes;
+        document.getElementById("modalFullTitle").innerText= "Airtime History"
+
+
+        if(say.length>0){
+            document.getElementById("display").style.backgroundColor = "slateblue"
+                document.getElementById("display").style.display = "flex" 
+                document.getElementById("display").style.flexDirection = "column" 
+                document.getElementById("display").style.color = "grey" 
+                document.getElementById("display").style.justifyContent = "stretch"
+                document.getElementById("display").style.alignItems = "center"
+                document.getElementById("display").innerHTML = tree  
+            document.getElementById("display").style.fontSize = "20px"
+            var tree ="";
+            for(let free=0; free<say.length;free++) {
+              if(free==0){
+              tree +=`
+                <div class=" card accordion-item w-50 active  ">
+                  <h2 class="accordion-header" id="heading${free}">
+                    <button
+                      type="button"
+                      class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#accordion${free}"
+                      aria-expanded="true"
+                      aria-controls="accordion${free}"
+                    >
+                      History ${free+1}
+                    </button>
+                  </h2>
+                  <div
+                    id="accordion${free}"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#display"
+                  >
+                    <div class="accordion-body">
+                      <div> Date : ${say[free].date} <span class='align-left' style='margin-left:150px;font-size:15px;'>${say[free].time}</span>
+                      <div> Amount of Airtime purchase : <span style='text-decoration:line-through double;font-size:19px'>N</span> ${say[free].AirtimeAmount}</div>
+                      <div> Balance :<span style="text-decoration:line-through double ;font-size:19px">N</span> ${say[free].Balance}</div> 
+                    </div>
+                  </div>
+                </div>`
+              }
+              else{
+                tree+=`<br>`
+                tree+=`<hr class="border border-5 border-warning">`
+                tree +=`
+                <div class="card accordion-item w-100 ">
+                  <h2 class="accordion-header" id="heading${free}">
+                    <button
+                      type="button"
+                      class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#accordion${free}"
+                      aria-expanded="true"
+                      aria-controls="accordion${free}"
+                    >
+                      History ${free+1}
+                    </button>
+                  </h2>
+                  <div
+                    id="accordion${free}"
+                    class="accordion-collapse collapse "
+                    data-bs-parent="#display"
+                  >
+                    <div class="accordion-body">
+                      <div> Date : ${say[free].date} <span class='align-left' style='margin-left:150px;font-size:15px;'>${say[free].time}</span>
+                      <div> Amount of Airtime purchase : <span style='text-decoration:line-through double;font-size:19px'>N</span> ${say[free].AirtimeAmount}</div>
+                      <div> Balance :<span style="text-decoration:line-through double ;font-size:19px">N</span> ${say[free].Balance}</div> 
+                    </div>
+                  </div>
+                </div>`
+              tree+=`<br>`
+              }
+            }    
+            document.getElementById("display").innerHTML = tree
+        }
+
+        else{
+          document.getElementById("display").style.backgroundColor = "slateblue"
+        document.getElementById("display").style.display = "flex"
+        document.getElementById("display").style.justifyContent = "center"
+        document.getElementById("display").style.alignItems = "center"
+        document.getElementById("display").style.color = "white"
+        document.getElementById("display").style.fontSize = "40px"
+        document.getElementById("display").innerHTML = `<div> NO HISTORY YET</div>`
+
+        }
+
+      })
+
+
+
+      // deoposit
+
+      document.getElementById("deposit").addEventListener("click",function(){
+        var recentUser = JSON.parse(localStorage.getItem("damilare"));
+        var say = recentUser[0].userDetail.TransactionHistory.deposit;
+
+        document.getElementById("modalFullTitle").innerText= "Deposit History"
+
+        if(say.length>0){
+            document.getElementById("display").style.backgroundColor = "slateblue"
+                document.getElementById("display").style.display = "flex" 
+                document.getElementById("display").style.flexDirection = "column" 
+                document.getElementById("display").style.color = "grey" 
+                document.getElementById("display").style.justifyContent = "stretch"
+                document.getElementById("display").style.alignItems = "center"
+                document.getElementById("display").innerHTML = tree  
+            document.getElementById("display").style.fontSize = "20px"
+            var tree ="";
+            for(let free=0; free<say.length;free++) {
+              if(free==0){
+              tree +=`
+                <div class=" card accordion-item w-50 active  ">
+                  <h2 class="accordion-header" id="heading${free}">
+                    <button
+                      type="button"
+                      class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#accordion${free}"
+                      aria-expanded="true"
+                      aria-controls="accordion${free}"
+                    >
+                      History ${free+1}
+                    </button>
+                  </h2>
+                  <div
+                    id="accordion${free}"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#display"
+                  >
+                    <div class="accordion-body">
+                      <div> Date : ${say[free].date} <span class='align-left' style='margin-left:150px;font-size:15px;'>${say[free].time}</span>
+                      <div> Amount deposit : <span style='text-decoration:line-through double;font-size:19px'>N</span> ${say[free].Amountdeposit}</div>
+                      <div> Balance :<span style="text-decoration:line-through double ;font-size:19px">N</span> ${say[free].Balance}</div> 
+                    </div>
+                  </div>
+                </div>`
+              }
+              else{
+                tree+=`<br>`
+                tree+=`<hr class="border border-5 border-warning">`
+                tree +=`
+                <div class="card accordion-item w-100 ">
+                  <h2 class="accordion-header" id="heading${free}">
+                    <button
+                      type="button"
+                      class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#accordion${free}"
+                      aria-expanded="true"
+                      aria-controls="accordion${free}"
+                    >
+                      History ${free+1}
+                    </button>
+                  </h2>
+                  <div
+                    id="accordion${free}"
+                    class="accordion-collapse collapse "
+                    data-bs-parent="#display"
+                  >
+                    <div class="accordion-body">
+                      <div> Date : ${say[free].date} <span class='align-left' style='margin-left:150px;font-size:15px;'>${say[free].time}</span>
+                      <div> Amount deposit:<span style='text-decoration:line-through double;font-size:19px'>N</span> ${say[free].Amountdeposit}</div>
+                      <div> Balance :<span style="text-decoration:line-through double ;font-size:19px">N</span> ${say[free].Balance}</div> 
+                    </div>
+                  </div>
+                </div>`
+              tree+=`<br>`
+              }
+            }    
+            document.getElementById("display").innerHTML = tree
+        }
+
+        else{
+          document.getElementById("display").style.backgroundColor = "slateblue"
+        document.getElementById("display").style.display = "flex"
+        document.getElementById("display").style.justifyContent = "center"
+        document.getElementById("display").style.alignItems = "center"
+        document.getElementById("display").style.color = "white"
+        document.getElementById("display").style.fontSize = "40px"
+        document.getElementById("display").innerHTML = `<div> NO HISTORY YET</div>`
+
+        }
+
+      })
+
+
+      // transfer
+      document.getElementById("transfer").addEventListener("click",function(){
+        var recentUser = JSON.parse(localStorage.getItem("damilare"));
+        var say = recentUser[0].userDetail.TransactionHistory.transfer;
+
+
+        document.getElementById("modalFullTitle").innerText= "Transfer History"
+        if(say.length>0){
+            document.getElementById("display").style.backgroundColor = "slateblue"
+                document.getElementById("display").style.display = "flex" 
+                document.getElementById("display").style.flexDirection = "column" 
+                document.getElementById("display").style.color = "grey" 
+                document.getElementById("display").style.justifyContent = "stretch"
+                document.getElementById("display").style.alignItems = "center"
+                document.getElementById("display").innerHTML = tree  
+            document.getElementById("display").style.fontSize = "20px"
+            var tree ="";
+            for(let free=0; free<say.length;free++) {
+              if(free==0){
+              tree +=`
+                <div class=" card accordion-item w-50 active  ">
+                  <h2 class="accordion-header" id="heading${free}">
+                    <button
+                      type="button"
+                      class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#accordion${free}"
+                      aria-expanded="true"
+                      aria-controls="accordion${free}"
+                    >
+                      History ${free+1}
+                    </button>
+                  </h2>
+                  <div
+                    id="accordion${free}"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#display"
+                  >
+                    <div class="accordion-body">
+                      <div> Date : ${say[free].date} <span class='align-left' style='margin-left:150px;font-size:15px;'>${say[free].time}</span>
+                      <div> Amount transfer : <span style='text-decoration:line-through double;font-size:19px'>N</span> ${say[free].amountSend}</div>
+                      <div> Balance :<span style="text-decoration:line-through double ;font-size:19px">N</span> ${say[free].Balance}</div> 
+                      <div></div>
+                    </div>
+                  </div>
+                </div>`
+              }
+              else{
+                tree+=`<br>`
+                tree+=`<hr class="border border-5 border-warning">`
+                tree +=`
+                <div class="card accordion-item w-100 ">
+                  <h2 class="accordion-header" id="heading${free}">
+                    <button
+                      type="button"
+                      class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#accordion${free}"
+                      aria-expanded="true"
+                      aria-controls="accordion${free}"
+                    >
+                      History ${free+1}
+                    </button>
+                  </h2>
+                  <div
+                    id="accordion${free}"
+                    class="accordion-collapse collapse "
+                    data-bs-parent="#display"
+                  >
+                    <div class="accordion-body">
+                      <div> Date : ${say[free].date} <span class='align-left' style='margin-left:150px;font-size:15px;'>${say[free].time}</span>
+                      <div> Amount deposit:<span style='text-decoration:line-through double;font-size:19px'>N</span> ${say[free].Amountdeposit}</div>
+                      <div> Balance :<span style="text-decoration:line-through double ;font-size:19px">N</span> ${say[free].Balance}</div> 
+                    </div>
+                  </div>
+                </div>`
+              tree+=`<br>`
+              }
+            }    
+            document.getElementById("display").innerHTML = tree
+        }
+
+        else{
+          document.getElementById("display").style.backgroundColor = "slateblue"
+        document.getElementById("display").style.display = "flex"
+        document.getElementById("display").style.justifyContent = "center"
+        document.getElementById("display").style.alignItems = "center"
+        document.getElementById("display").style.color = "white"
+        document.getElementById("display").style.fontSize = "40px"
+        document.getElementById("display").innerHTML = `<div> NO HISTORY YET</div>`
+
+        }
+
+      })
+      document.getElementById("withdraw").addEventListener("click",function(){
+        var recentUser = JSON.parse(localStorage.getItem("damilare"));
+        var say = recentUser[0].userDetail.TransactionHistory.withDraw;
+
+
+        document.getElementById("modalFullTitle").innerText= "Withdraw History"
+        if(say.length>0){
+            document.getElementById("display").style.backgroundColor = "slateblue"
+                document.getElementById("display").style.display = "flex" 
+                document.getElementById("display").style.flexDirection = "column" 
+                document.getElementById("display").style.color = "grey" 
+                document.getElementById("display").style.justifyContent = "stretch"
+                document.getElementById("display").style.alignItems = "center"
+                document.getElementById("display").innerHTML = tree  
+            document.getElementById("display").style.fontSize = "20px"
+            var tree ="";
+            for(let free=0; free<say.length;free++) {
+              if(free==0){
+              tree +=`
+                <div class=" card accordion-item w-50 active  ">
+                  <h2 class="accordion-header" id="heading${free}">
+                    <button
+                      type="button"
+                      class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#accordion${free}"
+                      aria-expanded="true"
+                      aria-controls="accordion${free}"
+                    >
+                      History ${free+1}
+                    </button>
+                  </h2>
+                  <div
+                    id="accordion${free}"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#display"
+                  >
+                    <div class="accordion-body">
+                      <div> Date : ${say[free].date} <span class='align-left' style='margin-left:150px;font-size:15px;'>${say[free].time}</span>
+                      <div> Amount withdraw : <span style='text-decoration:line-through double;font-size:19px'>N</span> ${say[free].Amountwithdraw}</div>
+                      <div> Balance :<span style="text-decoration:line-through double ;font-size:19px">N</span> ${say[free].Balance}</div> 
+                      <div></div>
+                    </div>
+                  </div>
+                </div>`
+              }
+              else{
+                tree+=`<br>`
+                tree+=`<hr class="border border-5 border-warning">`
+                tree +=`
+                <div class="card accordion-item w-100 ">
+                  <h2 class="accordion-header" id="heading${free}">
+                    <button
+                      type="button"
+                      class="accordion-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#accordion${free}"
+                      aria-expanded="true"
+                      aria-controls="accordion${free}"
+                    >
+                      History ${free+1}
+                    </button>
+                  </h2>
+                  <div
+                    id="accordion${free}"
+                    class="accordion-collapse collapse "
+                    data-bs-parent="#display"
+                  >
+                    <div class="accordion-body">
+                      <div> Date : ${say[free].date} <span class='align-left' style='margin-left:150px;font-size:15px;'>${say[free].time}</span>
+                      <div> Amount withdraw:<span style='text-decoration:line-through double;font-size:19px'>N</span> ${say[free].Amountwithdraw}</div>
+                      <div> Balance :<span style="text-decoration:line-through double ;font-size:19px">N</span> ${say[free].Balance}</div> 
+                    </div>
+                  </div>
+                </div>`
+              tree+=`<br>`
+              }
+            }    
+            document.getElementById("display").innerHTML = tree
+        }
+
+        else{
+          document.getElementById("display").style.backgroundColor = "slateblue"
+        document.getElementById("display").style.display = "flex"
+        document.getElementById("display").style.justifyContent = "center"
+        document.getElementById("display").style.alignItems = "center"
+        document.getElementById("display").style.color = "white"
+        document.getElementById("display").style.fontSize = "40px"
+        document.getElementById("display").innerHTML = `<div> NO HISTORY YET</div>`
+
+        }
+
+      })
+      
+
+      // document.getElementById("credit").addEventListener("click",function(){
+      //   var recentUser = JSON.parse(localStorage.getItem("damilare"));
+      //   var say = recentUser[0].userDetail.TransactionHistory.credit;
+      //   console.log(say)
+      //   document.getElementById("modalFullTitle").innerText= "Credit History"
+      //   var tree ="";
+      //   if(say.length>0){
+      //   for(let free=0; free<say.length;free++) {
+      //     tree +=`<div class="card ps-5" style='width:min-content>
+      //       <div> Date : ${say[free].date}</div> 
+      //       <div> Time : ${say[free].time}</div>
+      //       <div> Amount of Airtime purchase : <span style='text-decoration:line-through double;font-size:19px'>N</span> ${say[free].AirtimeAmount}</div>
+      //     <div> Balance :<span style="text-decoration:line-through double ;font-size:19px">N</span> ${say[free].Balance}</div> 
+      //     </div>`
+      //     tree+=`<br>`
+      //   }      
+      //   document.getElementById("display").innerHTML = tree
+      // }
+      // else{
+        
+      //   document.getElementById("display").style.backgroundColor = "slateblue"
+      //   document.getElementById("display").style.display = "flex"
+      //   document.getElementById("display").style.justifyContent = "center"
+      //   document.getElementById("display").style.alignItems = "center"
+      //   document.getElementById("display").style.color = "white"
+      //   document.getElementById("display").style.fontSize = "40px"
+      //   document.getElementById("display").innerHTML = `<div> NO HISTORY YET</div>`
+      // }
+
+      // })
+
+
+      // document.getElementById("transfer").addEventListener("click",function(){
+      //   var recentUser = JSON.parse(localStorage.getItem("damilare"));
+      //   var say = recentUser[0].userDetail.TransactionHistory.transfer;
+      //   console.log(say.length)
+      //   document.getElementById("modalFullTitle").innerText= "Transfer History"
+      //   var tree ="";
+      //   if(say.length>0){
+      //   document.getElementById("display").style.backgroundColor = "slateblue"
+      //       document.getElementById("display").style.display = "flex" 
+      //       document.getElementById("display").style.flexDirection = "column" 
+      //       document.getElementById("display").style.color = "grey" 
+      //       document.getElementById("display").style.justifyContent = "stretch"
+      //       document.getElementById("display").style.alignItems = "center"
+      //       document.getElementById("display").innerHTML = tree  
+      //   document.getElementById("display").style.fontSize = "20px"
+           
+      //       for(let free=0; free<say.length;free++) {
+      //         tree +=`<div class="card ps-3">
+      //           <div> Date : ${say[free].date}</div> 
+      //           <div> Time : ${say[free].time}</div>
+      //           <div>The Reciever  : ${say[free].nameOfTheReciever}</div>
+      //           <div> Amount of transfer: <span style='text-decoration:line-through double;font-size:19px'>N</span> ${say[free].amountSend}</div>
+      //         <div> Balance :<span style="text-decoration:line-through double ;font-size:19px">N</span> ${say[free].Balance}</div> 
+      //         </div>`
+      //         tree+=`<br>`
+      //       }  
+            
+      //       document.getElementById("display").innerHTML = tree
+      //     }
+      //     else{
+      //         document.getElementById("display").style.backgroundColor = "slateblue"
+      //         document.getElementById("display").style.display = "flex"
+      //         document.getElementById("display").style.justifyContent = "center"
+      //         document.getElementById("display").style.alignItems = "center"
+      //         document.getElementById("display").style.color = "white"
+      //         document.getElementById("display").style.fontSize = "40px"
+      //         document.getElementById("display").innerHTML = `<div> NO HISTORY YET</div>`
+      //     }   
+          
+      //     document.getElementById("display").style.backgroundColor = "slateblue"
+      // })
+    </script>
   </body>
 </html>

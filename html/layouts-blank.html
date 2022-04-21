@@ -41,6 +41,7 @@
       href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="layout-blank.css">
 
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
@@ -63,21 +64,13 @@
     <script src="../assets/js/config.js"></script>
   </head>
 
-  <body>
+  <body onload="body()">
     <!-- Content -->
-
-    <h4 class="fw-bold p-4">Blank Page</h4>
+    <div class="d-flex justify-content-center align-items-center border " style="height: 51vw;" id="jos">ii</div>
 
     <!-- / Content -->
 
-    <div class="buy-now">
-      <a
-        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >Upgrade to Pro</a
-      >
-    </div>
+    
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
@@ -98,5 +91,25 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+    <script>
+      var arry = JSON.parse(localStorage.getItem("welcome"))
+      function body(){
+        document.getElementById("jos").style.backgroundBlendMode= "darken"
+        document.getElementById("jos").style.backgroundImage= "url(4.jpeg),linear-gradient(blue,white)"
+        document.getElementById("jos").style.backgroundRepeat= "no-repeat"
+        document.getElementById("jos").style.backgroundSize= "cover"
+        document.getElementById("jos").style.color= "gold"
+        document.getElementById("jos").innerHTML = `<div class='text-center'> <div class='display-1'>WELCOME TO STAR BANK</div> <div style='font-size:30px'>Thank you for banking with us mr/mrs ${arry.userDetail.firstname}  ${arry.userDetail.SecondName}</div> 
+
+        <div style='font-size:20px'> Your account number is <span style='color:black'>${arry.userDetail.accountNumber} </div>
+        <button onclick="logIn()" class='btn border btn-outline-warning border-dark border-2'> login</button></div>`
+      }
+
+   function logIn(){
+         location.href="auth-login-basic.html"
+      }
+    </script>
   </body>
 </html>

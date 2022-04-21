@@ -52,7 +52,7 @@
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-
+    <link rel="stylesheet" href="auth-register-baisc.css">
     <!-- Page CSS -->
     <!-- Page -->
     <link rel="stylesheet" href="../assets/vendor/css/pages/page-auth.css" />
@@ -78,14 +78,14 @@
     </style>
   </head>
 
-  <body>
+  <body id="body" onload="body()"> 
     <!-- Content -->
 
-    <div class="container-xxl">
+    <div class="container-xxl" >
       <div class="authentication-wrapper authentication-basic container-p-y">
-        <div class="authentication-inner">
+        <div class="authentication-inner" id="cord">
           <!-- Register Card -->
-          <div class="card">
+          <div class="card" id="cord">
             <div class="card-body">
               <!-- Logo -->
               <div class="app-brand justify-content-center">
@@ -152,43 +152,61 @@
               <h4 class="mb-2 d-flex justify-content-center">Sign up here 🚀</h4>
               <p class="mb-4 d-flex justify-content-center">  easy and fun!</p>
 
-              <!-- <form id="formAuthentication" class="mb-3" action="index.html" method="POST"> -->
-                <div class="mb-3">
-                  <label for="username" class="form-label">First name</label>
+              <div class="card" id="cord" >
+                
+                <label for="username" class="form-label">First name</label>
+                <div class="mb-3 input-group input-group-merge">
+                  <span id="basic-icon-default-fullname2" class="input-group-text"
+                  ><i class="bx bx-user"></i
+                  ></span>
                   <input
                     type="text"
                     class="form-control"
                     id="fN"
                     name="username"
                     placeholder="Enter your username"
-                    autofocus
+                    aria-describedby="basic-icon-default-fullname2"
                   />
-                  <div id="firstError" style="color: red;">
-
-                  </div>
                 </div>
-                <div class="mb-3">
-                  <label for="username" class="form-label">Lastname</label>
+                <div id="firstError" style="color: red;"></div>
+                <!-- </div> -->
+                <!-- <div class="mb-3"> -->
+                  <label for="user" class="form-label">Last name</label>
+                  <div class="input-group input-group-merge">
+                      <span id="basic-icon-default-lastname" class="input-group-text"
+                    ><i class="bx bx-user"></i>
+                      </span>
                   <input
                     type="text"
                     class="form-control"
                     id="lN"
-                    name="username"
+                    name="user"
                     placeholder="Enter your username"
-                    autofocus
+                    aria-describedby="basic-icon-default-lastname"
                   />
-                  <div style="color: red;" id="secondError">
-                    
                   </div>
-                </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
+                  <div style="color: red;" id="secondError"></div>
+                <!-- </div> -->
+                <div class="mb-3 my-3">
+                  <label for="email" class="form-label">Email Address</label>
+                  <div class="input-group input-group-merge">
+                    <span id="basic-icon-default-lastname" class="input-group-text"
+                  ><i class="bx bx-envelope"></i>
+                    </span>
                   <input type="text" class="form-control" id="eM" name="email" placeholder="Enter your email" />
+                  </div>
                   <div id="emailError" style="color: red;"></div>
                 </div>
+
+
                 <div class="mb-3">
                   <label for="email" class="form-label">Mobile Number</label>
+                  <div class="input-group input-group-merge">
+                    <span id="basic-icon-default-lastname" class="input-group-text"
+                  ><i class="bx bx-phone"></i>
+                    </span>
                   <input type="number" class="form-control" id="pN" name="email" placeholder="" />
+                  </div>
                   <div id="numError" style="color: red;"></div>
                 </div>
                 <div class="mb-3 form-password-toggle">
@@ -212,7 +230,7 @@
                   <div class="input-group input-group-merge">
                     <input
                       type="password"
-                      id="cM"
+                      id="cM" 
                       class="form-control"
                       name="password"
                       placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
@@ -237,9 +255,10 @@
               <p class="text-center">
                 <span>Already have an account?</span>
                 <a href="auth-login-basic.html">
-                  <span>Sign in instead</span>
+                  <span>Sign in </span>
                 </a>
               </p>
+              </div>
             </div>
           </div>
           <!-- Register Card -->
@@ -270,6 +289,17 @@
 
 
     <script >
+
+
+      function body(){
+        
+
+        
+        document.getElementById("body").style.backgroundImage="url(4.jpeg)"
+        document.getElementById("body").style.backgroundRepeat="no-repeat"
+        document.getElementById("body").style.backgroundSize="cover"
+
+      }
       var arry =[];
       
 
@@ -282,10 +312,12 @@
         var phone =pN.value;
         var password = pS.value;
         var cPassword = cM.value;
-        var a = "490"+ Math.floor(Math.random()*100000000)
+        var a = "490"+ Math.floor(Math.random()*10000)
        
         
-        let pass = {"userDetail":{"firstname":first,"SecondName":second,"PhoneNumber":phone,"Email":email,"Password":password, "accountNumber":a,"Bal":userBal,"Transaction History":{"transfer":[], "credit":[],"Airtimes":[],"withDraw":[],"deposit":[],"credit":[]}}}
+        let pass = {"userDetail":{"firstname":first,"SecondName":second,"PhoneNumber":phone,"usersMoreDetails":{"address":{},"image":{},"country":{},"currency":{},},"Email":email,"Password":password, "accountNumber":a,"Bal":userBal,"TransactionHistory":{"transfer":[], "credit":[],"Airtimes":[],"withDraw":[],"deposit":[],"credit":[]}}}
+        
+        let ass = {"userDetail":{"firstname":first,"SecondName":second,"PhoneNumber":phone,"usersMoreDetails":{"address":{},"image":{},"country":{},"currency":{},},"Email":email,"Password":password, "accountNumber":a,"Bal":userBal,"TransactionHistory":{"transfer":[], "credit":[],"Airtimes":[],"withDraw":[],"deposit":[],"credit":[]}}}
         
         //  form unfill
         if( ((first.length<=0) && (second<=0)) && ( (phone<=0) && (email.length<=0)  && (password<=0)) ){
@@ -353,24 +385,50 @@
           
         else{
          var  sarry = JSON.parse(localStorage.getItem("user"));
-         if(sarry.length<=0){
+         if(sarry){
            var rake = sarry.find(h => ( h.userDetail.Email === email));
            if(rake){
              document.getElementById("emailError").innerText ="This  email address you use has alredy been used by another customer"
            }
-         }
+
+            else{
+              if(localStorage.user != null){
+              arry = JSON.parse(localStorage.getItem("user"))
+              };
+              arry.push(pass);
+
+              sarry = JSON.stringify(arry);
+              arry = JSON.stringify(ass);
+              localStorage.setItem("user", sarry);
+              localStorage.setItem("welcome",arry)
+              document.getElementById("fN").value=" ";
+              document.getElementById("lN").value=" ";
+              document.getElementById("eM").value=" ";
+              document.getElementById("pN").value=" ";
+              document.getElementById("pS").value=" ";
+              document.getElementById("cM").value=" ";
+              location.href="layouts-blank.html"
+
+            }
+          }
           else{
             if(localStorage.user != null){
-            arry = JSON.parse(localStorage.getItem("user"))
-            };
-            arry.push(pass);
-            sarry = JSON.stringify(arry);
-            localStorage.setItem("user", sarry);
+              arry = JSON.parse(localStorage.getItem("user"))
+              };
+              arry.push(pass);
+              sarry = JSON.stringify(arry);
+              arry = JSON.stringify(ass);
+              localStorage.setItem("user", sarry);
+              localStorage.setItem("welcome",arry)
+              document.getElementById("fN").value=" ";
+              document.getElementById("lN").value=" ";
+              document.getElementById("eM").value=" ";
+              document.getElementById("pN").value=" ";
+              document.getElementById("pS").value=" ";
+              document.getElementById("cM").value=" ";
+              location.href="layouts-blank.html"
 
-            document.write(`<font> <h1 class="bank">Welcome to STAR BANK</h1>
-            <p>${first} ${second} Your account Number ${a} </p>
-            <small> Your acount balance is N ${userBal} </small><br>
-             <p> click here to <a href="auth-login-basic.html">login<a></p></font> `)
+
           }
         }
 
