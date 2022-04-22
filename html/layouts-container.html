@@ -83,19 +83,21 @@
 
           <!-- Content wrapper -->
           <div class="content-wrapper" >
-            <div style="">
+            <div class="card" style="width: 800px; transform: translate(30px,100px);" >
             <!-- Content -->
             <div style="margin-left: 300px; padding-top: 30px; font-size: 30px;">Admin only</div>
-            <div class="container pt-5 " style="padding-right: 370px; padding-left: 100px;">
+            <div class="container pt-5 " style="padding-right: 70px; padding-left: 100px;">
               <label for="">Email Address</label>
-              <input type="text" class="form-control " style="height: 50px; font-size: 20px;">
+              <input type="text" class="form-control" id="email" style="height: 50px; font-size: 20px;">
+                <div id="emailErr"></div>
             </div>
 
-            <div class="container pt-5 " style="padding-right: 370px; padding-left: 100px;">
+            <div class="container pt-5 " style="padding-right: 70px; padding-left: 100px;">
               <label for="">Password</label>
-              <input type="text" class="form-control " style="height: 50px; font-size: 20px;">
+              <input type="text" class="form-control " style="height: 50px; font-size: 20px;" id="password">
+              <div id="passwordErr"></div>
             </div>
-            <div style="display: flex;justify-content: center; padding-right: 300px; padding-top: 50px;">
+            <div style="display: flex;justify-content: center; padding-right: 30px; padding-top: 50px; padding-bottom: 40px;">
               <button class="btn border btn-outline-primary" id="submit">submit</button>
             </div>
           </div>
@@ -135,9 +137,59 @@
     <!-- Main JS -->
     <script src="../assets/js/main.js"></script>
 
-    <!-- Page JS -->
-
-    <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <script>
+      document.getElementById("submit").addEventListener("click",()=>{
+        var email = document.querySelector("#email").value
+        var password = document.querySelector("#password").value
+        var admin = JSON.parse(localStorage.getItem("Admin"))
+        // console.log(admin)
+        // alert(admin)
+        if(email=="" &&password ==""){
+          document.querySelector("#passwordErr").style.color ="red"
+          document.querySelector("#emailErr").style.color ="red"
+          document.querySelector("#emailErr").innerText = "Enter your email address"
+          document.querySelector("#passwordErr").innerText = "Enter your password"
+        }
+        else if(email=="" || password ==""){
+
+          if(email==""){
+            
+            document.querySelector("#emailErr").style.color ="red"
+            document.querySelector("#emailErr").innerText = "Enter your email address"
+            document.querySelector("#passwordErr").innerText = ""
+          }
+          else{
+            document.querySelector("#passwordErr").style.color ="red"
+            document.querySelector("#passwordErr").innerText = "Enter your password"
+            document.querySelector("#emailErr").innerText = ""
+          }
+        }
+        else if(email!==admin[0].email && password !==admin[0].password){
+          document.querySelector("#passwordErr").style.color ="red"
+          document.querySelector("#emailErr").style.color ="red"
+          document.querySelector("#emailErr").innerText = "wrong email address"
+          ocument.querySelector("#passwordErr").innerText = "Wrong Password"
+        }
+        else if(email!==admin[0].email || password !==admin[0].password){
+          if(email!==admin[0].email ){
+
+            document.querySelector("#emailErr").style.color ="red"
+            document.querySelector("#emailErr").innerText = "Enter your email address"
+          }
+          else{
+
+            document.querySelector("#passwordErr").style.color ="red"
+            ocument.querySelector("#passwordErr").innerText = "Wrong Password"
+          }
+        }
+
+        else{
+          location.href=""
+        }
+      })
+
+    </script>
   </body>
 </html>
