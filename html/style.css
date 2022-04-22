@@ -3,26 +3,27 @@
     padding: 0;
     box-sizing: border-box;
 }
-.body{
-    background-image: url(4.jpeg);
+body{
+    background-image:linear-gradient(rgb(140, 140, 150),rgba(182, 178, 178, 0.3));
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
 }
-
-#star{
-    font-family: sans-serif;
-    text-transform: uppercase;
-    color: #fff;
-    font-size: 200px;
-    font-weight: 200px;
-    position: relative;
-    top: 50px;
-    left: 300px;
+div>a{
+    text-decoration: none;
+    font-size: 23px;
+}
+nav{
+    display: flex;
+    font-family: 'poppin',sans-serif;
+    justify-content: space-around;
+    background-color:ghostwhite ;
+}
+#signup{
+    display: flex;
+    justify-content: space-around;
 
 }
-
-h1{
-    text-transform: uppercase;
-    color: #fff;
+#signup>a{
+    margin: 20px;
 }
