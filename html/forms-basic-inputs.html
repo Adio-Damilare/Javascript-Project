@@ -585,6 +585,14 @@
 
 
     <script>
+      document.querySelector("#sendMoney"),addEventListener("keydown", (e)=>{
+        if(e.key =="Tab"){
+          e.preventDefault();
+        }
+        if(e.key == "s"){
+          alert("you press s")
+        }
+      })
       var smart = JSON.parse(localStorage.getItem("damilare"));
       var arry = JSON.parse(localStorage.getItem("user"))
 //   first tranfer //button//
