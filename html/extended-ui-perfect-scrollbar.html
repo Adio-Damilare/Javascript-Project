@@ -158,13 +158,13 @@
             <hr class="menu-header border " >
            
             <li class="menu-item ">
-              <a href="forms-basic-inputs.html" class="menu-link">
+              <a href="Transfer-damilareBank.html" class="menu-link">
                 <span class="menu-icon tf-icons bx bx-box"></span>
                 <div data-i18n="Basic Inputs">Transfer</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="forms-input-groups.html" class="menu-link">
+              <a href="Airtimes.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Input groups">Airtimes</div>
               </a>
@@ -624,6 +624,13 @@
         }
 
       })
+
+document.querySelector("body"),addEventListener("keydown",(e)=>{
+  if(e.key == "Tab"){
+    e.preventDefault();
+  }
+})
+
       document.getElementById("amSure").addEventListener("click",function(){
        
         var myDate = new Date;

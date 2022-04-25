@@ -154,13 +154,13 @@
             <hr class="menu-header border " >
            
             <li class="menu-item ">
-              <a href="forms-basic-inputs.html" class="menu-link">
+              <a href="Transfer-damilareBank.html" class="menu-link">
                 <span class="menu-icon tf-icons bx bx-box"></span>
                 <div data-i18n="Basic Inputs">Transfer</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="forms-input-groups.html" class="menu-link">
+              <a href="Airtimes.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Input groups">Airtimes</div>
               </a>
@@ -301,7 +301,7 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">John Doe</span>
+                            <span class="fw-semibold d-block">Daruz</span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>
@@ -368,7 +368,7 @@
                       <small class="text-muted float-end">Merged input group</small>
                     </div>
                     <div class="card-body">
-                      <form>
+                      <form id="star">
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-icon-default-fullname">Name</label>
                           <div class="col-sm-10">
@@ -515,16 +515,6 @@
       <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <!-- / Layout wrapper -->
-
-    <div class="buy-now">
-      <a
-        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >Upgrade to Pro</a
-      >
-    </div>
-
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
@@ -541,7 +531,11 @@
     <script src="../assets/js/main.js"></script>
 
     <!-- Page JS -->
-
+      <script>
+        document.getElementById("star").addEventListener("submit",(e)=>{
+          e.preventDefault()
+        })
+      </script>
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>

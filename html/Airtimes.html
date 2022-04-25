@@ -27,7 +27,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Input groups - Forms | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Airtime-DamilareBank</title>
 
     <meta name="description" content="" />
 
@@ -154,7 +154,7 @@
             <hr class="menu-header border " >
            
             <li class="menu-item ">
-              <a href="forms-basic-inputs.html" class="menu-link">
+              <a href="Transfer-damilareBank.html" class="menu-link">
                 <span class="menu-icon tf-icons bx bx-box"></span>
                 <div data-i18n="Basic Inputs">Transfer</div>
               </a>
@@ -496,15 +496,15 @@
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
     <script src="../assets/vendor/libs/popper/popper.js"></script>
     <script src="../assets/vendor/js/bootstrap.js"></script>
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <!-- <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script> -->
 
-    <script src="../assets/vendor/js/menu.js"></script>
+    <!-- <script src="../assets/vendor/js/menu.js"></script> -->
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="../assets/js/main.js"></script>
+    <!-- <script src="../assets/js/main.js"></script> -->
 
     <!-- Page JS -->
 
@@ -532,6 +532,8 @@
       document.getElementById("basic").addEventListener("mouseover",function(){
           document.getElementById("deal").disabled = false
       })
+      
+      var smart =[]
 
       document.getElementById("deal").addEventListener("mouseover",function(){
         var sum = amount.value
@@ -583,7 +585,7 @@
         }
         else{
           document.getElementById("deal").disabled = false
-          // document.getElementById("deal").innerHTML =`<buttton>confirm</button>`
+
           
         }
 
@@ -591,9 +593,26 @@
 
       })
 
+      document.getElementById("deal").addEventListener("click",function(){
+        var sum = amount.value
+        var num = basic.value
+        smart.splice(0,smart.length)
+         document.getElementById("deal").disabled = false
+          var tire ={"amount":sum,"number":num}
+          smart.push(tire)
+          document.getElementById("amount").value=""
+          document.getElementById("basic").value=""
+        
+
+      })
       // document,getElementById("deal").addEventListener("click",function(){
 
       // })
+      document.querySelector("body"),addEventListener("keydown",(e)=>{
+      if(e.key == "Tab"){
+        document.getElementById("deal").disabled= true
+      }
+    })
 
    
       document.getElementById("amSure").addEventListener("mouseover",function(){
@@ -623,7 +642,6 @@
       })
 
 
-      var smart =[]
 
       document.getElementById("amSure").addEventListener("click",function(){
            var myDate = new Date;
@@ -659,19 +677,17 @@
             var num = basic.value
             var sum = amount.value
             var pass = password.value;
-            var tire ={ "amount":sum}
-            smart.push(tire)
-
+           
 
             var sarray = JSON.parse(localStorage.getItem("user"))
             var recentUser = JSON.parse(localStorage.getItem("damilare"))
             var apc = recentUser[0].userDetail.accountNumber
               var deduct = sarray.find(great =>(great.userDetail.Password === pass && great.userDetail.accountNumber===apc));
               // console.log(deduct)
-              var some = deduct.userDetail.Bal-sum;
+              var some = parseInt(deduct.userDetail.Bal) - parseInt(smart[0].amount);
 
 
-              var timeRecord = {"date":dates,"time":timer, 'Balance':some,"AirtimeAmount":smart[0].amount,"numberOfthatRecieveTheAirtime":num};
+              var timeRecord = {"date":dates,"time":timer, 'Balance':some,"AirtimeAmount":smart[0].amount,"numberOfthatRecieveTheAirtime":smart[0].number};
             // alert(sum)
               for(f=0;f<recentUser.length;){
                 if(recentUser[f].userDetail.Password === pass){
