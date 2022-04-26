@@ -13,27 +13,28 @@
                 
             }
         }) 
-        // var star =0
-        // function press(){
-        // var arrar = [1,2,3,4,5,6,7,8,9]
-        // var input= parseInt( document.getElementById("input").value)
-        // alert(input)
-        // for(s=0;s<arrar.length;s++){
+        var star =0
+        function press(){
+        var arrar = [1,2,3,4,5,6,7,8,9]
+        var input= parseInt( document.getElementById("input").value)
+        alert(input)
+        for(s=0;s<arrar.length;s++){
 
 
             
             
-        //     if(arrar[s]===input){
-        //         alert("wwe")
-        //         arrar.splice(s,1)
-        //         s--;
-        //     }
-        // }
+            if(arrar[s]===input){
+                alert("wwe")
+                arrar.splice(s,1)
+                // s--;
+            }
+        }
         // var even= .remove(arrar, function(n){
         //     return n % 2 === 0
         // })
-    //     console.log(arrar)
-    // }
+        console.log(arrar)
+        document.getElementById("create").innerHTML= arrar
+    }
     </script>
 </head>
 <body>
@@ -44,6 +45,9 @@
     <button onclick="press()">
         press
     </button>
+    <div id="create">
+
+    </div>
 
 </body>
 </html>

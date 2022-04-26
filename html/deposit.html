@@ -20,14 +20,14 @@
   data-assets-path="../assets/"
   data-template="vertical-menu-template-free"
 >
-  <head>
+  <head> 
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Cards basic - UI elements | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Perfect Scrollbar - Extended UI | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
 
     <meta name="description" content="" />
 
@@ -51,6 +51,8 @@
     <link rel="stylesheet" href="../assets/css/demo.css" />
 
     <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
     <!-- Page CSS -->
@@ -127,13 +129,15 @@
                   </g>
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2" style="text-transform: uppercase;">STAR BANK</span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2" style="text-transform: uppercase;">Star bank</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
               <i class="bx bx-chevron-left bx-sm align-middle"></i>
             </a>
           </div>
+
+          <div class="menu-inner-shadow"></div>
 
           <div class="menu-inner-shadow"></div>
 
@@ -162,25 +166,25 @@
             <li class="menu-item">
               <a href="Airtimes.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Input groups">AIrtimes</div>
+                <div data-i18n="Input groups">Airtimes</div>
               </a>
             </li>
-            <li class="menu-item active">
-              <a href="cards-basic.html" class="menu-link">
+            <li class="menu-item">
+              <a href="withdraw.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Input groups">WithDraw</div>
               </a>
             </li>
 
-            <li class="menu-item ">
-              <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
+            <li class="menu-item active">
+              <a href="deposit.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Input groups">Deposit</div>
               </a>
             </li>
 
             <li class="menu-item ">
-              <a href="form-layouts-horizontal.html" class="menu-link">
+              <a href="Payment-Of-BIll.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-box"></i>
                 <div data-i18n="Input groups">Payment of Bills</div>
               </a>
@@ -190,11 +194,12 @@
             <hr class="menu-header border " >
          
             <li class="menu-item ">
-              <a href="form-layouts-vertical.html" class="menu-link">
+              <a href="transactionHistory.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Vertical Form">Transaction History</div>
               </a>
             </li>
+
         <!-- Layouts -->
         <hr class="menu-header border " >
         <li class="menu-item  ">
@@ -236,7 +241,7 @@
             <i class="menu-icon tf-icons bx bx-file"></i>
             <div data-i18n="Documentation">Documentation</div>
           </a>
-        </li>          <!-- < -->
+        </li>          
         </aside>
         <!-- / Menu -->
 
@@ -300,7 +305,7 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">John Doe</span>
+                            <span class="fw-semibold d-block">Oluwadamilare</span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>
@@ -353,41 +358,61 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4 d-flex justify-content-center text-dark display-4"><span class="text-muted fw-light"></span>WithDraw</h4>
+              <h4 class="fw-bold py-3 mb-4">
+                <span class="text-muted fw-light"></span> Deposit
+              </h4>
 
-              <!-- Examples -->
-              <div class="row ms-5 ps-5 py">
-                <div class="col-md-8 col-lg-8 mb-3 ps-5 py-4 pe-5 border rounded-3" style="background-image: url(../assets/img/elements/2.jpg);">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <h5 class="card-title" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin-left: 1pc; font-size: 18px;">Amount</h5>
-                      <div class="input-group input-group-merge">
-                         <span class="input-group-text " id="basic-addon-search31" style="text-decoration: line-through double;">N</span>
-                        <input
-                          type="number"
-                          class="form-control h-px-50"
-                          id="amount"
-                          placeholder=""
-                          aria-describedby="basic-default-password"  maxlength="11"
-                        />
-                      </div>
-                      <div id="amountErr"></div>
-                      <div>
-                        <h5 class="card-text mt-1">
-                        Account number
-                        </h5>
-                        <input type="text" class="form-control" name="" id="basic">
-                        <div id="basicErr"></div>
-                      </div>
-                      <h5 class="my-4 text-center">
+              <div class="row">
+                
+                <!--/ Vertical Scrollbar -->
 
-                        <button class="btn btn-outline-primary"
-                        data-bs-target="#modalToggle2"
-                        data-bs-toggle="modal"
-                        data-bs-dismiss="modal"
-                        id="withDraw"
-                        >WithDraw</button>
-                      </h5>
+                <!-- Horizontal Scrollbar -->
+               
+                <!--/ Horizontal Scrollbar -->
+
+                <!-- Vertical & Horizontal Scrollbars -->
+                <div class="col-12">
+                  <div class="card overflow-hidden" style="height: 500px">
+                    <!-- <h5 class="card-header">Vertical & Horizontal Scrollbars</h5> -->
+                    <div class="card-body pt-5 px-5" id="both-scrollbars-example" style="background-image:url(../assets/img/backgrounds/18.jpg);">
+                      <div class=" sm-mx-0 px-5">
+                        <div class="px-5">
+                          <div class="px-5">
+                          
+                            <div class="card-body">
+                              <h5 class="card-title" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin-left: 1pc; font-size: 18px;">Amount</h5>
+                              <div class="input-group input-group-merge">
+                                 <span class="input-group-text " id="basic-addon-search31" style="text-decoration: line-through double;">N</span>
+                                <input
+                                  type="number"
+                                  class="form-control h-px-50"
+                                  id="amount"
+                                  placeholder=""
+                                  aria-describedby="basic-default-password"  maxlength="11"
+                                />
+                              </div>
+                              <div id="amountErr"></div>
+                              <div>
+                                <h5 class="card-text mt-1">
+                                Account number
+                                </h5>
+                                <input type="text" class="form-control" name="" id="basic">
+                                <div id="basicErr"></div>
+                              </div>
+                              <h5 class="my-4 text-center">
+        
+                                <button class="btn btn-outline-primary"
+                                data-bs-target="#modalToggle2"
+                                data-bs-toggle="modal"
+                                data-bs-dismiss="modal"
+                                id="withDraw"
+                                >Deposit</button>
+                              </h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     </div>
                   </div>
                 </div>
@@ -424,15 +449,41 @@
                   </button>
                  
                 </div>
+                <!--/ Vertical & Horizontal Scrollbars -->
               </div>
-              </div>
-              <!--/ Card layout -->
             </div>
             <!-- / Content -->
 
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
-              
+              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+                <div class="mb-2 mb-md-0">
+                  ©
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  , made with ❤️ by
+                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+                </div>
+                <div>
+                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
+                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
+
+                  <a
+                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
+                    target="_blank"
+                    class="footer-link me-4"
+                    >Documentation</a
+                  >
+
+                  <a
+                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+                    target="_blank"
+                    class="footer-link me-4"
+                    >Support</a
+                  >
+                </div>
+              </div>
             </footer>
             <!-- / Footer -->
 
@@ -440,34 +491,42 @@
           </div>
           <!-- Content wrapper -->
         </div>
-       
+        <!-- / Layout page -->
       </div>
 
       <!-- Overlay -->
       <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-     <!-- build:js assets/vendor/js/core.js -->
-     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-     <script src="../assets/vendor/libs/popper/popper.js"></script>
-     <script src="../assets/vendor/js/bootstrap.js"></script>
-     <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
- 
-     <script src="../assets/vendor/js/menu.js"></script>
-     <!-- endbuild -->
- 
-     <!-- Vendors JS -->
- 
-     <!-- Main JS -->
-     <script src="../assets/js/main.js"></script>
- 
-     <!-- Page JS -->
- 
-     <!-- Place this tag in your head or just before your close body tag. -->
-     <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <script type="text/javascript">
+    <!-- / Layout wrapper -->
+
+  
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="../assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <!-- Main JS -->
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="../assets/js/extended-ui-perfect-scrollbar.js"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 
-      var recentUser = JSON.parse(localStorage.getItem("damilare"))
+
+    <script>
+        var recentUser = JSON.parse(localStorage.getItem("damilare"))
       document.getElementById("amount").addEventListener("keypress",function(){
         document.getElementById("amountErr").innerText = " "
             document.getElementById("withDraw").disabled = false
@@ -486,41 +545,31 @@
 
       document.getElementById("basic").addEventListener("mouseover",function(){
           document.getElementById("withDraw").disabled = false
-      }) 
+      })
 
-      document.querySelector("body"),addEventListener("keydown",(e)=>{
-      if(e.key == "Tab"){
-        e.preventDefault();
-      }
-    })
+      var save = []
+
 
       document.getElementById("withDraw").addEventListener("mouseover",function(){
         var valid = recentUser[0].userDetail.accountNumber
-        var submit = recentUser[0].userDetail.Bal
-        // alert(submit)
-        console.log(valid)
+        save.splice(0,save.length)
         var sum = amount.value;
         var num = basic.value;
-        // alert(sum)
+        small={"account":num,"amount":sum}
+        save.push(small) 
         if(sum == "" && num =="" ){
           document.getElementById("withDraw").disabled = true
-          document.getElementById("amountErr").innerText = "Enter amount you want to withdarw "
+          document.getElementById("amountErr").innerText = "Enter amount you want to deposit "
           document.getElementById("amountErr").style.color = "red"
           document.getElementById("basicErr").style.color = "red "
           document.getElementById("basicErr").innerText = "Enter your account number "
-        }
-        else if(sum>submit){
-          document.getElementById("withDraw").disabled = true
-          document.getElementById("amountErr").innerText = "Insufficient Balance"
-          document.getElementById("amountErr").style.color = "red"
-
         }
         else if(sum == "" || num ==""){
           document.getElementById("withDraw").disabled = true
           if(sum == "" ){
 
             document.getElementById("amountErr").style.color="red"
-            document.getElementById("amountErr").innerText = "Enter amount you want to withdraw"
+            document.getElementById("amountErr").innerText = "Enter amount you want to deposit"
             document.getElementById("basicErr").innerText = " "
             document.getElementById("basicErr").style.color = "red "
           }
@@ -535,7 +584,7 @@
           document.getElementById("basicErr").innerText ="Wrong account number"
           document.getElementById("amountErr").style.color="red"
           document.getElementById("basicErr").style.color=" red  "
-          document.getElementById("amountErr").innerText="   "
+          document.getElementById("amountErr").innerText=""
 
         }
         else if(num<0 || num == 0){
@@ -547,47 +596,43 @@
         }
         else{
           document.getElementById("withDraw").disabled = false
+          document.getElementById("amountErr").innerText =" "
+          document.getElementById("basicErr").innerText=""
         }
       })
 
     
 
-      var save = []
-
-      document.getElementById("withDraw").addEventListener("click",function(){
-        save.splice(0,save.length)
-        var sum = amount.value;
-        var num = basic.value;
-        small={"account":num,"amount":sum}
-        save.push(small)
-        document.getElementById("amount").value = ""
-        document.getElementById("basic").value = ""
+      document.getElementById("password").addEventListener("mouseover", function(){
+        
+        document.querySelector("#amSure").disabled = false;
       })
-
-
-      document.getElementById("password").addEventListener("mouseover",function(){
-
-        document.getElementById("amSure").disabled = false
-      })
-
       document.getElementById("amSure").addEventListener("mouseover",function(){
-      var pass= password.value
-      var pasW = recentUser[0].userDetail.Password
-      if (pass==""){
-        document.getElementById("amSure").disabled = true
-        document.getElementById("passwordErr").style.color ="red"
-        document.getElementById("passwordErr").innerText ="Enter your password"
-      }
-      else if(pass !==pasW){
-        document.getElementById("passwordErr").style.color ="red"
-        document.getElementById("passwordErr").innerText ="Wrong password"
-      }
-      else{
-        document.getElementById("amSure").disabled = false
-      }
+        var pass = password.value;
+        var paaSS = recentUser[0].userDetail.Password
+        if(pass==""){
+          document.querySelector("#amSure").disabled = true;
+          document.querySelector("passwordErr").innerText="Enter your password"
+        }
+        else if(pass !==paaSS){
+          document.querySelector("#amSure").disabled = true;
+          document.querySelector("passwordErr").innerText="Wrong password"
+        }
+        else{
+          document.querySelector("#amSure").disabled = false;
+          // document.querySelector("passwordErr").innerText="Enter your password"
+        }
+
       })
 
-      document.getElementById("amSure").addEventListener("click",function(){  
+document.querySelector("body"),addEventListener("keydown",(e)=>{
+  if(e.key == "Tab"){
+    e.preventDefault();
+  }
+})
+
+      document.getElementById("amSure").addEventListener("click",function(){
+       
         var myDate = new Date;
             var daysList = ["sunday","monday",'tuesday',"wednesday","thursday","friday","saturday"];
             var monthsList = ["January","february",'March',"April","May","June","July","September","October","November","December"];
@@ -597,7 +642,6 @@
             let day = daysList[myDate.getDay()];
             let today = `${date} / ${month} / ${year} / ${day}`;
             let amOrPm;
-            console.log(today)
             let twentyHours = function(){
 
                 if (myDate.getHours()>12){
@@ -616,24 +660,18 @@
             let currentTime = `${hours} : ${minutes} ${amOrPm}`
             var timer = (alert=( `${currentTime}`));
             var dates = (alert=( `${today}`));
-            var num = basic.value
-            var sum = amount.value
-            var pass = password.value;
-
-
             var sarray = JSON.parse(localStorage.getItem("user"))
             var recentUser = JSON.parse(localStorage.getItem("damilare"))
             var apc = recentUser[0].userDetail.accountNumber
-              var deduct = sarray.find(great =>(great.userDetail.Password === pass && great.userDetail.accountNumber===apc));
-              var some = deduct.userDetail.Bal-save[0].amount;
-            console.log(some)
+              var deduct = sarray.find(great =>( great.userDetail.accountNumber===apc));
+              var some = parseInt( deduct.userDetail.Bal) + parseInt(save[0].amount);
 
-              var timeRecord = {"date":dates,"time":timer, 'Balance':some,"Amountwithdraw":save[0].amount};
+              var timeRecord = {"date":dates,"time":timer, 'Balance':some,"Amountdeposit":save[0].amount};
             
               for(f=0;f<recentUser.length;){
-                if(recentUser[f].userDetail.Password === pass){
+                if(recentUser[f].userDetail.accountNumber===apc ){
                   recentUser[f].userDetail.Bal = some;
-                  recentUser[f].userDetail.TransactionHistory.withDraw.push(timeRecord)
+                  recentUser[f].userDetail.TransactionHistory.deposit.push(timeRecord)
                   break;
                 }
                 f++
@@ -643,7 +681,7 @@
               for(d=0; d<sarray.length;){
               if(recentUser[0].userDetail.accountNumber=== sarray[d].userDetail.accountNumber){
                 sarray[d].userDetail.Bal = some
-                sarray[d].userDetail.TransactionHistory.withDraw.push(timeRecord)
+                sarray[d].userDetail.TransactionHistory.deposit.push(timeRecord)
                 break
               }
               d++
@@ -651,15 +689,12 @@
 
               document.getElementById("password").value=""
               document.getElementById("basic").value=""
-
               document.getElementById("amount").value=""
-              document.getElementById("amountErr").innerText=""
               localStorage.setItem("user",JSON.stringify(sarray))
               localStorage.setItem("damilare",JSON.stringify(recentUser))
 
       })
 
-
-  </script>
+    </script>
   </body>
 </html>
