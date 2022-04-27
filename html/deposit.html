@@ -65,7 +65,7 @@
     <script src="../assets/js/config.js"></script>
   </head>
 
-  <body>
+  <body style="background-image: url(images/saveMoney.jpg); background-size: cover; background-repeat: no-repeat;">
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -169,13 +169,6 @@
                 <div data-i18n="Input groups">Airtimes</div>
               </a>
             </li>
-            <li class="menu-item">
-              <a href="withdraw.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Input groups">WithDraw</div>
-              </a>
-            </li>
-
             <li class="menu-item active">
               <a href="deposit.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
@@ -358,9 +351,13 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4">
-                <span class="text-muted fw-light"></span> Deposit
-              </h4>
+              <div>
+                <h4 class="fw-bold py-3 mb-4">
+                  <span class="text-muted fw-light"></span> Deposit
+                </h4>
+                <p class="text-dark " style="font-size: 20px;"><span >Notice</span> : You can not Deposit more than <span style="text-decoration: line-through double;">N</span>5000  Daily  </p>
+              </div>
+
 
               <div class="row">
                 
@@ -372,23 +369,23 @@
 
                 <!-- Vertical & Horizontal Scrollbars -->
                 <div class="col-12">
-                  <div class="card overflow-hidden" style="height: 500px">
+                  <div class="card overflow-hidden" style="height: 500px;background-color: transparent;">
                     <!-- <h5 class="card-header">Vertical & Horizontal Scrollbars</h5> -->
-                    <div class="card-body pt-5 px-5" id="both-scrollbars-example" style="background-image:url(../assets/img/backgrounds/18.jpg);">
-                      <div class=" sm-mx-0 px-5">
+                    <div class="card-body pt-5 px-md-5 px-sm-0" id="both-scrollbars-example"  style="background-color: transparent;">
+                      <div class=" sm-mx-0 px-sm-0 px-5">
                         <div class="px-5">
                           <div class="px-5">
                           
                             <div class="card-body">
                               <h5 class="card-title" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin-left: 1pc; font-size: 18px;">Amount</h5>
-                              <div class="input-group input-group-merge">
-                                 <span class="input-group-text " id="basic-addon-search31" style="text-decoration: line-through double;">N</span>
+                              <div class="input-group input-group-merge text-white bg-white" >
+                                 <span class="input-group-text " style="text-decoration: line-through double;">N</span>
                                 <input
                                   type="number"
-                                  class="form-control h-px-50"
+                                  class="form-control h-px-50 " 
                                   id="amount"
                                   placeholder=""
-                                  aria-describedby="basic-default-password"  maxlength="11"
+                                  aria-describedby="basic-default-password"
                                 />
                               </div>
                               <div id="amountErr"></div>
@@ -396,7 +393,7 @@
                                 <h5 class="card-text mt-1">
                                 Account number
                                 </h5>
-                                <input type="text" class="form-control" name="" id="basic">
+                                <input type="text" class="form-control h-px-50 " name="" id="basic">
                                 <div id="basicErr"></div>
                               </div>
                               <h5 class="my-4 text-center">
@@ -439,10 +436,9 @@
                 <div class="modal-footer">
                   <button
                     class="btn btn-primary w-100"
-                    data-bs-target="#modalToggle4"
-                    data-bs-toggle="modal"
                     data-bs-dismiss="modal"
-                   
+                    class="btn border bg-danger"
+                    aria-label="Close"
                     id="amSure"
                   >
                     confirm
@@ -506,19 +502,19 @@
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
     <script src="../assets/vendor/libs/popper/popper.js"></script>
     <script src="../assets/vendor/js/bootstrap.js"></script>
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <!-- <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script> -->
 
-    <script src="../assets/vendor/js/menu.js"></script>
+    <!-- <script src="../assets/vendor/js/menu.js"></script> -->
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <!-- <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script> -->
 
     <!-- Main JS -->
-    <script src="../assets/js/main.js"></script>
+    <!-- <script src="../assets/js/main.js"></script> -->
 
     <!-- Page JS -->
-    <script src="../assets/js/extended-ui-perfect-scrollbar.js"></script>
+    <!-- <script src="../assets/js/extended-ui-perfect-scrollbar.js"></script> -->
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -552,11 +548,9 @@
 
       document.getElementById("withDraw").addEventListener("mouseover",function(){
         var valid = recentUser[0].userDetail.accountNumber
-        save.splice(0,save.length)
+      
         var sum = amount.value;
         var num = basic.value;
-        small={"account":num,"amount":sum}
-        save.push(small) 
         if(sum == "" && num =="" ){
           document.getElementById("withDraw").disabled = true
           document.getElementById("amountErr").innerText = "Enter amount you want to deposit "
@@ -579,6 +573,11 @@
             document.getElementById("basicErr").innerText = " Enter your account number"
           }
         }
+        else if(sum>5000){
+          document.getElementById("withDraw").disabled = true
+          document.getElementById("amountErr").innerText ="The amount you want to deposit is beyond the daily allowance"
+          document.getElementById("amountErr").style.color="red"
+        }
         else if(num !== valid){
           document.getElementById("withDraw").disabled = true
           document.getElementById("basicErr").innerText ="Wrong account number"
@@ -587,21 +586,36 @@
           document.getElementById("amountErr").innerText=""
 
         }
+        else if(sum<0 || sum == 0){
+          document.getElementById("withDraw").disabled = true
+          document.getElementById("amountErr").innerText ="Invalid "
+          document.getElementById("amountErr").style.color="red"
+          document.getElementById("basicErr").style.color="red"
+          document.getElementById("basicErr").innerText=" "
+        }
         else if(num<0 || num == 0){
           document.getElementById("withDraw").disabled = true
           document.getElementById("amountErr").innerText =" "
           document.getElementById("amountErr").style.color="red"
           document.getElementById("basicErr").style.color="red"
-          document.getElementById("basicErr").innerText="invalid "
+          document.getElementById("basicErr").innerText="Invalid"
         }
         else{
           document.getElementById("withDraw").disabled = false
-          document.getElementById("amountErr").innerText =" "
-          document.getElementById("basicErr").innerText=""
+         
         }
       })
 
+  document.getElementById("withDraw").addEventListener("click",function(){
+        save.splice(0,save.length)
+        var sum = amount.value;
+        var num = basic.value;
+        small={"account":num,"amount":sum}
+        save.push(small) 
+        document.getElementById("amountErr").value =" "
+        document.getElementById("basicErr").value=""
     
+  })
 
       document.getElementById("password").addEventListener("mouseover", function(){
         
@@ -612,11 +626,11 @@
         var paaSS = recentUser[0].userDetail.Password
         if(pass==""){
           document.querySelector("#amSure").disabled = true;
-          document.querySelector("passwordErr").innerText="Enter your password"
+          document.querySelector("#passwordErr").innerText="Enter your password"
         }
         else if(pass !==paaSS){
           document.querySelector("#amSure").disabled = true;
-          document.querySelector("passwordErr").innerText="Wrong password"
+          document.querySelector("#passwordErr").innerText="Wrong password"
         }
         else{
           document.querySelector("#amSure").disabled = false;
@@ -633,9 +647,9 @@ document.querySelector("body"),addEventListener("keydown",(e)=>{
 
       document.getElementById("amSure").addEventListener("click",function(){
        
-        var myDate = new Date;
+            var myDate = new Date;
             var daysList = ["sunday","monday",'tuesday',"wednesday","thursday","friday","saturday"];
-            var monthsList = ["January","february",'March',"April","May","June","July","September","October","November","December"];
+            var monthsList = ["January","February",'March',"April","May","June","July","September","October","November","December"];
             let date = myDate.getDate();
             let month = monthsList[myDate.getMonth()];
             let year = myDate.getFullYear();
@@ -652,7 +666,7 @@ document.querySelector("body"),addEventListener("keydown",(e)=>{
                 }
                 else{
                     amOrPm = "AM";
-                    return `${myDate.getHours()}`
+                    return `${myDate.getHours()}`;
                 }
             }
             let hours = twentyHours();
@@ -660,16 +674,19 @@ document.querySelector("body"),addEventListener("keydown",(e)=>{
             let currentTime = `${hours} : ${minutes} ${amOrPm}`
             var timer = (alert=( `${currentTime}`));
             var dates = (alert=( `${today}`));
-            var sarray = JSON.parse(localStorage.getItem("user"))
-            var recentUser = JSON.parse(localStorage.getItem("damilare"))
-            var apc = recentUser[0].userDetail.accountNumber
+            var sarray = JSON.parse(localStorage.getItem("user"));
+            var recentUser = JSON.parse(localStorage.getItem("damilare"));
+            var apc = recentUser[0].userDetail.accountNumber;
               var deduct = sarray.find(great =>( great.userDetail.accountNumber===apc));
-              var some = parseInt( deduct.userDetail.Bal) + parseInt(save[0].amount);
-
+              var some = parseInt(deduct.userDetail.Bal) + parseInt(save[0].amount);
               var timeRecord = {"date":dates,"time":timer, 'Balance':some,"Amountdeposit":save[0].amount};
-            
+            var tree = new Date()
+             var should = recentUser[0].userDetail.chart.deposit[tree.getMonth()]
+             var remote = deduct.userDetail.chart.deposit[tree.getMonth()];
+             remote.push(save[0].amount)
+             should.push(save[0].amount)
               for(f=0;f<recentUser.length;){
-                if(recentUser[f].userDetail.accountNumber===apc ){
+                if(recentUser[f].userDetail.accountNumber=== apc ){
                   recentUser[f].userDetail.Bal = some;
                   recentUser[f].userDetail.TransactionHistory.deposit.push(timeRecord)
                   break;
@@ -679,9 +696,10 @@ document.querySelector("body"),addEventListener("keydown",(e)=>{
             
 
               for(d=0; d<sarray.length;){
-              if(recentUser[0].userDetail.accountNumber=== sarray[d].userDetail.accountNumber){
+              if(recentUser[0].userDetail.accountNumber === sarray[d].userDetail.accountNumber){
                 sarray[d].userDetail.Bal = some
                 sarray[d].userDetail.TransactionHistory.deposit.push(timeRecord)
+                
                 break
               }
               d++

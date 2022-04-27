@@ -82,13 +82,13 @@
     <!-- Content -->
 
     <div class="container-xxl" >
-      <div class="authentication-wrapper authentication-basic container-p-y">
+      <div class="authentication-wrapper authentication-basic container-p-x" >
         <div class="authentication-inner" id="cord">
           <!-- Register Card -->
           <div class="card" id="cord">
             <div class="card-body">
               <!-- Logo -->
-              <div class="app-brand justify-content-center">
+              <div class="app-brand justify-content-around">
                 <a href="index.html" class="app-brand-link gap-2">
                   <span class="app-brand-logo demo">
                     <svg
@@ -152,16 +152,16 @@
               <h4 class="mb-2 d-flex justify-content-center">Sign up here 🚀</h4>
               <p class="mb-4 d-flex justify-content-center">  easy and fun!</p>
 
-              <div class="card" id="cord" >
-                
+              <form class="w-100" method="post" id="cord" >
+                <div>
                 <label for="username" class="form-label">First name</label>
-                <div class="mb-3 input-group input-group-merge">
-                  <span id="basic-icon-default-fullname2" class="input-group-text"
+                <div class="mb-3 input-group input-group-merge"  style="border-bottom: 1px solid;">
+                  <span id="basic-icon-default-fullname2" class="input-group-text border-0"
                   ><i class="bx bx-user"></i
                   ></span>
                   <input
                     type="text"
-                    class="form-control"
+                    class="form-control border-0 fs-5" style="font-weight: 570;"
                     id="fN"
                     name="username"
                     placeholder="Enter your username"
@@ -169,16 +169,17 @@
                   />
                 </div>
                 <div id="firstError" style="color: red;"></div>
+              </div>
                 <!-- </div> -->
                 <!-- <div class="mb-3"> -->
                   <label for="user" class="form-label">Last name</label>
-                  <div class="input-group input-group-merge">
-                      <span id="basic-icon-default-lastname" class="input-group-text"
+                  <div class="input-group input-group-merge"  style="border-bottom: 1px solid;">
+                      <span id="basic-icon-default-lastname" class="input-group-text border-0"
                     ><i class="bx bx-user"></i>
                       </span>
                   <input
-                    type="text"
-                    class="form-control"
+                    type="text" 
+                    class="form-control border-0 fs-5" style="font-weight: 570;"
                     id="lN"
                     name="user"
                     placeholder="Enter your username"
@@ -189,11 +190,11 @@
                 <!-- </div> -->
                 <div class="mb-3 my-3">
                   <label for="email" class="form-label">Email Address</label>
-                  <div class="input-group input-group-merge">
-                    <span id="basic-icon-default-lastname" class="input-group-text"
-                  ><i class="bx bx-envelope"></i>
+                  <div class="input-group input-group-merge"  style="border-bottom: 1px solid;">
+                    <span id="basic-icon-default-lastname " class="input-group-text border-0"
+                  ><i class="bx bx-envelope border-0"></i>
                     </span>
-                  <input type="text" class="form-control" id="eM" name="email" placeholder="Enter your email" />
+                  <input type="text" class="form-control border-0 fs-5 fw-semibold text-muted" id="eM" name="email" placeholder="Enter your email" />
                   </div>
                   <div id="emailError" style="color: red;"></div>
                 </div>
@@ -201,42 +202,44 @@
 
                 <div class="mb-3">
                   <label for="email" class="form-label">Mobile Number</label>
-                  <div class="input-group input-group-merge">
-                    <span id="basic-icon-default-lastname" class="input-group-text"
+                  <div class="input-group input-group-merge"  style="border-bottom: 1px solid;">
+                    <span id="basic-icon-default-lastname" class="input-group-text border-0"
                   ><i class="bx bx-phone"></i>
                     </span>
-                  <input type="number" class="form-control" id="pN" name="email" placeholder="" />
+                  <input type="number" class="form-control border-0 fs-5" id="pN" name="email" placeholder="" />
                   </div>
                   <div id="numError" style="color: red;"></div>
                 </div>
-                <div class="mb-3 form-password-toggle">
+                <div>
+                <div class="mb-3 form-password-toggle " style="border-bottom: 1px solid;" >
                   <label class="form-label" for="password">Password</label>
                   <div class="input-group input-group-merge">
                     <input
                       type="password"
                       id="pS"
                       name="password"
-                      class="form-control"
+                      class="form-control border-0 fs-5 "
                       placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                       aria-describedby="password"
                     />
-                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                    <span class="input-group-text cursor-pointer border-0"><i class="bx bx-hide"></i></span>
                   </div>
-                  <div id="passwordError" style="color: red;"></div>
-
                 </div>
-                <div class="mb-3 form-password-toggle">
+                <div id="passwordError" style="color: red;"></div>
+                </div>
+                <div class="mb-3 form-password-toggle"  style="border: none; border-bottom: 1px solid; outline: none;">
                   <label class="form-label" for="password"> comfirm Password</label>
                   <div class="input-group input-group-merge">
                     <input
+                    style="border: none;"
                       type="password"
                       id="cM" 
-                      class="form-control"
+                      class="form-control fs-5"
                       name="password"
                       placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                       aria-describedby="password" 
                       />
-                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                    <span class="input-group-text cursor-pointer  border-0"><i class="bx bx-hide"></i></span>
                   </div>
                   <div id="comfirmError" style="color: red;"></div>
                 </div>
@@ -250,15 +253,15 @@
                     </label>
                   </div>
                 </div>
-                <button class="btn btn-primary d-grid w-100"  onclick="signUp()">Sign</button>
+                <button class="btn btn-primary d-grid w-100" type="submit"  onclick="signUp()">Sign</button>
 
-              <p class="text-center">
-                <span>Already have an account?</span>
-                <a href="auth-login-basic.html">
-                  <span>Sign in </span>
-                </a>
-              </p>
-              </div>
+                <p class="text-center">
+                  <span>Already have an account?</span>
+                  <a href="auth-login-basic.html">
+                    <span>Sign in </span>
+                  </a>
+                </p>
+              </form>
             </div>
           </div>
           <!-- Register Card -->
@@ -273,11 +276,25 @@
     <script src="../assets/vendor/libs/popper/popper.js"></script>
     <script src="../assets/vendor/js/bootstrap.js"></script>
 
+    <!-- <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script> -->
+
+    <script src="../assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+
+    <!-- Main JS -->
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Page JS -->
+
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 
     <script >
-
+document.querySelector("form"),addEventListener("submit",(e)=>{
+  e.preventDefault();
+})
 
       function body(){
         
@@ -303,7 +320,10 @@
         var a = "40342"+ Math.floor(Math.random()*10000)
        
         
-        let pass = {"userDetail":{"firstname":first,"SecondName":second,"PhoneNumber":phone,"usersMoreDetails":{"address":{},"image":{},"country":{},"currency":{},},"Email":email,"Password":password, "accountNumber":a,"Bal":userBal,"TransactionHistory":{"transfer":[], "credit":[],"Airtimes":[],"withDraw":[],"deposit":[],"credit":[]}}}
+        let pass = {"userDetail":{"firstname":first,"SecondName":second,"PhoneNumber":phone,"usersMoreDetails":{"address":{},"image":{},"country":{},"currency":{},},"Email":email,"Password":password, "accountNumber":a,"Bal":userBal,
+        "TransactionHistory":{"transfer":[], "credit":[],"Airtimes":[],"withDraw":[],"deposit":[],"credit":[]},
+        "chart":{"deposit":[[],[],[],[],[],[],[],[],[],[],[],[]],
+        "debit":[[],[],[],[],[],[],[],[],[],[],[],[]]} }}
         
         let ass = {"userDetail":{"firstname":first,"SecondName":second,"PhoneNumber":phone,"usersMoreDetails":{"address":{},"image":{},"country":{},"currency":{},},"Email":email,"Password":password, "accountNumber":a,"Bal":userBal,"TransactionHistory":{"transfer":[], "credit":[],"Airtimes":[],"withDraw":[],"deposit":[],"credit":[]}}}
         

@@ -5,7 +5,233 @@
 'use strict';
 
 (function () {
+  var user = JSON.parse(localStorage.getItem("damilare"));
+  // var good = new Date();
+  var dep = user[0].userDetail.chart.deposit
+  var deb = user[0].userDetail.chart.debit
   let cardColor, headingColor, axisColor, shadeColor, borderColor;
+var dep1=0
+var dep2=0
+var dep3=0
+var dep4=0
+var dep5=0
+var dep6=0
+var dep7=0
+var dep8=0
+var dep9=0
+var dep10=0
+var dep11=0
+var dep12=0
+
+var deb1=0
+var deb2=0
+var deb3=0
+var deb4=0
+var deb5=0
+var deb6=0
+var deb7=0
+var deb8=0
+var deb9=0
+var deb10=0
+var deb11=0
+var deb12=0
+  if(dep[0] && dep[0].length>0){
+      for(var d=0;d<dep[0].length;d++){
+        dep1+=parseInt(dep[0][d])
+      }
+  }
+  else{
+    dep1=0
+  }
+
+  if(dep[1]){
+      for(var e=0;d<dep[1].length;e++){
+        dep2+=parseInt(dep[1][d])
+      }
+  }
+  else{
+    dep2=2
+  }
+  if(dep[2]){
+      for(var d=0;d<dep[2].length;d++){
+        dep3+=parseInt(dep[2][d])
+      }
+  }
+  else{
+    dep3=0
+  }
+  if(dep[3] ){
+      for(var d=0;d<dep[3].length;d++){
+        dep4+=parseInt(dep[3][d])
+      }
+  }
+  else{
+    dep4=0
+  }
+  if(dep[4]){
+      for(var d=0;d<dep[4].length;d++){
+        dep5+=parseInt(dep[4][d])
+      }
+  }
+  else{
+    dep5=0
+  }
+  if(dep[5]){
+      for(var d=0;d<dep[5].length;d++){
+        dep6+=parseInt(dep[5][d])
+      }
+  }
+  else{
+    dep6=0
+  }
+  if(dep[6]){
+      for(var d=0;d<dep[6].length;d++){
+        dep7+=parseInt(dep[6][d])
+      }
+  }
+  else{
+    dep7=0
+  }
+  if(dep[7]){
+      for(var d=0;d<dep[7].length;d++){
+        dep8+=parseInt(dep[7][d])
+      }
+  }
+  else{
+    dep8=0
+  }
+  if(dep[8]){
+      for(var d=0;d<dep[8].length;d++){
+        dep9+=parseInt(dep[8][d])
+      }
+  }
+  else{
+    dep9=0
+  }
+  if(dep[9]){
+      for(var d=0;d<dep[9].length;d++){
+        dep10+=parseInt(dep[9][d])
+      }
+  }
+  else{
+    dep10=0
+  }
+  if(dep[10]){
+      for(var d=0;d<dep[10].length;d++){
+        dep11+=parseInt(dep[10][d])
+      }
+  }
+  else{
+    dep11=0
+  }
+  if(dep[11]){
+      for(var d=0;d<dep[11].length;d++){
+        dep12+=parseInt(dep[11][d])
+      }
+  }
+  else{
+    dep12=0
+  }
+          // debit 
+
+  if(deb[0] && deb[0].length>0){
+      for(var d=0;d<deb[0].length;d++){
+        deb1+=parseInt(deb[0][d])
+      }
+  }
+  else{
+    deb1=0
+  }
+
+  if(deb[1]){
+      for(var e=0;d<deb[1].length;e++){
+        deb2+=parseInt(deb[1][d])
+      }
+  }
+  else{
+    deb2=0
+  }
+  if(deb[2]){
+      for(var d=0;d<deb[2].length;d++){
+        deb3+=parseInt(deb[2][d])
+      }
+  }
+  else{
+    deb3=0
+  }
+  if(deb[3] ){
+      for(var d=0;d<deb[3].length;d++){
+        deb4+=parseInt(deb[3][d])
+      }
+  }
+  else{
+    deb4=0
+  }
+  if(deb[4]){
+      for(var d=0;d<deb[4].length;d++){
+        deb5+=parseInt(deb[4][d])
+      }
+  }
+  else{
+    deb5=0
+  }
+  if(deb[5]){
+      for(var d=0;d<deb[5].length;d++){
+        deb6+=parseInt(deb[5][d])
+      }
+  }
+  else{
+    deb6=0
+  }
+  if(deb[6]){
+      for(var d=0;d<deb[6].length;d++){
+        deb7+=parseInt(deb[6][d])
+      }
+  }
+  else{
+    deb7=0
+  }
+  if(deb[7]){
+      for(var d=0;d<deb[7].length;d++){
+        deb8+=parseInt(deb[7][d])
+      }
+  }
+  else{
+    deb8=0
+  }
+  if(deb[8]){
+      for(var d=0;d<deb[8].length;d++){
+        deb9+=parseInt(deb[8][d])
+      }
+  }
+  else{
+    deb9=0
+  }
+  if(deb[9]){
+      for(var d=0;d<deb[9].length;d++){
+        deb10+=parseInt(deb[9][d])
+      }
+  }
+  else{
+    deb10=0
+  }
+  if(deb[10]){
+      for(var d=0;d<deb[10].length;d++){
+        deb11+=parseInt(deb[10][d])
+      }
+  }
+  else{
+    deb11=0
+  }
+  if(deb[11]){
+      for(var d=0;d<deb[11].length;d++){
+        deb12+=parseInt(deb[11][d])
+      }
+  }
+  else{
+    deb12=0
+  }
+
 
   cardColor = config.colors.white;
   headingColor = config.colors.headingColor;
@@ -18,16 +244,16 @@
     totalRevenueChartOptions = {
       series: [
         {
-          name: '2021',
-          data: [18, 7, 15, 29, 18, 12, 9]
+          name: `Total Amount Deposit for a month`,
+          data: [dep1, dep2, dep3, dep4, dep5, dep6, dep7,dep8,dep9,dep10,dep11,dep12,]
         },
         {
-          name: '2020',
-          data: [-13, -18, -9, -14, -5, -17, -15]
+          name: `Total Amount debit for a month `,
+          data: [-deb1, -deb2, -deb3, -deb4, -deb5, -deb6, -deb7,-deb8,-deb9,-deb10,-deb11,-deb12,]
         }
       ],
       chart: {
-        height: 300,
+        height: 400,
         stacked: true,
         type: 'bar',
         toolbar: { show: false }
@@ -43,17 +269,18 @@
       },
       colors: [config.colors.primary, config.colors.info],
       dataLabels: {
-        enabled: false
+        enabled: false,
       },
       stroke: {
         curve: 'smooth',
-        width: 6,
+        width: 4,
         lineCap: 'round',
         colors: [cardColor]
+
       },
       legend: {
         show: true,
-        horizontalAlign: 'left',
+        horizontalAlign: 'center',
         position: 'top',
         markers: {
           height: 8,
@@ -73,16 +300,16 @@
         padding: {
           top: 0,
           bottom: -8,
-          left: 20,
-          right: 20
+          left: 40,
+          right: 0
         }
       },
       xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',"Aug","Sept","oct","Nov","Dec"],
         labels: {
           style: {
-            fontSize: '13px',
-            colors: axisColor
+            fontSize: '18px',
+            colors: axisColor,
           }
         },
         axisTicks: {
@@ -95,12 +322,12 @@
       yaxis: {
         labels: {
           style: {
-            fontSize: '13px',
+            fontSize: '15px',
             colors: axisColor
           }
         }
       },
-      responsive: [
+      responsive:[
         {
           breakpoint: 1700,
           options: {

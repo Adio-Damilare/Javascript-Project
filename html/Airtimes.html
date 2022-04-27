@@ -165,12 +165,6 @@
                 <div data-i18n="Input groups">Airtime</div>
               </a>
             </li>
-            <li class="menu-item ">
-              <a href="withdraw.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Input groups">WithDraw</div>
-              </a>
-            </li>
 
             <li class="menu-item">
               <a href="deposit.html" class="menu-link">
@@ -575,12 +569,20 @@
           document.getElementById("basicErr").innerText=" "
 
         }
-        else if(num<0 || num == 0){
+        else if(sum<0 || sum== 0){
           document.getElementById("deal").disabled = true
-          document.getElementById("amountErr").innerText =" "
+          document.getElementById("amountErr").innerText ="Invalid "
           document.getElementById("amountErr").style.color="red"
           document.getElementById("basicErr").style.color="red"
-          document.getElementById("basicErr").innerText="invalid "
+          document.getElementById("basicErr").innerText=" "
+
+        }
+        else if(num<0 || num== 0){
+          document.getElementById("deal").disabled = true
+          document.getElementById("amountErr").innerText =""
+          document.getElementById("amountErr").style.color="red"
+          document.getElementById("basicErr").style.color="red"
+          document.getElementById("basicErr").innerText="Invaild "
 
         }
         else{
@@ -685,6 +687,11 @@
               var deduct = sarray.find(great =>(great.userDetail.Password === pass && great.userDetail.accountNumber===apc));
               // console.log(deduct)
               var some = parseInt(deduct.userDetail.Bal) - parseInt(smart[0].amount);
+              var tree = new Date()
+             var should = recentUser[0].userDetail.chart.debit[tree.getMonth()]
+             var remote = deduct.userDetail.chart.debit[tree.getMonth()];
+             remote.push(smart[0].amount)
+             should.push(smart[0].amount)
 
 
               var timeRecord = {"date":dates,"time":timer, 'Balance':some,"AirtimeAmount":smart[0].amount,"numberOfthatRecieveTheAirtime":smart[0].number};

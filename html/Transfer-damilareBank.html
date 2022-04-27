@@ -174,12 +174,6 @@
                     <div data-i18n="Input groups">Airtimes</div>
                   </a>
                 </li>
-                <li class="menu-item ">
-                  <a href="withdraw.html" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-collection"></i>
-                    <div data-i18n="Input groups">WithDraw</div>
-                  </a>
-                </li>
     
                 <li class="menu-item">
                   <a href="deposit.html" class="menu-link">
@@ -498,11 +492,11 @@
                  
                 </div>
                 <div class="p-md-5 p-sm-5"> <label for="" class="fw-semibold my-3 ms-2">Account Number</label>
-                  <input type="text" class="form-control ms-5 w-75" name=""  onkeypress="errorClear()" id="account">
+                  <input type="text" class="form-control ms-5 w-75" name=""  onmouseover="sweet1()" onkeypress="errorClear()" id="account">
                   <div id="errorAcc" style="color: red;"></div>
                 </div>
                 <div class="px-md-5 px-sm-"> <label for="" class="fw-semibold mb-3 ms-2">Password</label>
-                  <input type="password"  class="form-control ms-5 w-75" onkeypress="errClear()" name=""  id="password">
+                  <input type="password"  class="form-control ms-5 w-75"  onmouseover="sweet2()" onkeypress onkeypress="errClear()" name=""  id="password">
                   <div id="errorPass" style="color: red;"></div>
                 </div>
                 <!-- <div class="modal-body"></div> -->
@@ -585,13 +579,24 @@
 
 
     <script>
+      function sweet1(){
+        document.getElementById("confir").disabled=false
+        
+      }
+
+      function sweet2(){
+        document.getElementById("confir").disabled=false
+        
+      }
+
+
+
+
       document.querySelector("#sendMoney"),addEventListener("keydown", (e)=>{
         if(e.key =="Tab"){
           e.preventDefault();
         }
-        if(e.key == "s"){
-          alert("you press s")
-        }
+        
       })
       var smart = JSON.parse(localStorage.getItem("damilare"));
       var arry = JSON.parse(localStorage.getItem("user"))
@@ -647,9 +652,9 @@
 
     var sure = []
     function checkIfTheTextBoxsIsFill(){
-      sure.splice(0,sure.length)
       var amount = pS.value;
       var account = recieverAccountNumber.value;
+      sure.splice(0,sure.length)
       sure.push({"amount":amount,"account":account})
       var validUser = arry.find(nam =>(nam.userDetail.accountNumber === account))
       var validate = smart.find( f => (f.userDetail.Bal>=amount));
@@ -821,6 +826,13 @@
               console.log(validate.userDetail.Bal);
             var timeRecord = {"date":dates,"time":timer, 'Balance':sent,"amountSend":moneySend,"nameOfTheReciever":validUser.userDetail.firstname +"  "+ validUser.userDetail.SecondName};
             var timeRecieve = {"date":dates,"time":timer, 'Balance':recieve,"amountRecieve":moneySend,'nameOfTheSender':validate.userDetail.firstname + "  " + validate.userDetail.SecondName};
+            var tree = new Date()
+             var should = great[0].userDetail.chart.debit[tree.getMonth()]
+             var she = validate.userDetail.chart.debit[tree.getMonth()]
+             var remote = validUser.userDetail.chart.deposit[tree.getMonth()];
+             remote.push(moneySend)
+             should.push(moneySend)
+             she.push(moneySend)
 
               for(r=0; r<smart.length;){
                 if(smart[r].userDetail.accountNumber == senderAcc){

@@ -127,7 +127,7 @@
                   </g>
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2" style="text-transform: uppercase;">Starbank </span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2" style="text-transform: uppercase;">Star bank </span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -203,7 +203,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -211,8 +211,8 @@
                       <a class="dropdown-item" href="#">
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
-                            <div class="avatar avatar-online">
-                              <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                            <div class="avatar avatar-online spinner">
+                              <img src="" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -276,7 +276,7 @@
               
                 <div class="card">
                   <div class="table-responsive text-nowrap">
-                    <table class="table table-striped">
+                    <table class="table table-bordered x">
                       <thead>
                       <tr align="center">
                         <th colspan="7">
@@ -289,24 +289,14 @@
                         <th>s/n</th>
                         <th>firstname</th>
                         <th>lastname</th>
-                        <th>phoneNumber</th>
-                        <th>User Account</th>
+                        <th>Phone Number</th>
+                        <th>User Account Number</th>
                         <th>transaction History</th>
                         <th>action</th>
                       </tr>
                     </thead>
                     <tbody id="costumer">
 
-                      <tr >
-                        <td>damilare</td>
-                        <td>damilare</td>
-                        <td>damilare</td>
-                        <td>damilare</td>
-                        <td>damilare</td>
-                        <td>damilare</td>
-                        <td>damilare</td>
-                      </tr>
-      
                   </tbody>
                 </table>
                   </div>
@@ -349,6 +339,59 @@
               </div>
             </div>
               </div>
+            <div
+            class="modal fade"
+            id="modalToggle2"
+            id="transfer"
+            aria-hidden="true"
+            aria-labelledby="modalToggleLabel2"
+            tabindex="-1"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title modal-title fw-semibold display-6 text-primary" id="modalToggleLabel2"></h5>
+                 
+                </div>
+                <div class="modal-body" >
+                    <div id="displayTheReciever">
+                      
+                    </div>
+ 
+                </div>
+                <div class="modal-footer" id="delete">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+            <div
+            class="modal fade"
+            id="modalToggle4"
+            id="transfer"
+            aria-hidden="true"
+            aria-labelledby="modalToggleLabel4"
+            tabindex="-1"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title modal-title fw-semibold display-6 text-primary" id="modalToggleLabel3"></h5>
+                 
+                </div>
+                <div class="modal-body" >
+                    <div id="mesa">
+                      
+                    </div>
+ 
+                </div>
+                <div class="modal-footer" id="sugar">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
          
               
             <!-- / Content -->
@@ -386,78 +429,474 @@
     <script>
       var users = JSON.parse(localStorage.getItem("user"))      
     firstAdmin=()=>{
-      var color =["info","primary"];
-    var userInfo = "";
-   
-    for(see=0, r=0; see<users.length;){
-      if(r==2){
-       r=0
-     }
-      userInfo+=`<tr class="table-${color[r]}"><td><strong>${see+1}</strong></td><td>${users[see].userDetail.firstname}</td> <td>${users[see].userDetail.SecondName}</td> <td>${users[see].userDetail.PhoneNumber}</td><td id="user${see}id">${users[see].userDetail.accountNumber}</td><td class="text-center">
+      if(users && users.length>0){
+            var color =["info","primary"];
+            var userInfo = "";
+            var dropdown = "dropup"
+            for(see=0, r=0; see<users.length;){
+              if(r==2){
+              r=0
+            }
+            if(see==0){
+              dropdown = "dropdown"
+            }
+              userInfo+=`<tr class="table-${color[r]}"><td><strong>${see+1}</strong></td><td><strong>${users[see].userDetail.firstname}</strong></td> <td><strong>${users[see].userDetail.SecondName}</strong></td> <td><strong>${users[see].userDetail.PhoneNumber}</strong></td><td id="user<strong>${see}id"><strong>${users[see].userDetail.accountNumber}</strong></td><td class="text-center">
+                
+                <div class="${dropdown}">
+                <button type="button" class="btn p-0 dropdown-toggle hide-arrow " data-bs-toggle="dropdown"
+                >
+                <i class="bx bx-dots-vertical-rounded"></i>
+                </button>
+                <div class="dropdown-menu">
+                <a class="dropdown-item" href="javascript:void(0);"
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#fullscreenModal"
+                >Transfer</a
+                >
+                <a class="dropdown-item" href="javascript:void(0);"
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#fullscreenModal"
+                >Airtime</a
+                >
+                <a class="dropdown-item" href="javascript:void(0);"
+                                type="button"
+                                class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#fullscreenModal"
+                >Deposit</a
+                >
+                </div>
+                </div>
         
-        <div class="dropup">
-        <button type="button" class="btn p-0 dropdown-toggle hide-arrow " data-bs-toggle="dropdown"
-        >
-        <i class="bx bx-dots-vertical-rounded"></i>
-        </button>
-        <div class="dropdown-menu">
-        <a class="dropdown-item" href="javascript:void(0);"
-                        type="button"
-                        data-bs-toggle="modal"
-                        data-bs-target="#fullscreenModal"
-        >Transfer</a
-        >
-        <a class="dropdown-item" href="javascript:void(0);"
-                        type="button"
-                        data-bs-toggle="modal"
-                        data-bs-target="#fullscreenModal"
-        >Airtime</a
-        >
-        <a class="dropdown-item" href="javascript:void(0);"
-                        type="button"
-                        class="btn btn-primary"
-                        data-bs-toggle="modal"
-                        data-bs-target="#fullscreenModal"
-        >Deposit</a
-        >
-        </div>
-        </div>
+                </td> <td><div class="dropup">
+                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                <i class="bx bx-dots-vertical-rounded"></i>
+                </button>
+                <div class="dropdown-menu">
+                <a class="dropdown-item" href="javascript:void(0);" onclick="select(${see})"
+                data-bs-target="#modalToggle2"
+                data-bs-toggle="modal"
+                data-bs-dismiss="modal" 
+                ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                >
+                <a class="dropdown-item " href="javascript:void(0);"
+                class="btn btn-primary btn-outline-blue"
+                data-bs-target="#modalToggle2"
+                data-bs-toggle="modal"
+                data-bs-dismiss="modal"
+                onclick="slow(${see})"
+                > <i class="bx bx-trash me-1"></i> Delete</a
+                >
+                </div>
+                </div>
+            </td></tr>`
+              r++
+            
+          
+              see++
+            }
+            document.getElementById("costumer").innerHTML = userInfo
+      }else{
+        var dooq =`<tr align="center" class="table-info py-5"><td colspan="7" rowspan="7">NO USER REGISTER FOR NOW</td></tr>`
+        document.getElementById("costumer").innerHTML = dooq
+      }
 
-        </td> <td><div class="dropup">
-        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-        <i class="bx bx-dots-vertical-rounded"></i>
-        </button>
-        <div class="dropdown-menu">
-        <a class="dropdown-item" href="javascript:void(0);"
-        ><i class="bx bx-edit-alt me-1"></i> Edit</a
-        >
-        <a class="dropdown-item " href="javascript:void(0);"
-        onclick="slow(${see})"
-        > <i class="bx bx-trash me-1"></i> Delete</a
-        >
-        </div>
-        </div>
-     </td></tr>`
-       r++
-    
-   
-      see++
-    }
-    document.getElementById("costumer").innerHTML = userInfo
    }
 
 
-   smart=[]
+   smart=[];
     function slow(r){
       smart.splice(0,smart.length)
       for(g=0;g<users.length;g++){
         if(users[g] === users[r] ){
           smart.push(users[g])
-          alert(smart)
-          break;
+          document.querySelector("#displayTheReciever").innerHTML = `<div><span class="fw-bold">${users[g].userDetail.firstname}   ${users[g].userDetail.SecondName}</span> Account will be deleted from this bank</div>`
+          document.getElementById("modalToggleLabel2").innerText="NOTICE"
+          document.querySelector("#delete").innerHTML=` <div><button
+                    class="btn btn-primary"
+                    data-bs-target="#modalToggle4"
+                    data-bs-toggle="modal"
+                    data-bs-dismiss="modal"
+                    onclick="check()"
+                  >
+                  DELETE
+                  </button>
+                  
+                  <button
+                  type="button"
+                  data-bs-dismiss="modal"
+                  class="btn border bg-danger"
+                  aria-label="Close"
+                >CANCEL</button></div>`
+          break
         }
       }
     }
-      </script>
+   function check(){
+      document.getElementById("mesa").innerHTML=`<div>
+        <h3> Enter your Admin ID</h3>
+        <input type='text' class="form-control" onmouseover="cure()" id="cure"> <p id="idErr"></p></div>`
+        document.getElementById("modalToggleLabel3").innerText="CONFIRM"
+        document.getElementById("sugar").innerHTML=`<button
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-dismiss="modal"
+                    onclick="amSure()"
+                    id="amSure"
+                    onmouseover="sea()"
+                  >
+                  confirm
+                  </button>
+                  <button
+                  type="button"
+                  data-bs-dismiss="modal"
+                  class="btn border bg-danger"
+                  aria-label="Close"
+                >CANCEL</button>`
+    }
+    
+   function sea(){
+      var AdminId =  document.querySelector("#cure").value
+      if( AdminId==""){
+        document.querySelector("#idErr").innerText="please enter your admin Id to delete "
+        document.querySelector("#idErr").style.color="red"
+        document.getElementById("amSure").disabled=true
+      }
+      else{
+        if(AdminId==1234567890){
+          document.getElementById("amSure").disabled = false
+        }
+      }
+      
+    }
+
+
+  function amSure(){
+    var deleteUser=[]
+        for(d=0;d<users.length;d++){
+          if(users[d]===smart[0]){
+            if(localStorage.delete !=null){
+              var food =JSON.parse( localStorage.getItem("delete"))
+            }
+            deleteUser.push(users[d])
+            localStorage.setItem("delete",JSON.stringify(deleteUser))
+            users.splice(d,1)
+            break
+          }
+        }
+          localStorage.setItem("user",JSON.stringify(users));
+          location.reload();
+          }
+    function cure(){
+      document.getElementById("amSure").disabled = false
+    }
+var chang=[]
+    function select(t){
+      chang.splice(0,chang.length)
+      for(j=0;j<users.length; j++){
+        if(users[j]===users[t]){
+          chang.push(users[j])
+          document.getElementById("modalToggleLabel2").innerHTML=`<span class="text-muted">EDIT</span> ${users[t].userDetail.firstname}  ${users[t].userDetail.SecondName} <span class="text-muted">Profile</span>`;
+          document.querySelector("#displayTheReciever").innerHTML = `<div>
+            <div>
+            <label class="fs-5"> First Name</label>
+            <div class="d-flex"> <input type="text" class="form-control" id="firstName" onmouseover="fN()"><button class="btn border border-2 btn-outline-primary d-flex  ms-6" id="edit1" onmouseover="editOver1()" onclick="edit1()"
+              data-bs-target="#modalToggle4"
+              data-bs-toggle="modal"
+              data-bs-dismiss="modal"
+              > <i class="bx bx-edit-alt me-1"></i>Edit</button></div></div>
+            <div>
+            <label class="fs-5"> Last Name</label>
+            <div class="d-flex"> <input type="text" class="form-control" id="lastName" onmouseover="lN()"><button class="btn border border-2 btn-outline-primary d-flex  ms-6" onmouseover="editOver2()" onclick="edit2()"
+              data-bs-target="#modalToggle4"
+              data-bs-toggle="modal"
+              data-bs-dismiss="modal"
+              id="edit2"
+              > <i class="bx bx-edit-alt me-1"></i>Edit</button></div></div>
+            <div>
+            <label class="fs-5">Phone Number</label>
+            <div class="d-flex"> <input type="number" class="form-control" id="phone" onmouseover="pH()"><button class="btn border border-2 btn-outline-primary d-flex  ms-6" onmouseover="editOver3()" onclick="edit3()"
+              data-bs-target="#modalToggle4"
+              data-bs-toggle="modal"
+              data-bs-dismiss="modal"
+              id="edit3"
+              > <i class="bx bx-edit-alt me-1"></i>Edit</button></div></div>
+            <div>
+            <label class="fs-5">Password</label>
+            <div class="d-flex"> <div  class="input-group input-group-merge"><input type="password"  id="passWord" class="form-control" onmouseover="pass()">
+               <span class="input-group-text cursor-pointer " onclick="showPassword()"><i class="bx bx-hide"></i></span>
+              </div>
+              <button class="btn border border-2 btn-outline-primary d-flex  ms-6"  id="edit4" onmouseover="editOver4()" onclick="edit4()"
+              data-bs-target="#modalToggle4"
+              data-bs-toggle="modal"
+              data-bs-dismiss="modal"
+              > <i class="bx bx-edit-alt me-1"></i>Edit</button></div></div>
+    
+            </div>`
+            document.querySelector("#delete").innerHTML=""
+        }
+
+      }
+     
+    }
+
+    function editOver1(){
+      var first = document.getElementById("firstName").value
+      if(first==''){
+        document.getElementById("edit1").disabled=true
+
+      }
+      else{
+        document.getElementById("edit1").disabled=false
+
+
+      }
+    }
+
+    function editOver2(){
+      var first = document.getElementById("lastName").value
+      if(first==''){
+        document.getElementById("edit2").disabled=true
+
+      }
+      else{
+        document.getElementById("edit2").disabled=false
+
+
+      }
+    }
+
+    function editOver3(){
+      var first = document.getElementById("phone").value
+      if(first==''){
+        document.getElementById("edit3").disabled=true
+
+      }
+      else{
+        document.getElementById("edit3").disabled=false
+
+
+      }
+    }
+
+    function editOver4(){
+      var first = document.getElementById("passWord").value
+      if(first==''){
+        document.getElementById("edit4").disabled=true
+
+      }
+      else{
+        document.getElementById("edit4").disabled=false
+
+
+      }
+    }
+    
+ function fN(){
+  document.getElementById("edit1").disabled=false
+
+}
+ function lN(){
+  document.getElementById("edit2").disabled=false
+
+}
+ function pH(){
+  document.getElementById("edit3").disabled=false
+
+}
+ function pass(){
+  document.getElementById("edit4").disabled=false
+
+}
+
+     function edit1(){
+      var first = document.getElementById("firstName").value
+      document.getElementById("mesa").innerHTML=` <div> <strong>Are sure you want to change <span class="text-primary">${chang[0].userDetail.firstname}</span> to <span class="text-primary">${first} </span> </strong>
+        <div>
+          <article> Enter your Admin ID</article>
+        <input type='text' class="form-control" onmouseover="care1()" id="care1"> <p id="IdErr"></p>
+
+        </div>
+        </div>`
+      document.getElementById("modalToggleLabel3").innerText="EDIT FIRSTNAME" 
+      document.getElementById("sugar").innerHTML=`<button
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-dismiss="modal"
+                    onmouseover="firstcheck()"
+                    onclick="firstNameEdit()"
+                    id="fName"
+                  
+                  >
+                Yes
+                  </button>
+                  <button
+                  type="button"
+                  data-bs-dismiss="modal"
+                  class="btn border bg-danger"
+                  aria-label="Close"
+                >CANCEL</button>`
+    
+     }
+     function edit2(){
+      var first = document.getElementById("lastName").value
+      document.getElementById("mesa").innerHTML=` <div> <strong>Are sure you want to change <span class="text-primary">${chang[0].userDetail.SecondName}</span> to <span class="text-primary">${first} </span> </strong>
+        <div>
+          <article> Enter your Admin ID</article>
+        <input type='text' class="form-control" onmouseover="care1()" id="care1"> <p id="IdErr"></p>
+
+        </div>
+        </div>`
+      document.getElementById("modalToggleLabel3").innerText="EDIT LASTNAME" 
+      document.getElementById("sugar").innerHTML=`<button
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-dismiss="modal"
+                    onmouseover="firstcheck()"
+                    onclick="firstNameEdit()"
+                    id="fName"
+                  
+                  >
+                Yes
+                  </button>
+                  <button
+                  type="button"
+                  data-bs-dismiss="modal"
+                  class="btn border bg-danger"
+                  aria-label="Close"
+                >CANCEL</button>`
+     }
+     function edit3(){
+
+      var first = document.getElementById("phone").value
+      document.getElementById("mesa").innerHTML=` <div> <strong>Are sure you want to change <span class="text-primary">${chang[0].userDetail.PhoneNumber}</span> to <span class="text-primary">${first} </span> </strong>
+        <div>
+          <article> Enter your Admin ID</article>
+        <input type='text' class="form-control" onmouseover="care1()" id="care1"> <p id="IdErr"></p>
+
+        </div>
+        </div>`
+      document.getElementById("modalToggleLabel3").innerText="EDIT PHONE NUMBER" 
+      document.getElementById("sugar").innerHTML=`<button
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-dismiss="modal"
+                    onmouseover="firstcheck()"
+                    onclick="firstNameEdit()"
+                    id="fName"
+                  
+                  >
+                Yes
+                  </button>
+                  <button
+                  type="button"
+                  data-bs-dismiss="modal"
+                  class="btn border bg-danger"
+                  aria-label="Close"
+                >CANCEL</button>`
+     }
+     function edit4(){
+      var first = document.getElementById("passWord").value
+      document.getElementById("mesa").innerHTML=` <div> <strong>Are sure you want to change <span class="text-primary">${chang[0].userDetail.Password}</span> to <span class="text-primary">${first} </span> </strong>
+        <div>
+          <article> Enter your Admin ID</article>
+        <input type='text' class="form-control" onmouseover="care1()" id="care1"> <p id="IdErr"></p>
+
+        </div>
+        </div>`
+      document.getElementById("modalToggleLabel3").innerText="EDIT PASSWORD" 
+      document.getElementById("sugar").innerHTML=`<button
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-dismiss="modal"
+                    onmouseover="firstcheck()"
+                    onclick="firstNameEdit()"
+                    id="fName"
+                  
+                  >
+                Yes
+                  </button>
+                  <button
+                  type="button"
+                  data-bs-dismiss="modal"
+                  class="btn border bg-danger"
+                  aria-label="Close"
+                >CANCEL</button>`
+
+     }
+
+     function care1(){
+      document.getElementById("fName").disabled=false
+     }
+     function firstcheck(){
+      var d = document.getElementById("care1").value
+       if(d==""){
+         document.getElementById("IdErr").innerText="Please enter your Admin Id"
+         document.getElementById("IdErr").style.color="red"
+         document.getElementById("fName").disabled=true
+       }
+       else{
+         if(d!=1234567890){
+          document.getElementById("IdErr").innerText="Wrong Admin Id"
+          document.getElementById("fName").disabled=true
+         }
+         else if(d==1234567890){
+           document.getElementById("fName").disabled=false
+         }
+       }
+     }
+
+     function firstNameEdit(){
+
+     var firstName = document.getElementById("modalToggleLabel3").innerText;
+      var first = document.getElementById("firstName").value;
+      var last = document.getElementById("lastName").value;
+      var phone = document.getElementById("phone").value;
+      var passWord = document.getElementById("passWord").value;
+      if(firstName=="EDIT FIRSTNAME"){
+      for(p=0;p<users.length;p++){
+        if(users[p]===chang[0]){
+          users[p].userDetail.firstname= first
+          break
+        }
+      }
+      localStorage.setItem("user",JSON.stringify(users))
+      location.reload();
+    }
+     else if(firstName=="EDIT LASTNAME"){
+      for(p=0;p<users.length;p++){
+        if(users[p]===chang[0]){
+          users[p].userDetail.SecondName= last
+          break
+        }
+      }
+      localStorage.setItem("user",JSON.stringify(users))
+      location.reload();
+    }
+     else if(firstName=="EDIT PHONE NUMBER"){
+      for(p=0;p<users.length;p++){
+        if(users[p]===chang[0]){
+          users[p].userDetail.PhoneNumber= phone
+          break
+        }
+      }
+      localStorage.setItem("user",JSON.stringify(users))
+      location.reload();
+    }
+     else if(firstName=="EDIT PASSWORD"){
+      for(p=0;p<users.length;p++){
+        if(users[p]===chang[0]){
+          users[p].userDetail.Password= passWord
+          break
+        }
+      }
+      localStorage.setItem("user",JSON.stringify(users))
+      location.reload();
+    }
+     }
+    
+  </script>
   </body>
 </html>
