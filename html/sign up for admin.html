@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<!-- =========================================================
+* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
+==============================================================
+
+* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
+* Created by: ThemeSelection
+* License: You must have a valid license purchased in order to legally use the theme for your project.
+* Copyright ThemeSelection (https://themeselection.com)
+
+=========================================================
+ -->
+<!-- beautify ignore:start -->
+<html
+  lang="en"
+  class="light-style layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="../assets/"
+  data-template="vertical-menu-template-free"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+
+    <title>admin sign up</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="../assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../assets/js/config.js"></script>
+  </head>
+
+  <body>
+    <!-- Layout wrapper -->
+    
+   <div class="container-fluid">
+     <div class="container pt-1">
+     <div class="container ">
+     <div class="container ">
+     <div class="container pt-5">
+     <div class="container pt-5">
+     <div class="container"> 
+     <div class="container">
+     <div class="container">
+     <div class="container">
+     <div class="container">
+     <div class="card">
+     <div class="card">
+     <div class="card">
+     <div class="card text-center py-5 text-primary fs-3 fw-bold">Admin only</div>
+    
+     <div class="card-body" id="disp">
+      <div class="card text-center text-danger fs-4  fw-lighter " id="errorD"></div>
+      <div class="card py-3"> <label for="">FullName</label>
+       <input type="text" id="name" class="form-control">
+      </div>
+      <div class="card  py-3"> <label for="">Email Address</label>
+       <input type="email" name="email" id="email" class="form-control">
+      </div>
+      <div class="card py-3"> <label for="">Phone number</label>
+       <input type="number" id="number" class="form-control">
+      </div>
+       <input type="button" id="submit"  value="sign up" class="form-control btn border border-2 btn-outline-primary">
+      </div>
+      </div>
+    </div></div></div></div>
+    </div></div></div></div>
+    </div></div></div></div>
+    </div></div></div></div>
+     </div>
+
+   </div>
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="../assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+    <!-- Main JS -->
+    <script src="../assets/js/main.js"></script>
+
+    <script src="../assets/js/dashboards-analytics.js"></script>
+
+
+    <!-- Main JS -->
+    <script src="../assets/js/main.js"></script>
+    <script>
+      
+      document.getElementById("submit").addEventListener("click",function(){
+        var arr =[]
+        var sarry= JSON.parse(localStorage.getItem("admin1"))
+        var fullname= document.getElementById("name").value;
+        var email= document.getElementById("email").value;
+        var phone= document.getElementById("number").value;
+        if(fullname==""&& email==""&&phone==""){
+          document.getElementById("errorD").innerHTML=`Fill those inputs`
+        }
+        else if(fullname==""|| email==""||phone==""){
+         
+          if(fullname==""){
+            document.getElementById("errorD").innerHTML=`Fill the fullname input`
+          }
+          else if(email==""){
+            document.getElementById("errorD").innerHTML=`Fill the email input`
+          }
+          else if(phone==""){
+            document.getElementById("errorD").innerHTML=`Fill the phone number input`
+          }
+
+        }
+        else if(phone<=0 && fullname<=0 && email<=0){
+          document.getElementById("errorD").innerHTML=`invalid`
+        }
+        else if(phone<=0 || fullname<=0 || email<=0 || phone.length<11){
+          if(phone<=0 ){
+            document.getElementById("errorD").innerHTML=`invalid phone number`
+          }
+          else if(fullname<=0 ){
+            document.getElementById("errorD").innerHTML=`invalid fullname`
+          }
+          else if(email<=0 ){
+            document.getElementById("errorD").innerHTML=`invalid email address`
+          }
+          else if(phone.length<11){
+            document.getElementById("errorD").innerHTML=`Your phone number must be 11 digit`
+          }
+          
+        }
+        else{
+          if(sarry && sarry.length>0){
+                var same= sarry.find(far=>(far.Email===email))
+                if(same){
+                  document.getElementById("errorD").innerHTML=`This email address has been used`
+                }
+                else{
+      
+                if(localStorage.admin1 !=null){
+                  var arr = JSON.parse(localStorage.getItem("admin1"))
+                }
+                var d= Math.floor(Math.random()*10099)+"6"+Math.floor(Math.random()*8888)
+                var admin = {"fullname":fullname,"Email":email,"phoneNumber":phone,"AdminId":d}
+                document.getElementById("disp").innerHTML=`<div class="text-center"> <strong> Welcome Admin ${fullname}</strong> <p> Your Admin Id is <span class="primary">${d}</span></p>
+                  <small> <a href="adminLogin.html" class="btn border border-3 btn-outline-primary">Login<a><small></div>`
+                arr.push(admin)
+                localStorage.setItem("admin1",JSON.stringify(arr))
+                      
+                }
+
+          }
+          else{
+        
+          var d= Math.floor(Math.random()*10099)+"6"+Math.floor(Math.random()*8888);
+          var admin = {"fullname":fullname,"Email":email,"phoneNumber":phone,"AdminId":d}
+          document.getElementById("disp").innerHTML=`<div class="text-center"> <strong> Welcome Admin ${fullname}</strong> <p> Your Admin Id is <span class="primary">${d}</span>
+            <small> <a href="adminLogin.html" class="btn border border-3 btn-outline-primary">Login<a><small></p></div>`;
+          arr.push(admin)
+          localStorage.setItem("admin1",JSON.stringify(arr))
+          }
+       }
+      })
+    </script>
+
+    <!-- Page JS -->
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>

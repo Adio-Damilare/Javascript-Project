@@ -244,16 +244,16 @@ var deb12=0
     totalRevenueChartOptions = {
       series: [
         {
-          name: `Total Amount Deposit for a month`,
+          name: `Total Amount Deposit for this month`,
           data: [dep1, dep2, dep3, dep4, dep5, dep6, dep7,dep8,dep9,dep10,dep11,dep12,]
         },
         {
-          name: `Total Amount debit for a month `,
+          name: `Total Amount debit for this month `,
           data: [-deb1, -deb2, -deb3, -deb4, -deb5, -deb6, -deb7,-deb8,-deb9,-deb10,-deb11,-deb12,]
         }
       ],
       chart: {
-        height: 400,
+        height: 300,
         stacked: true,
         type: 'bar',
         toolbar: { show: false }
@@ -264,7 +264,7 @@ var deb12=0
           columnWidth: '33%',
           borderRadius: 12,
           startingShape: 'rounded',
-          endingShape: 'rounded'
+          endingShape: 'rounded',
         }
       },
       colors: [config.colors.primary, config.colors.info],
@@ -308,7 +308,7 @@ var deb12=0
         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',"Aug","Sept","oct","Nov","Dec"],
         labels: {
           style: {
-            fontSize: '18px',
+            fontSize: '14px',
             colors: axisColor,
           }
         },
@@ -621,7 +621,7 @@ var deb12=0
       },
       series: [
         {
-          data: [110, 270, 145, 245, 205, 285]
+          data: [1199, 270, 145, 245, 205, 285]
         }
       ],
       xaxis: {
@@ -721,7 +721,7 @@ var deb12=0
     incomeChartConfig = {
       series: [
         {
-          data: [24, 21, 30, 22, 42, 26, 35, 29]
+          data: [124, 21, 30, 22, 42, 26, 35, 29]
         }
       ],
       chart: {
@@ -785,7 +785,7 @@ var deb12=0
         }
       },
       xaxis: {
-        categories: ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        categories: ['dd', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
         axisBorder: {
           show: false
         },
@@ -818,7 +818,7 @@ var deb12=0
   // --------------------------------------------------------------------
   const weeklyExpensesEl = document.querySelector('#expensesOfWeek'),
     weeklyExpensesConfig = {
-      series: [65],
+      series: [5],
       chart: {
         width: 60,
         height: 60,

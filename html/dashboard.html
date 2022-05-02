@@ -191,47 +191,6 @@
               </a>
             </li>
         <!-- Layouts -->
-        <hr class="menu-header border " >
-        <li class="menu-item  ">
-          <a href="pages-account-settings-account.html" class="menu-link ">
-            <i class="menu-icon tf-icons bx bx-user"></i>
-            <div data-i18n="Account Settings">Account Settings</div>
-          </a>
-        </li>
-        
-        <li class="menu-item">
-          <a href="pages-account-settings-notifications.html" class="menu-link">
-            <span class="bx bx-bell text-primary"></span>
-
-            <div data-i18n="Notifications" class="ms-3">Notifications</div> 
-          </a>
-        </li>
-
-        <li class="menu-item">
-          <a href="pages-account-settings-connections.html" class="menu-link">
-            <span class="bx bx-link-alt "></span>
-            <div data-i18n="Connections" class="ms-3">Connections</div>
-          </a>
-        </li>
-        <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
-        <li class="menu-item">
-          <a
-            target="_blank"
-            class="menu-link"
-          >
-            <i class="menu-icon tf-icons bx bx-support"></i>
-            <div data-i18n="Support">Support</div>
-          </a>
-        </li>1
-        <li class="menu-item">
-          <a
-            target="_blank"
-            class="menu-link"
-          >
-            <i class="menu-icon tf-icons bx bx-file"></i>
-            <div data-i18n="Documentation">Documentation</div>
-          </a>
-        </li>          <!-- < -->
         </aside>
         <!-- / Menu -->
 
@@ -253,13 +212,13 @@
               <!-- Search -->
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
-                  <i class="bx bx-search fs-4 lh-0"></i>
-                  <input
+                  <!-- <i class="bx bx-search fs-4 lh-0"></i> -->
+                  <!-- <input
                     type="text"
                     class="form-control border-0 shadow-none"
                     placeholder="Search..."
                     aria-label="Search..."
-                  />
+                  /> -->
                 </div>
               </div>
               <!-- /Search -->
@@ -355,11 +314,13 @@
                       <div class="col-sm-7">
                         <div class="card-body">
                           <h5 class="card-title text-primary"> <span class="text-dark">Name :</span> <span id="span"></span> </h5>
-                          <p class="mb-4">
-                          
+                          <p class="mb-4" >
+                            <span class="fw-bold">AccountNumber:</span>
+                            <span id="accountNumber" class="text-primary fw-bold">
+
+                            </span>
                           </p>
 
-                          <!-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a> -->
                         </div>
                       </div>
                       <div class="col-sm-6 text-center text-sm-left">
@@ -448,53 +409,36 @@
                   </div>
                 </div>
                 <!-- Total Revenue -->
+                
                 <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
                   <div class="card">
                     <div class="row row-bordered g-0">
                       <div class="col-md-12">
-                        <h5 class="card-header m-0 me-2 pb-3">Total Revenue</h5>
+                        <h5 class="card-header m-0 me-2 pb-3">Total Monthly Revenue For   <script>
+                          document.write(new Date().getFullYear());
+                        </script></h5>
                         <div id="totalRevenueChart" class="px-2"></div>
                       </div>
-                      <div class="col-md-4">
+                      <div class="col-md-8" >
                         <div class="card-body">
-                          <div class="text-center">
-                            <!-- <div class="dropdown">
-                              <button
-                                class="btn btn-sm btn-outline-primary dropdown-toggle"
-                                type="button"
-                                id="growthReportId"
-                                data-bs-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                              >
-                                2022
-                              </button>
-                              
-                            </div> -->
-                          </div>
-                        </div>
-                        <!-- <div id="growthChart"></div> -->
+                          
                         
-                        <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
-                          <div class="d-flex">
-                            <div class="me-2">
-                              <span class="badge bg-label-primary p-2"><i class="bx bx-dollar text-primary"></i></span>
+                        <!-- <div id="growthChart"></div> -->
+                        <div class="d-flex px-xxl-1 px-lg-1 p-1 gap-xxl-3 gap-lg-1 gap-3 justify-content-center">
+                          <div class="d-flex justify-content-center">
+                            <div style="display: flex;"> 
+                           <div style="height: 50px; border: 6px solid #7F82FF; border-radius: 50Px; margin: 10px;"></div>
+                           <small style="transform: translate(0pc,02pc);color: #7F82FF;">Represent the amount deposit in a the month</small>
                             </div>
-                            <div class="d-flex flex-column">
-                              <small>2022</small>
-                              <h6 class="mb-0">$0.0k</h6>
-                            </div>
-                          </div>
-                          <div class="d-flex">
-                            <div class="me-2">
-                              <span class="badge bg-label-info p-2"><i class="bx bx-wallet text-info"></i></span>
-                            </div>
-                            <div class="d-flex flex-column">
-                              <small>2021</small>
-                              <h6 class="mb-0">$0p0000.0k</h6>
-                            </div>
+                           <div style="display: flex;">
+                             <div style="height: 50px; border: 6px solid #28CAEE; border-radius: 50Px; margin: 10px;"></div>
+                             <small style="transform: translate(0pc,3pc);color:  #28CAEE;">Represent the amount spent in a the month</small>
+                           </div>
+                            
                           </div>
                         </div>
+                        </div>
+                       
                       </div>
                     </div>
                   </div>
@@ -567,7 +511,7 @@
                     <div class="col-12 mb-4">
                       <div class="card">
                         <div class="card-body">
-                          <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
+                          <!-- <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
                             <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                               <div class="card-title">
                                 <h5 class="text-nowrap mb-2">Total Revenue</h5>
@@ -581,7 +525,7 @@
                               </div>
                             </div>
                             <div id="profileReportChart"></div>
-                          </div>
+                          </div> -->
                         </div>
                       </div>
                     </div>
@@ -594,30 +538,8 @@
 
                 <!-- Transactions -->
                 <div class="col-md-12 col-lg-12 order-2 mb-4">
-                  <div class="card h-100">
-                    <div class="card-header d-flex align-items-center justify-content-between">
-                      <h5 class="card-title m-0 me-2">Transactions</h5>
-                      <div class="dropdown">
-                        <button
-                          class="btn p-0"
-                          type="button"
-                          id="transactionID"
-                          data-bs-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                        >
-                          <i class="bx bx-dots-vertical-rounded"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                          <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <!-- \ -->
-                    </div>
+                  
+                  
                   </div>
                 </div>
                 <div
@@ -662,34 +584,7 @@
 
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                <div class="mb-2 mb-md-0">
-                  ©
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  , made with ❤️ by
-                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-                </div>
-                <div>
-                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-                  <a
-                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Documentation</a
-                  >
-
-                  <a
-                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Support</a
-                  >
-                </div>
-              </div>
+           
             </footer>
             <!-- / Footer -->
 
@@ -699,6 +594,9 @@
         </div>
         <!-- / Layout page -->
       </div>
+<!-- <div id="orderStatisticsChart"></div> -->
+<!-- <div id="incomeChart"></div>
+<div id="expensesOfWeek"></div> -->
 
       <!-- Overlay -->
       <div class="layout-overlay layout-menu-toggle"></div>
@@ -712,18 +610,17 @@
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
     <script src="../assets/vendor/libs/popper/popper.js"></script>
     <script src="../assets/vendor/js/bootstrap.js"></script>
-    <!-- <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script> -->
+     <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-    <!-- <script src="../assets/vendor/js/menu.js"></script> -->
+    <script src="../assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
     <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
     <!-- Main JS -->
-    <!-- <script src="../assets/js/main.js"></script> -->
+    <script src="../assets/js/main.js"></script>
 
-    <!-- Page JS -->
     <script src="../assets/js/dashboards-analytics.js"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
@@ -733,10 +630,11 @@
  
     function message(){
    
-
-        smart = JSON.parse(localStorage.getItem("damilare"));
+      smart = JSON.parse(localStorage.getItem("damilare"));
       
-        document.getElementById('span').innerHTML = smart[0].userDetail.firstname + "  "+ smart[0].userDetail.SecondName;
+      document.getElementById('span').innerHTML = smart[0].userDetail.firstname + "  "+ smart[0].userDetail.SecondName;
+      document.getElementById("accountNumber").innerText=smart[0].userDetail.accountNumber;
+      // alert(smart[0].userDetail.accountNumber)
         document.getElementById('bal').innerHTML = smart[0].userDetail.Bal
         var create = smart[0].userDetail.TransactionHistory.Airtimes
         var judge = smart[0].userDetail.TransactionHistory.transfer

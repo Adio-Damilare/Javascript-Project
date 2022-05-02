@@ -93,7 +93,7 @@
             </div>
 
             <div class="container pt-5 " style="padding-right: 70px; padding-left: 100px;">
-              <label for="">Password</label>
+              <label for="">Admin Id</label>
               <input type="text" class="form-control " style="height: 50px; font-size: 20px;" id="password">
               <div id="passwordErr"></div>
             </div>
@@ -141,51 +141,59 @@
 
     <script>
       document.getElementById("submit").addEventListener("click",()=>{
+        var recentAdmin=[]
         var email = document.querySelector("#email").value
         var password = document.querySelector("#password").value
-        var admin = JSON.parse(localStorage.getItem("Admin"))
+        var admin = JSON.parse(localStorage.getItem("admin1"))
+        var searchEmail = admin.find( some=>(some.Email===email))
+        var searchAdminId = admin.find( some=>(some.AdminId===password))
         
         if(email=="" &&password ==""){
+        
           document.querySelector("#passwordErr").style.color ="red"
           document.querySelector("#emailErr").style.color ="red"
           document.querySelector("#emailErr").innerText = "Enter your email address"
-          document.querySelector("#passwordErr").innerText = "Enter your password"
+          document.querySelector("#passwordErr").innerText = "Enter Admin Id"
+        }
+        else if(!searchEmail &&  !searchAdminId){
+        
+          document.querySelector("#passwordErr").style.color ="red"
+          document.querySelector("#emailErr").style.color ="red"
+          document.querySelector("#emailErr").innerText = "wrong email address"
+          document.querySelector("#passwordErr").innerText = "Wrong Admin Id"
         }
         else if(email=="" || password ==""){
 
-          if(email==""){
-            
+          if(email=="")
+          {
             document.querySelector("#emailErr").style.color ="red"
             document.querySelector("#emailErr").innerText = "Enter your email address"
             document.querySelector("#passwordErr").innerText = ""
           }
           else{
+          
             document.querySelector("#passwordErr").style.color ="red"
-            document.querySelector("#passwordErr").innerText = "Enter your password"
+            document.querySelector("#passwordErr").innerText = "Enter Admin Id"
             document.querySelector("#emailErr").innerText = ""
           }
         }
-        else if(email!==admin[0].email && password !==admin[0].password){
-          document.querySelector("#passwordErr").style.color ="red"
-          document.querySelector("#emailErr").style.color ="red"
-          document.querySelector("#emailErr").innerText = "wrong email address"
-          ocument.querySelector("#passwordErr").innerText = "Wrong Password"
-        }
-        else if(email!==admin[0].email || password !==admin[0].password){
-          if(email!==admin[0].email ){
-
+       
+        else if(!searchEmail|| !searchAdminId){
+          if(!searchEmail){
+          
             document.querySelector("#emailErr").style.color ="red"
             document.querySelector("#emailErr").innerText = "Enter your email address"
           }
           else{
-
+          
             document.querySelector("#passwordErr").style.color ="red"
-            ocument.querySelector("#passwordErr").innerText = "Wrong Password"
+            document.querySelector("#passwordErr").innerText = "Wrong Admin Id"
           }
         }
-
-        else{
-          location.href="firstAdmin.html"
+        else if(searchEmail && searchAdminId ){
+          recentAdmin.push(searchAdminId)
+          location.href="secondAdmin.html"
+          localStorage.setItem("recentAdmin",JSON.stringify(recentAdmin))
         }
       })
 

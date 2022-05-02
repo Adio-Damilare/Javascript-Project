@@ -491,11 +491,11 @@
                   <h5 class="modal-title  fw-bolder display-4 text-primary" >Transfer</h5>
                  
                 </div>
-                <div class="p-md-5 p-sm-5"> <label for="" class="fw-semibold my-3 ms-2">Account Number</label>
+                <div class="p-md-5 p-sm-5"> <label for="" class="fw-semibold my-3 ms-2">Your  Account Number</label>
                   <input type="text" class="form-control ms-5 w-75" name=""  onmouseover="sweet1()" onkeypress="errorClear()" id="account">
                   <div id="errorAcc" style="color: red;"></div>
                 </div>
-                <div class="px-md-5 px-sm-"> <label for="" class="fw-semibold mb-3 ms-2">Password</label>
+                <div class="px-md-5 px-sm-"> <label for="" class="fw-semibold mb-3 ms-2">Your Password</label>
                   <input type="password"  class="form-control ms-5 w-75"  onmouseover="sweet2()" onkeypress onkeypress="errClear()" name=""  id="password">
                   <div id="errorPass" style="color: red;"></div>
                 </div>
@@ -531,10 +531,12 @@
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title fw-bolder display-4 text-primary" id="modalToggleLabel4">Transfer successful</h5>
+                  <h5 class="modal-title fw-bolder display-6 text-primary" id="modalToggleLabel4">Transfer successfully</h5>
                  
                 </div>
-                <div class="modal-body"></div>
+                <div class="modal-body" id="succes">
+
+                </div>
                 <div class="modal-footer">
                   
                   <button
@@ -562,13 +564,13 @@
     <script src="../assets/vendor/js/bootstrap.js"></script>
     <!-- <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script> -->
 
-    <!-- <script src="../assets/vendor/js/menu.js"></script> -->
+    <script src="../assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <!-- <script src="../assets/js/main.js"></script> -->
+    <script src="../assets/js/main.js"></script>
 
     <!-- Page JS -->
 
@@ -796,7 +798,6 @@
             let today = `${date} / ${month} / ${year} / ${day}`;
             let amOrPm;
             let twentyHours = function(){
-
                 if (myDate.getHours()>12){
                     amOrPm = "PM";
                     let twentyFourHoursTimes = myDate.getHours();

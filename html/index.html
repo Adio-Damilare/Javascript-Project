@@ -8,29 +8,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav >
+    <nav id="nav" >
         <div id="menu">
             <a href="index.html" class=" active"  >
             Menu
             </a>
         </div>
         <div id="signup">
-            <a href="auth-register-basic.html">Signup</a>
+            <a href="auth-register-basic.html">Sign Up</a>
             <a href="auth-login-basic.html">Login</a>
-            <a href="layouts-container.html">
-                Admin
-            </a>
+            <div id="dropdown">
+                <a href="">Admin</a>
+                <ul id="drop-content">
+                    <li> <a href="sign up for admin.html">Sign up</a> </li>
+                    <li> <a href="adminLogin.html">Login</a> </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <main style="display: flex; align-items: center;justify-content: center; height: 40vw;">
+    <main id="main">
         <section>
-       <h1> welcome to star bank</h1>
-       <br>
-       <button>get started</button>
+            <h1 id="welcome"> welcome to star bank</h1>
+            <br>
+            <a href="auth-register-basic.html">
+            <button id="startBtn">get started</button>
+            </a>
         </section>
     </main>
+    <section id="ourServices">
+
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit voluptas necessitatibus sit maxime aperiam! Nesciunt qui ratione facilis, sit, quidem enim, quasi illum possimus excepturi repudiandae saepe expedita illo consequuntur?
+        </div>
+        <div>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque dolorum quae eos in quia aspernatur! Nobis amet nemo saepe quidem. Nulla ipsam nesciunt, tenetur tempore ratione deleniti repellendus numquam veritatis!
+        </div>
+        <div>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus ad qui placeat officiis nesciunt, quis porro amet sit, nisi expedita ducimus ab hic sed illo dolorem odio accusamus similique harum!
+        </div>
+    </section>
+   
+   
    
     <script src="../assets/vendor/js/bootstrap.js"></script>
+
 </body>
 </html>

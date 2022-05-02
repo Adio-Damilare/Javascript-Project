@@ -63,9 +63,25 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
+    <style>
+      .joy{
+        width: 100%;
+        padding: 0 300px;
+      }
+      @media (max-width:856px) {
+        .joy{
+          width: 100%;
+        padding: 0 130px}
+      }
+      @media (max-width:575px) {
+        .joy{
+          width: 100%;
+        padding: 0 0px}
+      }
+    </style>
   </head>
 
-  <body style="background-image: url(images/saveMoney.jpg); background-size: cover; background-repeat: no-repeat;">
+  <body style="background-blend-mode: darken;background-image: url(images/saveMoney.jpg),linear-gradient(rgb(149, 149, 204),rgb(235, 190, 190)); background-size: cover; background-repeat: no-repeat;">
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -194,47 +210,6 @@
             </li>
 
         <!-- Layouts -->
-        <hr class="menu-header border " >
-        <li class="menu-item  ">
-          <a href="pages-account-settings-account.html" class="menu-link ">
-            <i class="menu-icon tf-icons bx bx-user"></i>
-            <div data-i18n="Account Settings">Account Settings</div>
-          </a>
-        </li>
-        
-        <li class="menu-item">
-          <a href="pages-account-settings-notifications.html" class="menu-link">
-            <span class="bx bx-bell text-primary"></span>
-
-            <div data-i18n="Notifications" class="ms-3">Notifications</div> 
-          </a>
-        </li>
-
-        <li class="menu-item">
-          <a href="pages-account-settings-connections.html" class="menu-link">
-            <span class="bx bx-link-alt "></span>
-            <div data-i18n="Connections" class="ms-3">Connections</div>
-          </a>
-        </li>
-        <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
-        <li class="menu-item">
-          <a
-            target="_blank"
-            class="menu-link"
-          >
-            <i class="menu-icon tf-icons bx bx-support"></i>
-            <div data-i18n="Support">Support</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a
-            target="_blank"
-            class="menu-link"
-          >
-            <i class="menu-icon tf-icons bx bx-file"></i>
-            <div data-i18n="Documentation">Documentation</div>
-          </a>
-        </li>          
         </aside>
         <!-- / Menu -->
 
@@ -352,8 +327,8 @@
 
             <div class="container-xxl flex-grow-1 container-p-y">
               <div>
-                <h4 class="fw-bold py-3 mb-4">
-                  <span class="text-muted fw-light"></span> Deposit
+                <h4 class="fw-bold py-3 mb-4 text-white">
+                   Deposit
                 </h4>
                 <p class="text-dark " style="font-size: 20px;"><span >Notice</span> : You can not Deposit more than <span style="text-decoration: line-through double;">N</span>5000  Daily  </p>
               </div>
@@ -369,12 +344,12 @@
 
                 <!-- Vertical & Horizontal Scrollbars -->
                 <div class="col-12">
-                  <div class="card overflow-hidden" style="height: 500px;background-color: transparent;">
+                  <div class="card overflow-auto" style="height: 500px;background-color: transparent;">
                     <!-- <h5 class="card-header">Vertical & Horizontal Scrollbars</h5> -->
-                    <div class="card-body pt-5 px-md-5 px-sm-0" id="both-scrollbars-example"  style="background-color: transparent;">
-                      <div class=" sm-mx-0 px-sm-0 px-5">
-                        <div class="px-5">
-                          <div class="px-5">
+                    <div class="card-body pt-5 px-md-0 px-sm-0" id="both-scrollbars-example"  style="background-color: transparent;">
+                      <div class=" ">
+                        <div class="">
+                          <div class="joy">
                           
                             <div class="card-body">
                               <h5 class="card-title" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin-left: 1pc; font-size: 18px;">Amount</h5>
@@ -382,7 +357,7 @@
                                  <span class="input-group-text " style="text-decoration: line-through double;">N</span>
                                 <input
                                   type="number"
-                                  class="form-control h-px-50 " 
+                                  class="form-control h-px-50 px-md-0 " 
                                   id="amount"
                                   placeholder=""
                                   aria-describedby="basic-default-password"
@@ -398,7 +373,7 @@
                               </div>
                               <h5 class="my-4 text-center">
         
-                                <button class="btn btn-outline-primary"
+                                <button class="btn btn-outline-primary bg-primary text-white"
                                 data-bs-target="#modalToggle2"
                                 data-bs-toggle="modal"
                                 data-bs-dismiss="modal"
@@ -504,17 +479,17 @@
     <script src="../assets/vendor/js/bootstrap.js"></script>
     <!-- <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script> -->
 
-    <!-- <script src="../assets/vendor/js/menu.js"></script> -->
+    <script src="../assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <!-- <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script> -->
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
     <!-- Main JS -->
-    <!-- <script src="../assets/js/main.js"></script> -->
+    <script src="../assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <!-- <script src="../assets/js/extended-ui-perfect-scrollbar.js"></script> -->
+    <script src="../assets/js/extended-ui-perfect-scrollbar.js"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -680,11 +655,11 @@ document.querySelector("body"),addEventListener("keydown",(e)=>{
               var deduct = sarray.find(great =>( great.userDetail.accountNumber===apc));
               var some = parseInt(deduct.userDetail.Bal) + parseInt(save[0].amount);
               var timeRecord = {"date":dates,"time":timer, 'Balance':some,"Amountdeposit":save[0].amount};
-            var tree = new Date()
+            var tree = new Date();
              var should = recentUser[0].userDetail.chart.deposit[tree.getMonth()]
              var remote = deduct.userDetail.chart.deposit[tree.getMonth()];
-             remote.push(save[0].amount)
-             should.push(save[0].amount)
+             remote.push(save[0].amount);
+             should.push(save[0].amount);
               for(f=0;f<recentUser.length;){
                 if(recentUser[f].userDetail.accountNumber=== apc ){
                   recentUser[f].userDetail.Bal = some;

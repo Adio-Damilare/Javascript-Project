@@ -65,7 +65,7 @@
     <script src="../assets/js/config.js"></script>
   </head>
 
-  <body>
+  <body onload="load()">
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -174,13 +174,7 @@
               <!-- Search -->
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
-                  <i class="bx bx-search fs-4 lh-0"></i>
-                  <input
-                    type="text"
-                    class="form-control border-0 shadow-none"
-                    placeholder="Search..."
-                    aria-label="Search..."
-                  />
+                  <div class="online_animation"></div>
                 </div>
               </div>
               <!-- /Search -->
@@ -269,8 +263,45 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Box Icons</h4>
+              <div class="card row">
+                <div class="card col-6">
+                  <div class="card">
+                  <span class="text-muted fs-5 text-dark ps-5 py-4">
+                    Admin Name: <span id="span" class="ms-2 text-primary">
 
+                    </span>
+                  </span>
+
+                  <span class="text-muted fs-5 text-dark ps-5 py-4">
+                    Admin Id: <span id="span1" class="ms-2 text-primary">
+
+                    </span>
+                  </span>
+                  </div>
+                </div>
+                
+                
+              </div>
+              <div class="container">
+                <div class="card row mt-4">
+               <div class="card">
+                 <h4 class="text-center text-primary">
+                  Chart that represent the users register per month
+                 </h4>
+                 
+                 <div id="incomeChart" style=" padding: 30px;">
+
+                 </div>
+                
+                 </div>
+                 
+               </div>
+              </div>
+            </div>
+
+            </div>
+            <div>
+            
             </div>
             <!-- / Content -->
 
@@ -297,19 +328,27 @@
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
     <script src="../assets/vendor/libs/popper/popper.js"></script>
     <script src="../assets/vendor/js/bootstrap.js"></script>
-    <!-- <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script> -->
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script> -->
 
-    <!-- <script src="../assets/vendor/js/menu.js"></script> -->
+    <script src="../assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <!-- <script src="../assets/js/main.js"></script> -->
+   <script src="../assets/js/main.js"></script> 
+   <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
-    <!-- Page JS -->
-
-    <!-- Place this tag in your head or just before your close body tag. -->
+   <script src="chart.js"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+     function load(){
+    var recentAdmin= JSON.parse(localStorage.getItem("recentAdmin"))
+    document.getElementById("span").innerHTML=recentAdmin[0].fullname
+    document.getElementById("span1").innerHTML=recentAdmin[0].AdminId
+  
+    // data: [dep2,dep3,dep4,dep5,dep6, dep7, dep8, dep9, dep10, dep11,dep12,dep13]
+  }
+    </script>
   </body>
 </html>
