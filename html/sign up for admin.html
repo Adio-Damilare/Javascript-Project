@@ -54,6 +54,43 @@
     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
     <!-- Page CSS -->
+    <style>
+      body{
+        background-color: slateblue;
+      }
+      .row
+      {
+        width: 600px;
+        transform: translate(240px,6pc);
+      }
+    @media (max-width:980px) {
+      
+
+      .row
+      {
+        width: 550px;
+        transform: translate(40px,6pc);
+      }
+    }
+    @media (max-width:764px) {
+      
+
+      .row
+      {
+        width: 450px;
+        transform: translate(20px,6pc);
+      }
+    }
+    @media (max-width:500px) {
+      
+
+      .row
+      {
+        width: 100%;
+        transform: translate(0px,6pc);
+      }
+    }
+    </style>
 
     <!-- Helpers -->
     <script src="../assets/vendor/js/helpers.js"></script>
@@ -67,19 +104,10 @@
     <!-- Layout wrapper -->
     
    <div class="container-fluid">
-     <div class="container pt-1">
-     <div class="container ">
-     <div class="container ">
-     <div class="container pt-5">
-     <div class="container pt-5">
-     <div class="container"> 
      <div class="container">
-     <div class="container">
-     <div class="container">
-     <div class="container">
-     <div class="card">
-     <div class="card">
-     <div class="card">
+     <div class="card row">
+     <div class="card col-12">
+     <div class="card col-12">
      <div class="card text-center py-5 text-primary fs-3 fw-bold">Admin only</div>
     
      <div class="card-body" id="disp">
@@ -89,15 +117,16 @@
       </div>
       <div class="card  py-3"> <label for="">Email Address</label>
        <input type="email" name="email" id="email" class="form-control">
+       <div id="emailErr">
+
+       </div>
       </div>
       <div class="card py-3"> <label for="">Phone number</label>
        <input type="number" id="number" class="form-control">
       </div>
        <input type="button" id="submit"  value="sign up" class="form-control btn border border-2 btn-outline-primary">
       </div>
-      </div>
-    </div></div></div></div>
-    </div></div></div></div>
+      </div>  
     </div></div></div></div>
     </div></div></div></div>
      </div>
@@ -125,7 +154,29 @@
     <!-- Main JS -->
     <script src="../assets/js/main.js"></script>
     <script>
-      
+      document.getElementById("email").addEventListener("change",function(){
+        var invalid=/\s/;
+        var email = document.querySelector("#email").value
+        if(invalid.test(email)){
+          document.querySelector("#emailErr").style.color="red"
+          document.getElementById("errorD").innerHTML = "You are not allow to add space to your email address";
+          document.getElementById("submit").disabled=true;
+        } else{
+          document.getElementById("submit").disabled=false
+        }
+      })
+
+      document.getElementById("email").addEventListener("change",function(){
+        var invalid=/\s/;
+        var p = document.querySelector("#number").value
+        if(invalid.test(p)){
+       
+          document.getElementById("errorD").innerHTML = "You are not allow to add space to your phone number";
+          document.getElementById("submit").disabled=true;
+        } else{
+          document.getElementById("submit").disabled=false
+        }
+      })
       document.getElementById("submit").addEventListener("click",function(){
         var arr =[]
         var sarry= JSON.parse(localStorage.getItem("admin1"))

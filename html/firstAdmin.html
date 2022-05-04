@@ -418,6 +418,14 @@
     <!-- endbuild -->
 
     <!-- Vendors JS -->
+    <script src="../assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+
+    <!-- Main JS -->
+   <script src="../assets/js/main.js"></script> 
+   <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
     <!-- Main JS -->
     <!-- <script src="../assets/js/main.js"></script> -->
@@ -558,17 +566,24 @@
     }
     
    function sea(){
+     var recentAdmin=JSON.parse(localStorage.getItem("recentAdmin"))
       var AdminId =  document.querySelector("#cure").value
       if( AdminId==""){
         document.querySelector("#idErr").innerText="please enter your admin Id to delete "
         document.querySelector("#idErr").style.color="red"
         document.getElementById("amSure").disabled=true
       }
+      else if(AdminId!=recentAdmin[0].AdminId){
+        document.querySelector("#idErr").innerText="Wrong Adminid";
+        document.querySelector("#idErr").style.color="red"
+        document.getElementById("amSure").disabled=true
+      }
       else{
-        if(AdminId==1234567890){
+        if(AdminId==recentAdmin[0].AdminId){
           document.getElementById("amSure").disabled = false
         }
       }
+
       
     }
 
@@ -578,7 +593,7 @@
         for(d=0;d<users.length;d++){
           if(users[d]===smart[0]){
             if(localStorage.delete !=null){
-              var food =JSON.parse( localStorage.getItem("delete"))
+              var deleteUser=JSON.parse( localStorage.getItem("delete"))
             }
             deleteUser.push(users[d])
             localStorage.setItem("delete",JSON.stringify(deleteUser))
@@ -588,7 +603,7 @@
         }
           localStorage.setItem("user",JSON.stringify(users));
           location.reload();
-          }
+  }
     function cure(){
       document.getElementById("amSure").disabled = false
     }
@@ -831,6 +846,7 @@ var chang=[]
       document.getElementById("fName").disabled=false
      }
      function firstcheck(){
+       var recentAdmin=JSON.parse(localStorage.getItem("recentAdmin"))
       var d = document.getElementById("care1").value
        if(d==""){
          document.getElementById("IdErr").innerText="Please enter your Admin Id"
@@ -838,11 +854,11 @@ var chang=[]
          document.getElementById("fName").disabled=true
        }
        else{
-         if(d!=1234567890){
+         if(d!=recentAdmin[0].AdminId){
           document.getElementById("IdErr").innerText="Wrong Admin Id"
           document.getElementById("fName").disabled=true
          }
-         else if(d==1234567890){
+         else if(d==recentAdmin[0].AdminId){
            document.getElementById("fName").disabled=false
          }
        }

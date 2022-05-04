@@ -63,7 +63,7 @@
     <script src="../assets/js/config.js"></script>
   </head>
 
-  <body>
+  <body style="background-color: slateblue;">
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -82,17 +82,17 @@
           <!-- / Navbar -->
 
           <!-- Content wrapper -->
-          <div class="content-wrapper" >
-            <div class="card" style="width: 800px; transform: translate(30px,100px);" >
+          <div class="content-wrapper row" >
+            <div class="card col-12" style="width: 800px; transform: translate(30px,100px);" >
             <!-- Content -->
-            <div style="margin-left: 300px; padding-top: 30px; font-size: 30px;">Admin only</div>
-            <div class="container pt-5 " style="padding-right: 70px; padding-left: 100px;">
+            <div style="text-align: center; padding-top: 30px; font-size: 30px; " class="text-primary">Admin only</div>
+            <div class="container pt-5 " style="padding-right:50px; padding-left: 80px;">
               <label for="">Email Address</label>
               <input type="text" class="form-control" id="email" style="height: 50px; font-size: 20px;">
                 <div id="emailErr"></div>
             </div>
 
-            <div class="container pt-5 " style="padding-right: 70px; padding-left: 100px;">
+            <div class="container pt-5 " style="padding-right: 50px; padding-left: 80px;">
               <label for="">Admin Id</label>
               <input type="text" class="form-control " style="height: 50px; font-size: 20px;" id="password">
               <div id="passwordErr"></div>
@@ -140,6 +140,22 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
     <script>
+      document.getElementById("email").addEventListener("change", function(){
+        var invalid=/\s/;
+        var email = document.querySelector("#email").value
+        if(invalid.test(email)){
+          document.querySelector("#emailErr").style.color="red"
+          document.querySelector("#emailErr").innerText = "check there is space between the email"
+        }
+      })
+      document.getElementById("password").addEventListener("change", function(){
+        var invalid=/\s/;
+        var password = document.querySelector("#password").value
+        if(invalid.test(password)){
+          document.querySelector("#passwordErr").style.color="red"
+          document.querySelector("#passwordErr").innerText = "check there is space between the password"
+        }
+      })
       document.getElementById("submit").addEventListener("click",()=>{
         var recentAdmin=[]
         var email = document.querySelector("#email").value

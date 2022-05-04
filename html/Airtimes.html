@@ -403,8 +403,8 @@
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title fw-bolder display-4 text-primary" id="modalToggleLabel4">Transfer successful</h5>
-               
+                <h5 class="modal-title fw-bolder display-4 text-primary" id="modalToggleLabel4"></h5>
+               You have successfully purchase airtime of<span style="text-decoration: line-through double;">N</span> <span id="veiw"></span>
               </div>
               <div class="modal-body"></div>
               <div class="modal-footer">
@@ -672,7 +672,7 @@
               }
               d++
               }
-
+              document.getElementById("veiw").innerHTML=smart[0].amount
               document.getElementById("password").value=""
               document.getElementById("basic").value=""
               document.getElementById("amount").value=""
