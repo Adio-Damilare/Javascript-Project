@@ -22,9 +22,8 @@
    var dep13=0
    if(user[0]){
      for(let r=0;r<user[0].length;r++){
-  
-       dep2+=parseInt(user[0][r]);
-       
+      dep2+=parseInt(user[0][r]);
+ 
      }
    }else{
      dep2=300

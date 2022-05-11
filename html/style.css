@@ -4,103 +4,16 @@
     box-sizing: border-box;
     font-family: "poppin",sans-serif;
 }
-body{
-    background-blend-mode: darken;
-    background-image:linear-gradient(rgb(140, 140, 150),rgba(182, 178, 178, 0.3)),url(4.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+.fresh{
+    background-image: linear-gradient(to top right, rgb(197, 197, 194),70%,rgb(244, 249, 250));
 }
-div>a{
-    text-decoration: none;
-    font-size: 23px;
-    color: #fff;
-}
-div>a:hover{
-    color: chocolate;
-    text-decoration: underline;
-    font-size: 23px;
-}
+@media (max-width:766px) {
 
-nav{
-    position: sticky;
-    display: flex;
-    top: 0;
-    font-family: 'poppin',sans-serif;
-    justify-content: space-around;
-    background-color:transparent ;
-}
-#signup{
-    display: flex;
-    justify-content: space-around;
-
-}
-#menu{
-    padding-top: 27px;
-}
-#signup>a{
-    margin: 20px;
-}
-#welcome{
-    color: #fff;
-    font-family: "poppin",sans-serif;
-    text-transform: uppercase;
-    font-size: 50px;
-}
-#main{
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    height: 40vw;
-}
-#startBtn{
-    transform: translate(260px,0px);
-    font-size: 18px;
-    height: 50px;
-    border-radius: 9px;
-    text-transform: capitalize;
-    border: 5px solid grey;
-}
-
-#startBtn:hover{
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-color: white;
-    background-color: blue;
-    color: #fff;
-}
-#ourServices{
-    display: flex;
-    padding: 0 60px 0 60px;
-}
-
-#ourServices>div{
-    background-color: white;
-    margin: 20px;
-    padding: 5px 10px 5px 10px;
-}
-
-#dropdown{
-    margin-top: 20px;
-    margin-left: 10px;
-}
-#drop-content{
-    display: none;
-    font-size: 20px;
-    color: white;
-    margin-top: 10px;
-
-}
-#drop-content li{
-    list-style-type: none;
-    margin: 10px 0 ;
-}
-#drop-content li a{
-    list-style-type: none;
-    text-decoration: none;
-    color: white;
-
-}
-#dropdown:hover #drop-content{
-    display: block;
+    /* .pest{
+        
+        transform: translate(0,-130px);
+    } */
+    .good{
+        transform: translate(-500px,0px);
+    }
 }
